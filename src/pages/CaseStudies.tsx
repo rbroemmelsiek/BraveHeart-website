@@ -62,8 +62,10 @@ export default function CaseStudies() {
       ]}
       cta={{
         primaryLabel: 'Get Matched',
+        primaryIntent: 'matched',
         secondaryLabel: 'Verify Eligibility',
-        secondaryTo: '/who-we-serve',
+        secondaryAction: 'modal',
+        secondaryIntent: 'verify',
       }}
       relatedLinks={[
         { label: 'Who We Serve', to: '/who-we-serve' },

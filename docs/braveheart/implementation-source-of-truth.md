@@ -52,7 +52,8 @@ Each public route is implemented in `src/pages/` using shared layout components 
 | `BraveHeartImage.tsx` | Production WebP renderer with lazy/eager loading |
 | `ImagePlaceholder.tsx` | Retained for fallback; superseded by BraveHeartImage in Plan 03 |
 | `ProgramDisclaimer.tsx` | Compliance disclaimer on benefit pages |
-| `CtaBlock.tsx` | Primary/secondary CTAs (ContactModal via Plan 04) |
+| `CtaBlock.tsx` | Primary/secondary/tertiary CTAs with verification entry intents |
+| `VerificationEntryModal.tsx` | Front-end-only intake form, disclaimers, QR placeholder |
 
 ### H1 Control
 
@@ -67,6 +68,33 @@ H1 text per route follows `docs/braveheart/seo-publication-map.md` and normalize
 | Image component | `src/components/braveheart/BraveHeartImage.tsx` |
 | Theme tokens | `src/index.css` — deep navy, gold accent, warm white text, dark glass |
 | Conversion script | `npm run images:braveheart` → `scripts/convert-braveheart-images.mjs` |
+
+### CTA and Verification Entry (Plan 04 — 2026-06-21)
+
+| Asset | Path |
+|---|---|
+| CTA config | `src/config/cta.ts` |
+| Verification modal | `src/components/braveheart/VerificationEntryModal.tsx` |
+| Entry context | `src/context/ContactModalContext.tsx` — `openVerificationEntry(intent)` |
+| Flow documentation | `docs/braveheart/cta-and-verification-flow.md` |
+
+Phase 1 intake is **front-end only**. No verification backend, CRM, or live app URL.
+
+### SEO and Publication Controls (Plan 05 — 2026-06-21)
+
+| Asset | Path |
+|---|---|
+| SEO config | `src/config/seo.ts` |
+| Head manager | `src/components/SEOHead.tsx` |
+| Route integration | `src/App.tsx` (`AppShell` + `useLocation`) |
+| Static fallback | `index.html` |
+| robots.txt | `public/robots.txt` |
+| sitemap.xml | `public/sitemap.xml` |
+| Metadata map | `docs/braveheart/seo-publication-map.md` |
+
+Placeholder canonical domain: `https://braveheartfirstresponders.com` — swap before launch.
+
+Per-route metadata includes title, description, canonical URL, robots directive, Open Graph, and Twitter/X card tags. Legal pages remain `index,follow` but are flagged for legal review in docs.
 
 ### Publication Gaps
 

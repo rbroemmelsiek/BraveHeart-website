@@ -61,6 +61,7 @@ export default function SavingsComparison() {
       ]}
       cta={{
         primaryLabel: 'Verify Eligibility',
+        primaryIntent: 'verify',
         secondaryLabel: 'View Service Lines',
         secondaryTo: '/service-lines',
       }}

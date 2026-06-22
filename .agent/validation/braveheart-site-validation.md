@@ -2,71 +2,76 @@
 
 ## Status
 
-Plan 03 assets and visual system validated — 2026-06-21. See `.agent/validation/03.braveheart-assets-and-visual-system-validation.md` for plan-specific detail.
+Plan 05 SEO and publication controls validated — 2026-06-21. See `.agent/validation/05.braveheart-seo-publication-controls-validation.md` for plan-specific detail.
 
 ## Required Route Validation
 
-| Route | Renders | H1 Present | Metadata | Images OK | Links OK | Notes |
-|---|---:|---:|---:|---:|---:|---|
-| `/` | Yes | Yes | Pending (Plan 05) | Yes (3 WebP) | Yes | Plan 03 images + theme |
-| `/our-story` | Yes | Yes | Pending | Yes (2 WebP) | Yes | Plan 03 images |
-| `/who-we-serve` | Yes | Yes | Pending | Yes (2 WebP) | Yes | Plan 03 images |
-| `/savings-comparison` | Yes | Yes | Pending | Yes (2 WebP) | Yes | Compliance flags on figures |
-| `/service-lines` | Yes | Yes | Pending | Yes (4 WebP) | Yes | Plan 03 images |
-| `/our-guarantee` | Yes | Yes | Pending | Yes (1 WebP) | Yes | Compliance flags |
-| `/case-studies` | Yes | Yes | Pending | Yes (1 WebP) | Yes | Illustrative + testimonial pending |
-| `/privacy-policy` | Yes | Yes | Pending | N/A | Yes | Draft legal — review required |
-| `/terms-of-service` | Yes | Yes | Pending | N/A | Yes | Draft legal — review required |
-| `/accessibility` | Yes | Yes | Pending | N/A | Yes | Draft legal — review required |
+| Route | Renders | H1 Present | Metadata | Images OK | Links OK | CTA OK | Notes |
+|---|---:|---:|---:|---:|---:|---:|---|
+| `/` | Yes | Yes | Yes | Yes | Yes | Yes | Unique title + OG |
+| `/our-story` | Yes | Yes | Yes | Yes | Yes | Yes | Unique title + OG |
+| `/who-we-serve` | Yes | Yes | Yes | Yes | Yes | Yes | Unique title + OG |
+| `/savings-comparison` | Yes | Yes | Yes | Yes | Yes | Yes | Unique title + OG |
+| `/service-lines` | Yes | Yes | Yes | Yes | Yes | Yes | Unique title + OG |
+| `/our-guarantee` | Yes | Yes | Yes | Yes | Yes | Yes | Unique title + OG |
+| `/case-studies` | Yes | Yes | Yes | Yes | Yes | Yes | Unique title + OG |
+| `/privacy-policy` | Yes | Yes | Yes | N/A | Yes | Yes | Legal review banner |
+| `/terms-of-service` | Yes | Yes | Yes | N/A | Yes | Yes | Legal review banner |
+| `/accessibility` | Yes | Yes | Yes | N/A | Yes | Yes | Legal review banner |
 
 ## Legacy Redirect Validation (Plan 01)
 
 | Legacy route | Redirects to | Verified |
 |---|---|---|
-| `/residence` | `/our-story` | Configured |
-| `/neighborhood` | `/who-we-serve` | Configured |
-| `/schools` | `/savings-comparison` | Configured |
-| `/gallery` | `/case-studies` | Configured |
-| `/privacy` | `/privacy-policy` | Configured |
-| `/terms` | `/terms-of-service` | Configured |
+| `/residence` | `/our-story` | Configured — not in sitemap |
+| `/neighborhood` | `/who-we-serve` | Configured — not in sitemap |
+| `/schools` | `/savings-comparison` | Configured — not in sitemap |
+| `/gallery` | `/case-studies` | Configured — not in sitemap |
+| `/privacy` | `/privacy-policy` | Configured — not in sitemap |
+| `/terms` | `/terms-of-service` | Configured — not in sitemap |
 
 ## Build Validation
 
 | Check | Result | Notes |
 |---|---|---|
-| Install succeeds | Pass | Includes `sharp` devDependency |
-| Dev server starts | Not run | — |
-| Production build succeeds | Pass | Plan 03 |
-| `npm run lint` | Pass | Plan 03 |
-| All referenced WebP files exist | Pass | 19 production files |
-| No listing-site image refs on active routes | Pass | Unrouted legacy pages retain old refs only |
-| robots.txt present | Pending | Plan 05 |
-| sitemap.xml present | Pending | Plan 05 |
+| Install succeeds | Pass | |
+| Production build succeeds | Pass | Plan 05 |
+| `npm run lint` | Pass | Plan 05 |
+| All referenced WebP files exist | Pass | OG + favicon verified |
+| No listing-site contact on active routes | Pass | Plan 04 |
+| robots.txt present | Pass | `dist/robots.txt` copied |
+| sitemap.xml present | Pass | 10 Phase 1 routes only |
 
-## SEO Validation
-
-| Check | Result | Notes |
-|---|---|---|
-| One H1 per page | Pass | Matches seo-publication-map intent |
-| Unique SEO titles | Pending | Plan 05 |
-| Unique meta descriptions | Pending | Plan 05 |
-| Canonical URLs | Pending | Plan 05 |
-| Open Graph images | Pending | `brave-heart-logo-square.webp` ready — Plan 05 |
-| Alt text on meaningful images | Pass | Plan 03 |
-| Internal links resolve | Pass | Related links + CTAs |
-| Favicon | Pass | `braveheart-icon.webp` |
-
-## Asset Validation
+## CTA Validation (Plan 04)
 
 | Check | Result |
 |---|---|
-| Production path populated | Pass — 19 WebP files |
-| Originals preserved | Pass — sources at `public/assets/` |
-| Kebab-case filenames | Pass |
-| WebP quality ~82 | Pass |
-| Dimensions preserved | Pass |
-| Global logo in nav/footer | Pass |
+| Navbar Verify Eligibility opens modal | Pass |
+| Footer Contact opens modal | Pass |
+| Page primary CTAs use correct intent | Pass |
+| Secondary internal links resolve | Pass |
+| No guaranteed eligibility language in CTAs | Pass |
+| Modal disclaimers visible | Pass |
+| Front-end-only form (no backend) | Pass |
+| QR loads from production path | Pass |
+| Listing mailto/tel/sms removed | Pass |
+
+## SEO Validation (Plan 05)
+
+| Check | Result | Notes |
+|---|---|---|
+| One H1 per page | Pass | Unchanged from Plan 02 |
+| Unique SEO titles | Pass | 10 distinct titles in `src/config/seo.ts` |
+| Unique meta descriptions | Pass | 10 distinct descriptions |
+| Canonical URLs | Pass | Placeholder domain consistent |
+| Open Graph images | Pass | All paths resolve on disk |
+| Favicon / apple-touch-icon | Pass | `braveheart-icon.webp`, `brave-heart-logo-square.webp` |
+| robots.txt allows indexing | Pass | `Allow: /` |
+| sitemap.xml Phase 1 routes | Pass | 10 routes; no listing routes |
+| Alt text on meaningful images | Pass | Plan 03 |
+| Internal links resolve | Pass | No active nav/footer links to listing routes |
+| No accidental noindex | Pass | All Phase 1 routes `index,follow` |
 
 ## Publication Decision
 
-**Not ready for publication.** Legal pages, compliance-sensitive figures, and verified testimonials require review. Plan 03 complete — awaiting approval before Plan 04.
+**Not ready for full publication launch.** SEO controls are implemented, but final domain confirmation, legal sign-off, compliance review of savings figures, verified testimonials, and live verification/app URLs remain open. Plan 05 complete — awaiting approval before Plan 06.

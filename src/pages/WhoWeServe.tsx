@@ -69,6 +69,7 @@ export default function WhoWeServe() {
       ]}
       cta={{
         primaryLabel: 'Verify Eligibility',
+        primaryIntent: 'verify',
         secondaryLabel: 'See Service Lines',
         secondaryTo: '/service-lines',
       }}

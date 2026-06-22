@@ -49,6 +49,7 @@ export default function OurGuarantee() {
       ]}
       cta={{
         primaryLabel: 'Verify Eligibility',
+        primaryIntent: 'verify',
         secondaryLabel: 'Our Story',
         secondaryTo: '/our-story',
       }}

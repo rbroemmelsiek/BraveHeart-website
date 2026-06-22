@@ -1,0 +1,6 @@
+# Production robots rules (Phase 1)
+# Staging/preview hosts should use: User-agent: * / Disallow: /
+User-agent: *
+Allow: /
+
+Sitemap: https://braveheartfirstresponders.com/sitemap.xml

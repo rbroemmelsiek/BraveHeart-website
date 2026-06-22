@@ -48,6 +48,19 @@ Before publication, verify:
 11. Legal, privacy, terms, and accessibility pages are reachable.
 12. CTA links are working or intentionally stubbed.
 
+## Metadata Implementation (Plan 05)
+
+Phase 1 uses a lightweight client-side head manager:
+
+```text
+src/config/seo.ts          — route metadata and placeholder domain
+src/components/SEOHead.tsx — document.title + meta/link tags
+src/App.tsx                — SEOHead bound to router pathname
+index.html                 — static home fallback before hydration
+```
+
+**SPA limitation:** Crawlers that do not execute JavaScript only see `index.html` fallback metadata. Full per-route metadata requires JS execution or future prerender/SSR if needed.
+
 ## robots.txt
 
 Production:
@@ -67,6 +80,8 @@ Disallow: /
 ```
 
 Do not apply staging robots rules to production.
+
+Implemented file: `public/robots.txt` (production rules). Staging hosts must override with `Disallow: /` at deploy time.
 
 ## Sitemap
 

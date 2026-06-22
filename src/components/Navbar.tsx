@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useContactModal } from '../context/ContactModalContext';
+import { useVerificationEntry } from '../context/ContactModalContext';
 import { braveheartImageSrc } from '../lib/braveheartAssets';
 
 export default function Navbar() {
   const location = useLocation();
   const path = location.pathname;
-  const { openModal } = useContactModal();
+  const { openVerificationEntry } = useVerificationEntry();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const links = [
@@ -56,7 +56,7 @@ export default function Navbar() {
             })}
           </div>
           <button
-            onClick={openModal}
+            onClick={() => openVerificationEntry('verify')}
             className="hidden lg:block bg-primary text-on-primary px-6 xl:px-8 py-3 rounded-sm uppercase text-xs tracking-widest font-medium hover:opacity-90 transition-opacity shadow-lg shadow-primary/20"
           >
             Verify Eligibility
@@ -97,7 +97,7 @@ export default function Navbar() {
             <button
               onClick={() => {
                 setIsMobileMenuOpen(false);
-                openModal();
+                openVerificationEntry('verify');
               }}
               className="bg-primary text-on-primary w-full md:w-auto md:px-12 py-4 md:py-5 rounded-sm uppercase text-sm tracking-widest font-medium hover:opacity-90 transition-opacity shadow-lg shadow-primary/20"
             >

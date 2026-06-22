@@ -26,7 +26,7 @@ Route-specific content is **implemented in React** using normalized content, PRD
 | `/` | Hero / Program Overview | normalized-content/home.md, PRD | first-responder-real-estate-benefits.webp | Verify Eligibility | implemented | needs-review | Plan 03 — hero image priority load. |
 | `/` | Client Lifecycle Roadmap | normalized-content/home.md | braveheart-client-heroes-journey.webp | Learn More | implemented | needs-review | Plan 03 wired. |
 | `/` | HomeToHome Support | normalized-content/home.md | ai-guardian-team-real-estate-support.webp | Verify | implemented | needs-review | Plan 03 wired. |
-| `/` | Verification Intro | normalized-content/home.md | None | Verify Eligibility | implemented | needs-review | CTA opens ContactModal (Plan 04). |
+| `/` | Verification Intro | normalized-content/home.md | None | Verify Eligibility | implemented | needs-review | Opens verification entry modal (Plan 04). |
 | `/our-story` | Founder Origin | normalized-content/our-story.md | police-history-generational-wealth.webp | Speak With Founder | implemented | needs-review | Plan 03 wired. |
 | `/our-story` | Legacy Timeline | normalized-content/our-story.md | braveheart-legacy-of-support-history.webp | Learn More | implemented | needs-review | Plan 03 wired; [TBD] historical claims. |
 | `/our-story` | Mission Principles | PRD tone | None | — | implemented | needs-review | Bullets from PRD tone guidance. |
@@ -50,7 +50,9 @@ Route-specific content is **implemented in React** using normalized content, PRD
 | `/accessibility` | Accessibility Sections | normalized-content/accessibility.md | None | Contact | implemented | needs-review | **Draft — audit and legal review.** |
 | Global | Navbar/Footer logo | asset-inventory | brave-heart-logo-landscape.webp | — | implemented | needs-review | Plan 03 global chrome. |
 | Global | Favicon | asset-inventory | braveheart-icon.webp | — | implemented | needs-review | Plan 03. |
-| Global | App / QR CTA | cta-and-verification-flow.md | braveheart-app-qr-code-signup.webp | Open App | converted | needs-review | Converted — Plan 04 CTA wiring. |
+| Global | Navbar Verify Eligibility | cta-and-verification-flow.md | — | Verify Eligibility | implemented | needs-review | Opens modal (`verify` intent). |
+| Global | Footer Contact | cta-and-verification-flow.md | — | Contact | implemented | needs-review | Opens modal (`contact` intent). |
+| Global | App / QR CTA | cta-and-verification-flow.md | braveheart-app-qr-code-signup.webp | Open App | implemented | needs-review | QR in modal — app URL stubbed. |
 
 ## Insertion Rule
 

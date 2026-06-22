@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useContactModal } from '../context/ContactModalContext';
+import { useVerificationEntry } from '../context/ContactModalContext';
 import { braveheartImageSrc } from '../lib/braveheartAssets';
 
 export default function Footer() {
-  const { openModal } = useContactModal();
+  const { openVerificationEntry } = useVerificationEntry();
 
   return (
     <footer className="bg-surface-container-low w-full py-16 md:py-20 px-6 md:px-12 border-t border-outline-variant/10">
@@ -35,7 +35,7 @@ export default function Footer() {
             <button
               type="button"
               className="text-on-surface-variant hover:text-primary transition-colors"
-              onClick={openModal}
+              onClick={() => openVerificationEntry('contact')}
             >
               Contact
             </button>

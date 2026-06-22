@@ -69,7 +69,7 @@ export default function TermsOfService() {
           ),
         },
       ]}
-      cta={{ primaryLabel: 'Contact the Program Team' }}
+      cta={{ primaryLabel: 'Contact the Program Team', primaryIntent: 'contact' }}
       relatedLinks={[
         { label: 'Privacy Policy', to: '/privacy-policy' },
         { label: 'Accessibility', to: '/accessibility' },

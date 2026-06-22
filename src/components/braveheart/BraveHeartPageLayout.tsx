@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PageSection, { PageSectionData } from './PageSection';
 import ProgramDisclaimer from './ProgramDisclaimer';
 import CtaBlock from './CtaBlock';
+import { VerificationEntryIntent } from '../../config/cta';
 
 export interface RelatedLink {
   label: string;
@@ -18,8 +19,11 @@ export interface BraveHeartPageLayoutProps {
   showDisclaimer?: boolean;
   cta?: {
     primaryLabel?: string;
+    primaryIntent?: VerificationEntryIntent;
     secondaryLabel?: string;
     secondaryTo?: string;
+    secondaryAction?: 'link' | 'modal';
+    secondaryIntent?: VerificationEntryIntent;
     tertiaryLabel?: string;
     tertiaryTo?: string;
   };
@@ -83,8 +87,11 @@ export default function BraveHeartPageLayout({
         {cta && (
           <CtaBlock
             primaryLabel={cta.primaryLabel}
+            primaryIntent={cta.primaryIntent}
             secondaryLabel={cta.secondaryLabel}
             secondaryTo={cta.secondaryTo}
+            secondaryAction={cta.secondaryAction}
+            secondaryIntent={cta.secondaryIntent}
             tertiaryLabel={cta.tertiaryLabel}
             tertiaryTo={cta.tertiaryTo}
           />

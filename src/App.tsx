@@ -1,6 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
+import SEOHead from './components/SEOHead';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -15,12 +16,14 @@ import TermsOfService from './pages/TermsOfService';
 import Accessibility from './pages/Accessibility';
 import { ContactModalProvider } from './context/ContactModalContext';
 
-export default function App() {
+function AppShell() {
+  const location = useLocation();
+
   return (
-    <ContactModalProvider>
-      <Router>
-        <ScrollToTop />
-        <div className="flex flex-col min-h-screen">
+    <>
+      <SEOHead pathname={location.pathname} />
+      <ScrollToTop />
+      <div className="flex flex-col min-h-screen">
           <Navbar />
           <main className="flex-grow">
             <Routes>
@@ -45,7 +48,16 @@ export default function App() {
             </Routes>
           </main>
           <Footer />
-        </div>
+      </div>
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <ContactModalProvider>
+      <Router>
+        <AppShell />
       </Router>
     </ContactModalProvider>
   );

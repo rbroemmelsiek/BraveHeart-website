@@ -59,6 +59,7 @@ export default function OurStory() {
       ]}
       cta={{
         primaryLabel: 'Speak With the Founder',
+        primaryIntent: 'founder',
         secondaryLabel: 'Who We Serve',
         secondaryTo: '/who-we-serve',
       }}

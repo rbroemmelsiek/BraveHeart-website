@@ -8,17 +8,62 @@ Replace with final production domain before launch:
 https://braveheartfirstresponders.com
 ```
 
+**Status:** Placeholder in use — requires owner confirmation before indexing or marketing launch.
+
+Implementation constant: `PRODUCTION_DOMAIN` in `src/config/seo.ts`.
+
+## Metadata Mechanism (Plan 05 — 2026-06-21)
+
+| Item | Value |
+|---|---|
+| Config | `src/config/seo.ts` |
+| Head manager | `src/components/SEOHead.tsx` |
+| Integration | `AppShell` in `src/App.tsx` via `useLocation()` |
+| Static fallback | `index.html` home metadata + favicon |
+| robots.txt | `public/robots.txt` |
+| sitemap.xml | `public/sitemap.xml` |
+
+**SPA note:** Metadata is applied client-side after route navigation. Crawlers that execute JavaScript receive per-route tags. Static `index.html` provides home-page fallback before hydration.
+
 ## Page Metadata Table
 
 | Route | SEO Title | Meta Description | H1 | Primary Keyword | OG Image | Robots | Sitemap | Status |
 |---|---|---|---|---|---|---|---|---|
-| `/` | Brave Heart First Responders Real Estate Benefits | Real estate benefits, closing credits, and HomeToHome-powered guidance for eligible first responders and military members. | Real Financial Relief—Applied Where It Counts | first responder real estate benefits | first-responder-real-estate-benefits.webp | index,follow | yes | Draft |
-| `/our-story` | Our Story | Learn how Brave Heart was built from lived experience to support public safety and military families. | Our Story: Built From Lived Experience | Brave Heart founder story | police-history-generational-wealth.webp | index,follow | yes | Draft |
-| `/who-we-serve` | Who We Serve | Eligibility overview for first responders, law enforcement, firefighters, EMTs, paramedics, military members, and veterans. | Who We Serve: A Dedicated Mission | first responder eligibility | braveheart-hometohome-secure-verification.webp | index,follow | yes | Draft |
-| `/savings-comparison` | Savings Comparison | See how stacked real estate benefits may reduce closing costs across brokerage, lending, escrow, title, and inspections. | Real Savings: Transparent Financial Analysis | closing cost savings for first responders | real-world-impact-benefit-credit-example.webp | index,follow | yes | Draft |
-| `/service-lines` | Service Lines | Explore the Brave Heart benefit menu across brokerage, lending, escrow, title, inspections, warranties, and lifecycle support. | Our Service Lines: The Pre-Negotiated Benefit Menu | real estate benefit menu | major-transaction-savings-brokerage-lender.webp | index,follow | yes | Draft |
-| `/our-guarantee` | Our Guarantee | Brave Heart service standards, accountability, and transaction oversight for eligible participants. | Our Guarantee: Quality, Accountability & Protection | real estate service guarantee | braveheart-advantage-benefits-list.webp | index,follow | yes | Draft |
-| `/case-studies` | Case Studies | Example Brave Heart transaction scenarios for law enforcement, firefighters, military members, and veterans. | Real Results: Client Case Studies | first responder real estate case studies | first-responder-testimonial-captain-lopez.webp | index,follow | yes | Draft |
-| `/privacy-policy` | Privacy Policy | How Brave Heart handles personal information, verification data, and transaction-related information. | Privacy Policy | Brave Heart privacy policy | logo-square | index,follow | yes | Draft |
-| `/terms-of-service` | Terms of Service | Operational guidelines, eligibility rules, and program terms for Brave Heart First Responders. | Terms of Service | Brave Heart terms of service | logo-square | index,follow | yes | Draft |
-| `/accessibility` | Accessibility Statement | Brave Heart accessibility commitment and digital interface standards. | Accessibility Statement | Brave Heart accessibility | logo-square | index,follow | yes | Draft |
+| `/` | Brave Heart First Responders Real Estate Benefits | Real estate benefits, closing credits, and HomeToHome-powered guidance for eligible first responders and military members. | Real Financial Relief—Applied Where It Counts | first responder real estate benefits | first-responder-real-estate-benefits.webp | index,follow | yes | Implemented |
+| `/our-story` | Our Story | Learn how Brave Heart was built from lived experience to support public safety and military families. | Our Story: Built From Lived Experience | Brave Heart founder story | police-history-generational-wealth.webp | index,follow | yes | Implemented |
+| `/who-we-serve` | Who We Serve | Eligibility overview for first responders, law enforcement, firefighters, EMTs, paramedics, military members, and veterans. | Who We Serve: A Dedicated Mission | first responder eligibility | braveheart-hometohome-secure-verification.webp | index,follow | yes | Implemented |
+| `/savings-comparison` | Savings Comparison | See how stacked real estate benefits may reduce closing costs across brokerage, lending, escrow, title, and inspections. | Real Savings: Transparent Financial Analysis | closing cost savings for first responders | real-world-impact-benefit-credit-example.webp | index,follow | yes | Implemented |
+| `/service-lines` | Service Lines | Explore the Brave Heart benefit menu across brokerage, lending, escrow, title, inspections, warranties, and lifecycle support. | Our Service Lines: The Pre-Negotiated Benefit Menu | real estate benefit menu | major-transaction-savings-brokerage-lender.webp | index,follow | yes | Implemented |
+| `/our-guarantee` | Our Guarantee | Brave Heart service standards, accountability, and transaction oversight for eligible participants. | Our Guarantee: Quality, Accountability & Protection | real estate service guarantee | braveheart-advantage-benefits-list.webp | index,follow | yes | Implemented |
+| `/case-studies` | Case Studies | Example Brave Heart transaction scenarios for law enforcement, firefighters, military members, and veterans. | Real Results: Client Case Studies | first responder real estate case studies | first-responder-testimonial-captain-lopez.webp | index,follow | yes | Implemented |
+| `/privacy-policy` | Privacy Policy | How Brave Heart handles personal information, verification data, and transaction-related information. | Privacy Policy | Brave Heart privacy policy | brave-heart-logo-square.webp | index,follow | yes | Implemented — legal review required |
+| `/terms-of-service` | Terms of Service | Operational guidelines, eligibility rules, and program terms for Brave Heart First Responders. | Terms of Service | Brave Heart terms of service | brave-heart-logo-square.webp | index,follow | yes | Implemented — legal review required |
+| `/accessibility` | Accessibility Statement | Brave Heart accessibility commitment and digital interface standards. | Accessibility Statement | Brave Heart accessibility | brave-heart-logo-square.webp | index,follow | yes | Implemented — legal review required |
+
+## Canonical URL Pattern
+
+```text
+https://braveheartfirstresponders.com{route}
+```
+
+Home canonical: `https://braveheartfirstresponders.com/`
+
+## Open Graph / Twitter
+
+All routes emit:
+
+- `og:title`, `og:description`, `og:image`, `og:url`, `og:type`, `og:site_name`
+- `twitter:card` (`summary_large_image`), `twitter:title`, `twitter:description`, `twitter:image`
+
+OG image URLs are absolute and resolve under `/assets/images/braveheart/`.
+
+## Excluded From Sitemap
+
+Legacy listing routes (`/residence`, `/neighborhood`, `/schools`, `/gallery`) and slug redirects (`/privacy`, `/terms`) are **not** canonical sitemap entries. They redirect to Phase 1 routes.
+
+## Unresolved Publication Items
+
+- Final production domain confirmation and swap in `src/config/seo.ts`, `public/sitemap.xml`, and `public/robots.txt`.
+- Legal review for privacy, terms, and accessibility drafts (indexable but not final).
+- JSON-LD structured data (deferred unless explicitly approved).
+- Blog/CMS sitemap entries (Plan 06).

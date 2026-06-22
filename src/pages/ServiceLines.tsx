@@ -86,6 +86,7 @@ export default function ServiceLines() {
       ]}
       cta={{
         primaryLabel: 'Start Intake',
+        primaryIntent: 'intake',
         secondaryLabel: 'Compare Savings',
         secondaryTo: '/savings-comparison',
       }}

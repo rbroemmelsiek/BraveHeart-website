@@ -79,6 +79,7 @@ export default function Home() {
       ]}
       cta={{
         primaryLabel: 'Verify Eligibility',
+        primaryIntent: 'verify',
         secondaryLabel: 'Explore Service Lines',
         secondaryTo: '/service-lines',
         tertiaryLabel: 'Who We Serve',

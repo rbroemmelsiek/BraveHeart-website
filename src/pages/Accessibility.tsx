@@ -61,7 +61,7 @@ export default function Accessibility() {
           ),
         },
       ]}
-      cta={{ primaryLabel: 'Contact the Program Team' }}
+      cta={{ primaryLabel: 'Contact the Program Team', primaryIntent: 'contact' }}
       relatedLinks={[
         { label: 'Privacy Policy', to: '/privacy-policy' },
         { label: 'Terms of Service', to: '/terms-of-service' },
