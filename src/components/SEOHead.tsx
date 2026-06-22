@@ -3,8 +3,9 @@ import {
   SITE_NAME,
   getAbsoluteOgImageUrl,
   getCanonicalUrl,
-  getRouteSEO,
+  getRouteSEO as getStaticRouteSEO,
 } from '../config/seo';
+import { getBlogSEO } from '../lib/blog';
 
 function upsertMeta(attribute: 'name' | 'property', key: string, content: string): void {
   let element = document.querySelector(`meta[${attribute}="${key}"]`) as HTMLMetaElement | null;
@@ -40,8 +41,8 @@ interface SEOHeadProps {
  */
 export default function SEOHead({ pathname }: SEOHeadProps) {
   useEffect(() => {
-    const seo = getRouteSEO(pathname);
-    const canonicalUrl = getCanonicalUrl(seo.path);
+    const seo = getBlogSEO(pathname) ?? getStaticRouteSEO(pathname);
+    const canonicalUrl = seo.canonicalUrl ?? getCanonicalUrl(seo.path);
     const ogImageUrl = getAbsoluteOgImageUrl(seo.ogImage);
 
     document.title = seo.title;
@@ -54,7 +55,7 @@ export default function SEOHead({ pathname }: SEOHeadProps) {
     upsertMeta('property', 'og:description', seo.description);
     upsertMeta('property', 'og:image', ogImageUrl);
     upsertMeta('property', 'og:url', canonicalUrl);
-    upsertMeta('property', 'og:type', 'website');
+    upsertMeta('property', 'og:type', seo.ogType ?? 'website');
     upsertMeta('property', 'og:site_name', SITE_NAME);
 
     upsertMeta('name', 'twitter:card', 'summary_large_image');

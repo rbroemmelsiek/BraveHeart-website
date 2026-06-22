@@ -23,6 +23,9 @@ export default function Footer() {
         </div>
         <div className="flex flex-col items-center md:items-end gap-6">
           <div className="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4 font-['Work_Sans'] text-[10px] uppercase tracking-[0.15em]">
+            <Link className="text-on-surface-variant hover:text-primary transition-colors" to="/blog">
+              Blog
+            </Link>
             <Link className="text-on-surface-variant hover:text-primary transition-colors" to="/privacy-policy">
               Privacy Policy
             </Link>

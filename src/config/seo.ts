@@ -19,6 +19,8 @@ export interface RouteSEO {
   ogImage: string;
   robots: string;
   sitemap: boolean;
+  ogType?: 'website' | 'article';
+  canonicalUrl?: string;
 }
 
 export const ROUTE_SEO: Record<string, RouteSEO> = {

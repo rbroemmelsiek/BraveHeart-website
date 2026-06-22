@@ -14,6 +14,9 @@ import CaseStudies from './pages/CaseStudies';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Accessibility from './pages/Accessibility';
+import BlogIndex from './pages/BlogIndex';
+import BlogPost from './pages/BlogPost';
+import TopicArchive from './pages/TopicArchive';
 import { ContactModalProvider } from './context/ContactModalContext';
 
 function AppShell() {
@@ -37,6 +40,9 @@ function AppShell() {
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/accessibility" element={<Accessibility />} />
+              <Route path="/blog" element={<BlogIndex />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/topics/:taxonomySlug" element={<TopicArchive />} />
 
               {/* Legacy listing-site and legal slug redirects */}
               <Route path="/residence" element={<Navigate to="/our-story" replace />} />

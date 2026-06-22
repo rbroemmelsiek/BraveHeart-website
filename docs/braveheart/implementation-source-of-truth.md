@@ -96,6 +96,22 @@ Placeholder canonical domain: `https://braveheartfirstresponders.com` — swap b
 
 Per-route metadata includes title, description, canonical URL, robots directive, Open Graph, and Twitter/X card tags. Legal pages remain `index,follow` but are flagged for legal review in docs.
 
+### CMS-Lite / Blog (Plan 06 — 2026-06-21)
+
+| Asset | Path |
+|---|---|
+| Post content | `content/braveheart/posts/*.md` |
+| Blog loader | `src/lib/blog.ts` |
+| Frontmatter parser | `src/lib/frontmatter.ts` |
+| Markdown renderer | `src/lib/markdownBody.tsx` |
+| Blog index | `src/pages/BlogIndex.tsx` |
+| Blog post | `src/pages/BlogPost.tsx` |
+| Topic archive | `src/pages/TopicArchive.tsx` |
+| Sitemap generator | `scripts/generate-sitemap.mjs` |
+| Workflow doc | `docs/braveheart/phase-2-cms-blog-workflow.md` |
+
+Only `status: published` posts are public. No backend CMS, database, or authentication.
+
 ### Publication Gaps
 
 Content marked `[TBD]` in React or `needs-review` in content map is **not publication-ready**. Legal pages require compliance sign-off. Numeric savings examples and verified testimonials are explicitly deferred.

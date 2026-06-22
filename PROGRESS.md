@@ -3,7 +3,7 @@
 ## Current Status
 
 ```text
-Status: Plan 05 complete — awaiting approval for Plan 06
+Status: Plan 07 complete — Phase 1 technical QA pass; publication launch blocked pending owner/legal/compliance sign-off
 Primary objective: Convert cloned Home Listing Website into Brave Heart First Responders website.
 ```
 
@@ -16,14 +16,14 @@ Primary objective: Convert cloned Home Listing Website into Brave Heart First Re
 | 02 | Content pages | **Complete** | Route-specific content via BraveHeartPageLayout; legal drafts flagged. |
 | 03 | Assets and visual system | **Complete** | 19 WebP conversions; images wired; navy/gold theme. |
 | 04 | CTA and verification entry | **Complete** | Verification entry modal; listing contact removed. |
-| 05 | SEO and publication controls | **Complete** | Per-route metadata, robots.txt, sitemap.xml. Lint + build pass. **Awaiting approval.** |
+| 05 | SEO and publication controls | **Complete** | Per-route metadata, robots.txt, sitemap.xml. |
 
 ## Phase 2 Checklist
 
 | Step | Plan | Status | Notes |
 |---|---|---:|---|
-| 06 | CMS-lite/blog | Not started | Add markdown/frontmatter publishing workflow. |
-| 07 | Final publication readiness | Not started | Launch audit after plans 01–05. |
+| 06 | CMS-lite/blog | **Complete** | Markdown posts, blog routes, taxonomy archives, sitemap generator. Lint + build pass. |
+| 07 | Final publication readiness | **Complete** | Full route audit, build/lint/preview validation, launch-readiness report. **Not approved for public production launch.** |
 
 ## Validation Reports
 
@@ -33,6 +33,9 @@ Primary objective: Convert cloned Home Listing Website into Brave Heart First Re
 .agent/validation/03.braveheart-assets-and-visual-system-validation.md
 .agent/validation/04.braveheart-cta-and-verification-entry-validation.md
 .agent/validation/05.braveheart-seo-publication-controls-validation.md
+.agent/validation/06.braveheart-phase-2-cms-lite-validation.md
+.agent/validation/07.braveheart-final-publication-readiness-validation.md
+docs/braveheart/launch-readiness-report.md
 ```
 
 ## Open Decisions
@@ -47,6 +50,33 @@ Primary objective: Convert cloned Home Listing Website into Brave Heart First Re
 - Verified testimonial publication for case studies.
 - Staging robots override for preview deployments.
 - Optional prerender/SSR for non-JS crawler metadata coverage.
+- Editorial approval workflow for blog posts before setting `status: published`.
+
+## Plan 07 Summary (2026-06-21)
+
+- Executed final publication-readiness audit per `.agent/plans/07.braveheart-final-publication-readiness.md`.
+- `npm run lint` and `npm run build` pass; production preview route audit completed.
+- All 10 Phase 1 routes + blog routes + legacy redirects verified; no listing residue on active pages.
+- 19 production WebP assets resolve; alt text present on meaningful images.
+- robots.txt and sitemap.xml production-appropriate (12 public entries; placeholder domain documented).
+- Draft/review blog posts excluded from index and sitemap; direct URLs return 404 + noindex.
+- Legal pages reachable with visible draft review banners; compliance-sensitive copy flagged.
+- **No application code changes** — audit and documentation only.
+- Created `docs/braveheart/launch-readiness-report.md`.
+- **Recommendation:** ready for internal review and staging; **not ready for public production** until launch blockers cleared.
+
+## Plan 06 Summary (2026-06-21)
+
+- Added file-based CMS at `content/braveheart/posts/` with YAML frontmatter schema.
+- Implemented build-time loader (`src/lib/blog.ts`) using Vite `import.meta.glob`.
+- Added routes: `/blog`, `/blog/:slug`, `/topics/:taxonomySlug`.
+- Published-only filtering for index, post routes, and sitemap.
+- Extended SEO via `getBlogSEO()` for blog index, posts, and topic archives.
+- Added `scripts/generate-sitemap.mjs` (runs before build) — 12 sitemap entries.
+- Sample posts: 1 published, 1 draft, 1 review (draft/review excluded publicly).
+- Footer Blog link added; Phase 1 nav preserved.
+- No backend CMS, database, authentication, or form backend introduced.
+- `npm run lint` and `npm run build` pass.
 
 ## Plan 05 Summary (2026-06-21)
 
@@ -57,7 +87,6 @@ Primary objective: Convert cloned Home Listing Website into Brave Heart First Re
 - Created `public/robots.txt` (Allow `/`, sitemap reference).
 - Created `public/sitemap.xml` (10 Phase 1 routes; no legacy listing routes).
 - Updated SEO docs and validation reports.
-- `npm run lint` and `npm run build` pass.
 
 ## Plan 04 Summary (2026-06-21)
 
