@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>1622 W. Oak St. | Gallery - The Curated Gallery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&amp;family=Work+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#331200",
+              "on-secondary": "#ffffff",
+              "primary-fixed": "#cfe5ff",
+              "on-background": "#1b1c1a",
+              "on-primary-container": "#fdfcff",
+              "error-container": "#ffdad6",
+              "background": "#fbf9f5",
+              "primary-container": "#4f78a0",
+              "outline-variant": "#c2c7cf",
+              "surface-container-high": "#eae8e4",
+              "tertiary-fixed-dim": "#fcb792",
+              "on-secondary-fixed-variant": "#474646",
+              "on-primary-fixed": "#001d34",
+              "tertiary-container": "#9f6747",
+              "surface-bright": "#fbf9f5",
+              "surface-tint": "#376188",
+              "surface-container-low": "#f5f3ef",
+              "on-secondary-fixed": "#1c1b1b",
+              "tertiary-fixed": "#ffdbca",
+              "secondary-container": "#e2dfde",
+              "on-error": "#ffffff",
+              "on-secondary-container": "#636262",
+              "inverse-primary": "#a1caf7",
+              "surface-container": "#f0eeea",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#f2f0ec",
+              "surface": "#fbf9f5",
+              "primary": "#355f86",
+              "on-surface": "#1b1c1a",
+              "secondary-fixed": "#e5e2e1",
+              "on-error-container": "#93000a",
+              "surface-container-highest": "#e4e2de",
+              "inverse-surface": "#30312e",
+              "error": "#ba1a1a",
+              "secondary-fixed-dim": "#c8c6c5",
+              "on-tertiary-container": "#fffbff",
+              "primary-fixed-dim": "#a1caf7",
+              "outline": "#72777f",
+              "on-tertiary-fixed-variant": "#6a3b1f",
+              "surface-dim": "#dbdad6",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "secondary": "#5f5e5e",
+              "surface-variant": "#e4e2de",
+              "on-primary-fixed-variant": "#1c4a6f",
+              "tertiary": "#834f31",
+              "on-surface-variant": "#42474e"
+            },
+            fontFamily: {
+              "headline": ["Cormorant Garamond"],
+              "body": ["Work Sans"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+        body {
+            cursor: default;
+        }
+
+        /* Glassmorphism Classes inspired by Screen 6 */
+        .glass-nav {
+            background-color: rgba(251, 249, 245, 0.6);
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+        }
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .glass-quote {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Scroll Reveal Animations */
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .reveal {
+            opacity: 0;
+        }
+        .reveal.active {
+            animation: fade-in-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .btn-transition {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-transition:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-black/5">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-[1440px] mx-auto">
+<div class="text-2xl font-['Cormorant_Garamond'] italic text-[#1b1c1a] dark:text-[#fbf9f5] tracking-tight">
+            The Gallery
+        </div>
+<!-- Navigation Links -->
+<div class="hidden md:flex items-center gap-12">
+<a class="text-[#1b1c1a]/60 dark:text-[#fbf9f5]/60 font-['Work_Sans'] text-xs uppercase tracking-widest hover:text-[#355f86] transition-colors duration-300" href="#">Portfolio</a>
+<a class="text-[#355f86] dark:text-[#5E87B0] border-b-2 border-[#355f86] pb-1 font-['Work_Sans'] text-xs uppercase tracking-widest" href="#">Gallery</a>
+<a class="text-[#1b1c1a]/60 dark:text-[#fbf9f5]/60 font-['Work_Sans'] text-xs uppercase tracking-widest hover:text-[#355f86] transition-colors duration-300" href="#">Insights</a>
+<a class="text-[#1b1c1a]/60 dark:text-[#fbf9f5]/60 font-['Work_Sans'] text-xs uppercase tracking-widest hover:text-[#355f86] transition-colors duration-300" href="#">Concierge</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="font-['Cormorant_Garamond'] font-light tracking-tight text-[#355f86] dark:text-[#5E87B0] hover:text-[#355f86] transition-colors duration-300 btn-transition">
+                Inquire
+            </button>
+<span class="material-symbols-outlined text-[#1b1c1a] dark:text-[#fbf9f5] cursor-pointer">menu</span>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 overflow-hidden">
+<!-- Editorial Hero Section -->
+<header class="relative px-8 md:px-24 mb-32 flex flex-col md:flex-row items-end">
+<div class="z-10 md:w-1/3 mb-12 md:mb-0 md:-mr-20 reveal">
+<p class="font-label text-xs uppercase tracking-[0.2em] text-secondary mb-4">Historical District</p>
+<h1 class="font-headline text-6xl md:text-8xl font-light text-on-surface leading-tight">
+                1622 W. <br/>
+<span class="italic pl-12">Oak St.</span>
+</h1>
+<div class="mt-8 flex items-center gap-4 text-tertiary">
+<span class="w-12 h-[1px] bg-tertiary"></span>
+<span class="font-label text-xs uppercase tracking-widest">A Visual Narrative</span>
+</div>
+</div>
+<div class="md:w-2/3 h-[600px] overflow-hidden rounded-sm reveal" style="transition-delay: 200ms;">
+<img class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-1000" data-alt="Modernist luxury estate exterior at twilight with glowing warm interior lights and sharp architectural lines against a deep blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJwKPg6esesMfH7nmmY4T97TOC6Ilq41U1CkH9hStvOplMtkvJAeZrJ3Pr5jBiToFHpp5fB9XHkIk-Hc1ZdujCtr04q3wj1AjwIuf5kq2OHZYDjMbF_k1JAin4IdpeKVF7fKQdNJgxr5pclQD_GGZJdJ8zMjKQ6qb1geqMyMiwBjuiZponx6KdNZVTqvBLjBiU7B4aO229RcneJSqeq7rGIVqT2t9ujb0rG5Q20AYTw-nPiO2AzMB2Gi8u3pBh7htyHPV-4jgG0-Xu"/>
+</div>
+</header>
+<!-- Asymmetrical Gallery Grid -->
+<section class="max-w-[1440px] mx-auto px-8 md:px-16 grid grid-cols-12 gap-y-24 md:gap-y-48 gap-x-8">
+<!-- Row 1: Staggered Pair -->
+<div class="col-span-12 md:col-span-7 gallery-item cursor-zoom-in relative group reveal">
+<div class="overflow-hidden bg-surface-container-low shadow-lg">
+<img alt="Entry Doors &amp; Hall View" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0uhzIH4V6Nyvia8rediU0G_VVEfgAOvLS3ViblW7QFOjF45YmoITFMkMvth5vWrc3kaGci1BFjfMoKQFOUflwn7bSEwSk9VrvlZeF47A5EFYMj5NK-KNdNbIwXMhk2ISrcauVgikf3ukifHjWN_Ll6L2UxUzv5G9Tlz5YEii3It1NnT4XFxQPzlX91WY4NN_z-tRoE5Yf3hZZJaZJ6JA5vGrCKXbesR395VHiqZgKNHjDa-o5U2uoneXjrHJLIqGfOadNHM6KTJLdg"/>
+</div>
+<div class="mt-6 flex justify-between items-start">
+<h3 class="font-headline font-light text-2xl">Architectural Transparency: The Grand Entrance</h3>
+<p class="font-label text-[10px] uppercase tracking-tighter text-secondary">01 / Entrance</p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 md:col-start-9 self-center gallery-item cursor-zoom-in relative group reveal" style="transition-delay: 200ms;">
+<div class="aspect-[1/1] overflow-hidden bg-surface-container-low rounded-full shadow-lg">
+<img alt="Front Elevation Garden" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida/ADBb0uhZg9p_K7ar_YlTi3OwZ1XDW6qvWV6VSb9ORmGvdK-6w4dzfKrWdjoH-6_sEkPyBbs3J4ZNUcf6yjCAm9Ph3n2eW3_6magD6ooZWaYKStDbkzROdVitzRIUrdHuLrNEjIDRnYA-D9zdEXT3HEwBt1sO_TefmZxHxypqaEbhijB7U-wisDS0xZtSQnSeCJ4O6vrxyO0L8H1Iav0jvD4S7sXsES8DOPKdY-MO42pM7_8qf91bfUmoN8engdgP8_0_vikPfbTS8723IUo"/>
+</div>
+<div class="mt-8 text-center">
+<p class="font-headline font-light text-xl italic mb-1">Manicured Grounds</p>
+<p class="font-label text-[10px] uppercase tracking-[0.3em] text-tertiary">Where Architecture Meets Nature</p>
+</div>
+</div>
+<!-- Row 2: Large Feature -->
+<div class="col-span-12 md:col-span-10 md:col-start-2 gallery-item cursor-zoom-in relative group reveal">
+<div class="aspect-[16/9] overflow-hidden bg-surface-container-low shadow-xl">
+<img alt="ADU Pool House Hedge" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida/ADBb0ui4XTixRLhFZENHRWFFs99wakruG5BHYvFjRCvrbynavZ3S2a3JkW6hAOR6FZD515BaJH4K2YvQfAIheK0Vnl3f4DzaSfQVkVPr6z2seudERZBqUBM7n3T3tFV1nbxacprMM0uxhOJSgJCPhFEDgYY2stoPiTHumj8wGDpcOrqxjHqrUszzpRNlvea-AalMepamZpGrrrRx2gOn9sIL-XVkx6WdoAjqANdducRAQpptCPB0zYVkUMde9i2ROspu9keNKNbGJJtoGA"/>
+</div>
+<div class="absolute -bottom-12 -left-4 md:-left-8 glass-panel p-8 max-w-sm hidden md:block">
+<h3 class="font-headline font-light text-3xl italic leading-tight">Private Sanctuary:</h3>
+<p class="font-label text-xs uppercase tracking-widest mt-2 text-secondary">The ADU and Pool House</p>
+</div>
+</div>
+<!-- Row 3: Vertical & Horizontal Mix -->
+<div class="col-span-12 md:col-span-5 gallery-item cursor-zoom-in relative group mt-12 reveal">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low shadow-lg">
+<img alt="Spa ADU" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0ujmczse4IbAQjwVFdW5tJ1g_BUp6b_OzApP9FKy9e55CT0IFh67RFsHk_wBeePBOUOMjUhQDLSX8C4gWAiJ8aIKO-BURKHMFy_UiqBYwkKYqiKMXYt59Gx4lPRuPoGuiUIu6iuLCbk4I6KKBj-kALH0zk5rVtI7akm2QZ5cwdivGdFU6AOWq7zw61zP_sM9rdfENKSExe343sGWb7ncUf6LJwjZrhv5xCVQG_OHFtCTXIMo-dEgplmAGqsEevx9Cqp85upTbdnzzIs"/>
+</div>
+<div class="mt-6">
+<h3 class="font-headline font-light text-2xl">Refined Leisure: The Heated Spa &amp; Terrace</h3>
+</div>
+</div>
+<div class="col-span-12 md:col-span-6 md:col-start-7 gallery-item cursor-zoom-in relative group reveal" style="transition-delay: 200ms;">
+<div class="aspect-[4/3] overflow-hidden bg-surface-container-low shadow-lg">
+<img alt="Living Room Front Garden" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0ugsj0PUdUa09bQhFfOWsQ582h5frhaHspMCMzCFaUa65nvuSHZmhdHScARpbgEIT4GoCqdCTf_jhojTrpGn4W6BHWEXvKxzL4q3WgcJffsQaVExjCK6YhzxgJaslG6HrwUBY2F00Had2NVrWH2x-Ko8-_PMhSP5GfIo7OAHShdCDrXM42zDPmFXF80HzsUgz0eVq7p8muzcOhVJssWSVwCuEnyZo0jjSl1LUrJXn1xBuiclJRRGhxS3f2_zEwuxW_1rx84hJFwsDoY"/>
+</div>
+<div class="mt-6 flex flex-col items-end text-right">
+<h3 class="font-headline font-light text-2xl mb-2">The Great Room</h3>
+<p class="font-label text-[10px] uppercase tracking-widest text-secondary">An Interplay of Interior &amp; Exterior</p>
+<span class="w-16 h-[1px] bg-outline-variant mt-2 opacity-30"></span>
+</div>
+</div>
+<!-- Row 4: Detailed Study -->
+<div class="col-span-12 md:col-span-5 md:col-start-2 gallery-item cursor-zoom-in relative group reveal">
+<div class="aspect-square overflow-hidden bg-surface-container-low shadow-lg">
+<img alt="Primary Bath Shower" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida/ADBb0ujx8CunJ14x3peDMyRtVIzp-kHFrdIoL50OseLon1Hkwib8T_tnQeE_YMYCM6-SU1pNUs3SQUEdAZRucKM8NYcsK1FzusCj9zeJe8m3ufFQmu5pfqH7ZE8_Fsc90zD3NNBcJ2ShoGPqERtML0zijkG6T2s91yVGa2LW8oARyL6ad0PLQk5rGuzJCiSi3-ATby-RasFnYl4qDxR1rKYsSMp93h9KouPcqBG6_-Y6PyK7idHVvPD9R_rZWo0aUQmBQ2rl02E4UPqnlw"/>
+</div>
+<div class="mt-6">
+<h3 class="font-headline font-light text-2xl italic">Bespoke Restorations</h3>
+<p class="font-label text-[10px] uppercase tracking-widest text-tertiary mt-1">The Primary Steam Shower</p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-5 md:col-start-8 gallery-item cursor-zoom-in relative group mt-24 reveal" style="transition-delay: 200ms;">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low shadow-lg">
+<img alt="Primary Bedroom Window" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0uhVRV053BoCdzVU_yfBdeDTz36xaPJw2StphTIgpKGCzGTYH9YhM4lhkp_E2ldHr-Ybxg3pGfFQYM6UnYYSZSQe5bE07RXedQHfQhlTS26MjbXIx5Y1WZ1bxDP5WJG0LqBHJcBjRU1DT7htcodyeMI8ZidPZ-7X1hvgm2negeGwABS5V55i9n5yPzWefaN8LYmb3NrBig4-XgK97WDWz557k3cEXfu-o3pyTz5gFNSBUET2Q38C3axfRpwn-2TvKKpPmtL42tGOgrQ"/>
+</div>
+<div class="mt-6">
+<h3 class="font-headline font-light text-2xl">The Primary Suite</h3>
+<p class="font-label text-[10px] uppercase tracking-widest text-secondary">Bathed in Natural Radiance</p>
+</div>
+</div>
+<!-- Row 5: Wide Panoramas -->
+<div class="col-span-12 md:col-span-8 md:col-start-1 gallery-item cursor-zoom-in relative group reveal">
+<div class="aspect-[21/9] overflow-hidden bg-surface-container-low shadow-lg">
+<img alt="Kitchen Awning Window" class="w-full h-full object-cover group-hover:brightness-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0uggVVLv03TfWHeBlHwhPchryAFbPwswBx6Eokl7npjNV7MrBbM3qE1Mzkx3ymERQkRGMbFLxR8T-Xx6GVlWsAi-4tl1uucC1mCfJPlUHtstRBG4IISPE_nGkJKS_aorpZozt9m1VbElWHIkVN7b_7plpYPHVpyTOeL-42Wx5M0t6se9BoRY3loLtq89vPGh4v8lz5v_iPv562VALMsMCBNXTmRA2L5xJeL0FHanEjncFqgycOxd1SJAhozvpMkToOqK_d0ib3k_Owg"/>
+</div>
+<div class="mt-6">
+<h3 class="font-headline font-light text-2xl">Culinary Artistry: The Quartzite Patio Bar</h3>
+</div>
+</div>
+<div class="col-span-12 md:col-span-3 md:col-start-10 self-end gallery-item cursor-zoom-in relative group mb-12 reveal" style="transition-delay: 200ms;">
+<div class="aspect-square overflow-hidden bg-surface-container-low border-[12px] border-surface shadow-lg">
+<img alt="Dining Room Sliders" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida/ADBb0ujYZduP2W8NqjVTpCyVG_IOuvxVMyO89RkqUR-kJVrypgIgh4mZfN-gVst8TXs2DwuPTGL1tGiSAY4LogPx-qbug3CtcUEam0FN1WtvTHr-LHYfZDvqp0krxKfAOWGWQTKyXFmMyCmcclGgJoUb5t79AYFUVxutU3KpMcDpcmPnbPA39Hti7AlqQ6o28GfoO9mDrypD3ciXJoAA5iD8vxMq-XXo4b3hcBMXrMF0a2dpVG9YJavbpda4jaQUjjkpfrPSZCvkjHVW7Q"/>
+</div>
+<div class="mt-4">
+<p class="font-headline font-light text-lg italic">Seamless Flow</p>
+<p class="font-label text-[10px] uppercase tracking-widest text-secondary">Al Fresco Living</p>
+</div>
+</div>
+</section>
+<!-- Signature Quote Section -->
+<section class="mt-48 mb-48 text-center px-8 reveal">
+<div class="max-w-4xl mx-auto glass-panel py-20 px-12 rounded-xl">
+<span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim mb-8" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<h2 class="font-headline text-4xl md:text-5xl font-light leading-relaxed italic text-on-surface">
+                Luxury is not about excess, it is about the curated absence of noise.
+            </h2>
+<p class="mt-12 font-label text-xs uppercase tracking-[0.4em] text-secondary">Architectural Philosophy</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#c2c7cf]/15 bg-[#f5f3ef] dark:bg-[#1b1c1a]">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-[1440px] mx-auto reveal">
+<div class="text-lg font-['Cormorant_Garamond'] text-[#1b1c1a] dark:text-[#fbf9f5] mb-8 md:mb-0">
+            The Curated Gallery
+        </div>
+<div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
+<a class="font-['Work_Sans'] text-xs uppercase tracking-widest text-[#1b1c1a]/40 dark:text-[#fbf9f5]/40 hover:text-[#834f31] underline underline-offset-4 transition-all" href="#">Privacy Policy</a>
+<a class="font-['Work_Sans'] text-xs uppercase tracking-widest text-[#1b1c1a]/40 dark:text-[#fbf9f5]/40 hover:text-[#834f31] underline underline-offset-4 transition-all" href="#">Terms of Service</a>
+<a class="font-['Work_Sans'] text-xs uppercase tracking-widest text-[#1b1c1a]/40 dark:text-[#fbf9f5]/40 hover:text-[#834f31] underline underline-offset-4 transition-all" href="#">Accessibility</a>
+<a class="font-['Work_Sans'] text-xs uppercase tracking-widest text-[#1b1c1a]/40 dark:text-[#fbf9f5]/40 hover:text-[#834f31] underline underline-offset-4 transition-all" href="#">Contact</a>
+</div>
+<div class="font-['Work_Sans'] text-xs uppercase tracking-widest text-[#1b1c1a]/40 dark:text-[#fbf9f5]/40">
+            © 2024 The Curated Gallery. All rights reserved.
+        </div>
+</div>
+</footer>
+<!-- Lightbox Mock Overlay -->
+<div class="fixed inset-0 bg-on-background/95 z-[100] hidden flex-col items-center justify-center backdrop-blur-md" id="lightbox-overlay">
+<button class="absolute top-8 right-8 text-surface-container-lowest hover:text-tertiary-fixed transition-colors" onclick="document.getElementById('lightbox-overlay').classList.add('hidden')">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<button class="absolute left-8 top-1/2 -translate-y-1/2 text-surface-container-lowest hover:text-tertiary-fixed transition-colors">
+<span class="material-symbols-outlined text-5xl">chevron_left</span>
+</button>
+<button class="absolute right-8 top-1/2 -translate-y-1/2 text-surface-container-lowest hover:text-tertiary-fixed transition-colors">
+<span class="material-symbols-outlined text-5xl">chevron_right</span>
+</button>
+<div class="absolute top-8 left-1/2 -translate-x-1/2 flex gap-6 text-surface-container-lowest">
+<button class="hover:text-tertiary-fixed transition-colors">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+<button class="hover:text-tertiary-fixed transition-colors">
+<span class="material-symbols-outlined">zoom_out</span>
+</button>
+<button class="hover:text-tertiary-fixed transition-colors">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+</div>
+<img alt="Featured Residence" class="max-h-[819px] max-w-[90vw] object-contain shadow-2xl" id="lightbox-img" src="https://lh3.googleusercontent.com/aida/ADBb0uhzIH4V6Nyvia8rediU0G_VVEfgAOvLS3ViblW7QFOjF45YmoITFMkMvth5vWrc3kaGci1BFjfMoKQFOUflwn7bSEwSk9VrvlZeF47A5EFYMj5NK-KNdNbIwXMhk2ISrcauVgikf3ukifHjWN_Ll6L2UxUzv5G9Tlz5YEii3It1NnT4XFxQPzlX91WY4NN_z-tRoE5Yf3hZZJaZJ6JA5vGrCKXbesR395VHiqZgKNHjDa-o5U2uoneXjrHJLIqGfOadNHM6KTJLdg"/>
+<div class="absolute bottom-12 text-center">
+<p class="font-headline text-2xl text-surface-container-lowest" id="lightbox-caption">Architectural Transparency: The Grand Entrance</p>
+<p class="font-label text-xs uppercase tracking-widest text-surface-container-low opacity-60 mt-2">1622 W. Oak St.</p>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Scroll reveal logic
+        const reveals = document.querySelectorAll('.reveal');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        reveals.forEach(reveal => revealObserver.observe(reveal));
+
+        // Lightbox Trigger Simulation
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox-overlay');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                const caption = item.querySelector('h3') ? item.querySelector('h3').textContent : 
+                                item.querySelector('p.font-headline') ? item.querySelector('p.font-headline').textContent : "";
+                
+                lightboxImg.src = img.src;
+                lightboxCaption.textContent = caption;
+                lightbox.classList.remove('hidden');
+            });
+        });
+    });
+</script>
+</body></html>

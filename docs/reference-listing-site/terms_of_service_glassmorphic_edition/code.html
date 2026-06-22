@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="light scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300&amp;family=Work+Sans:wght@300;400;500;600&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#93000a",
+              "on-primary-container": "#fdfcff",
+              "surface-dim": "#dbdad6",
+              "on-error": "#ffffff",
+              "surface-container-high": "#eae8e4",
+              "surface-container-highest": "#e4e2de",
+              "primary-container": "#4f78a0",
+              "surface-bright": "#fbf9f5",
+              "tertiary-fixed-dim": "#fcb792",
+              "on-background": "#1b1c1a",
+              "on-tertiary-container": "#fffbff",
+              "surface-container-low": "#f5f3ef",
+              "inverse-primary": "#a1caf7",
+              "on-secondary-fixed-variant": "#474646",
+              "inverse-on-surface": "#f2f0ec",
+              "on-secondary-container": "#636262",
+              "on-surface-variant": "#42474e",
+              "outline-variant": "#c2c7cf",
+              "on-tertiary-fixed": "#331200",
+              "tertiary-fixed": "#ffdbca",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#e4e2de",
+              "background": "#fbf9f5",
+              "secondary-container": "#e2dfde",
+              "on-tertiary-fixed-variant": "#6a3b1f",
+              "secondary-fixed-dim": "#c8c6c5",
+              "primary-fixed": "#cfe5ff",
+              "on-secondary-fixed": "#1c1b1b",
+              "surface-container": "#f0eeea",
+              "tertiary-container": "#9f6747",
+              "tertiary": "#834f31",
+              "on-tertiary": "#ffffff",
+              "on-surface": "#1b1c1a",
+              "secondary-fixed": "#e5e2e1",
+              "error-container": "#ffdad6",
+              "surface": "#fbf9f5",
+              "primary-fixed-dim": "#a1caf7",
+              "on-primary": "#ffffff",
+              "secondary": "#5f5e5e",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#1c4a6f",
+              "on-primary-fixed": "#001d34",
+              "error": "#ba1a1a",
+              "surface-tint": "#376188",
+              "primary": "#355f86",
+              "outline": "#72777f",
+              "inverse-surface": "#30312e"
+            },
+            fontFamily: {
+              "headline": ["Cormorant Garamond"],
+              "body": ["Work Sans"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Work Sans', sans-serif; }
+        .font-serif-elegant { font-family: 'Cormorant Garamond', serif; }
+        .letter-spacing-widest { letter-spacing: 0.1rem; }
+
+        /* Glassmorphism Classes */
+        .glass-nav {
+            background-color: rgba(251, 249, 245, 0.6);
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+        }
+        .glass-panel {
+            background-color: rgba(251, 249, 245, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Scroll Reveal Animations */
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .reveal {
+            opacity: 0;
+        }
+        .reveal.active {
+            animation: fade-in-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        /* Interactive Transitions */
+        .btn-transition {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-transition:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 left-0 right-0 z-50 glass-nav shadow-[0_40px_40px_-15px_rgba(27,28,26,0.04)] border-b border-black/5">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="font-serif italic text-2xl tracking-tight text-slate-900">
+            1622 W. Oak St.
+        </div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-slate-500 font-light hover:text-[#834f31] transition-colors duration-300 uppercase text-xs tracking-[0.1rem]" href="#">Home</a>
+<a class="text-slate-500 font-light hover:text-[#834f31] transition-colors duration-300 uppercase text-xs tracking-[0.1rem]" href="#">The Residence</a>
+<a class="text-slate-500 font-light hover:text-[#834f31] transition-colors duration-300 uppercase text-xs tracking-[0.1rem]" href="#">Neighborhood</a>
+<a class="text-slate-500 font-light hover:text-[#834f31] transition-colors duration-300 uppercase text-xs tracking-[0.1rem]" href="#">Schools</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-sm uppercase text-xs tracking-[0.1rem] font-medium hover:bg-primary-container btn-transition shadow-lg shadow-primary/20">
+            Schedule Tour
+        </button>
+</div>
+</nav>
+<main class="pt-48 pb-24">
+<div class="max-w-screen-2xl mx-auto px-8">
+<!-- Editorial Header Section -->
+<div class="flex flex-col items-center mb-24 text-center">
+<div class="w-full reveal active">
+<span class="text-secondary uppercase text-xs tracking-[0.2rem] mb-6 block font-medium">Legal Governance</span>
+<h1 class="font-serif-elegant font-light text-6xl md:text-8xl text-on-surface leading-tight">
+                    Terms of <br/>Service
+                </h1>
+</div>
+</div>
+<!-- Content Grid: Focused Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24 relative z-20">
+<!-- Sidebar / Quick Nav -->
+<aside class="md:col-span-3 reveal active">
+<div class="sticky top-32 space-y-8">
+<div class="h-px bg-outline-variant/30 w-12"></div>
+<nav class="flex flex-col space-y-4">
+<a class="text-slate-900 border-b border-slate-900 pb-1 w-fit text-sm uppercase tracking-widest font-medium" href="#acceptance">Acceptance</a>
+<a class="text-slate-400 hover:text-slate-900 transition-colors text-sm uppercase tracking-widest font-light" href="#informational">Informational Nature</a>
+<a class="text-slate-400 hover:text-slate-900 transition-colors text-sm uppercase tracking-widest font-light" href="#verification">Data Verification</a>
+<a class="text-slate-400 hover:text-slate-900 transition-colors text-sm uppercase tracking-widest font-light" href="#limitations">Limitations</a>
+</nav>
+<div class="pt-8">
+<p class="text-xs text-secondary font-light leading-relaxed">
+                            Last Updated: <br/>
+                            October 24, 2024
+                        </p>
+</div>
+</div>
+</aside>
+<!-- Primary Text Content -->
+<div class="md:col-span-8 md:col-start-5 space-y-24">
+<!-- Section 1 -->
+<section class="max-w-3xl reveal" id="acceptance">
+<h2 class="font-serif-elegant text-4xl mb-8 text-primary italic">01. Acceptance of Terms</h2>
+<div class="space-y-6 text-on-surface-variant font-light leading-loose">
+<p>
+                            Welcome to the digital exhibition of 1622 W. Oak St. By accessing this website, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. This platform is designed to provide a premium viewing experience of the residence and its surrounding environment.
+                        </p>
+</div>
+</section>
+<!-- Section 2 -->
+<section class="glass-panel p-12 md:-mx-12 rounded-xl shadow-sm reveal" id="informational" style="transition-delay: 100ms;">
+<h2 class="font-serif-elegant text-4xl mb-8 text-primary">02. Informational Purposes</h2>
+<div class="space-y-6 text-on-surface-variant font-light leading-loose">
+<p class="text-lg text-on-surface">
+                            This website serves exclusively as a digital brochure and informational portal for potential buyers, real estate professionals, and architectural enthusiasts.
+                        </p>
+<p>
+                            All creative assets, including high-resolution imagery, video tours, and editorial descriptions, are intended to convey the aesthetic and lifestyle potential of the property. They do not constitute a binding legal offer or a contractual agreement for sale.
+                        </p>
+</div>
+</section>
+<!-- Section 3 -->
+<section class="max-w-3xl reveal" id="verification" style="transition-delay: 100ms;">
+<h2 class="font-serif-elegant text-4xl mb-8 text-tertiary italic">03. Independent Verification</h2>
+<div class="space-y-6 text-on-surface-variant font-light leading-loose">
+<p>
+                            While we strive for absolute precision in our digital presentation, architectural details, square footage, property boundaries, and neighborhood specifications are subject to change.
+                        </p>
+<div class="border-l border-tertiary-container pl-8 py-2 my-10 bg-tertiary-fixed/10">
+<p class="text-on-surface font-medium italic">
+                                "Prospective buyers are explicitly advised and required to independently verify all property data, including but not limited to dimensions, zoning, utility access, and school district boundaries."
+                            </p>
+</div>
+<p>
+                            1622 W. Oak St. Residential Exhibition and its representatives shall not be held liable for discrepancies between digital renderings and the physical residence.
+                        </p>
+</div>
+</section>
+<!-- Section 4 -->
+<section class="max-w-3xl reveal" id="limitations" style="transition-delay: 200ms;">
+<h2 class="font-serif-elegant text-4xl mb-8 text-primary">04. Use of Imagery</h2>
+<div class="space-y-6 text-on-surface-variant font-light leading-loose">
+<p>
+                            The editorial photography and curated content on this site are protected by intellectual property laws. Users may not reproduce, distribute, or modify any high-resolution assets without express written consent from the estate management.
+                        </p>
+</div>
+</section>
+<!-- Editorial Footer Note -->
+<div class="pt-12 border-t border-outline-variant/20 reveal">
+<p class="font-serif-elegant italic text-2xl text-secondary">A Legacy of Refined Living.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-low text-primary border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 mt-24 max-w-screen-2xl mx-auto reveal">
+<div class="mb-8 md:mb-0">
+<div class="font-serif text-xl text-slate-800 mb-2">1622 W. Oak St.</div>
+<p class="text-slate-400 text-xs tracking-widest uppercase">Residential Exhibition</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
+<a class="text-slate-400 hover:text-slate-700 transition-all text-xs tracking-widest uppercase" href="#">Privacy Policy</a>
+<a class="text-slate-900 underline underline-offset-4 text-xs tracking-widest uppercase" href="#">Terms of Service</a>
+<a class="text-slate-400 hover:text-slate-700 transition-all text-xs tracking-widest uppercase" href="#">Accessibility</a>
+<a class="text-slate-400 hover:text-slate-700 transition-all text-xs tracking-widest uppercase" href="#">Contact</a>
+</div>
+<div class="text-slate-400 text-[10px] tracking-widest uppercase text-center md:text-right max-w-xs">
+            © 2024 1622 W. Oak St. Residential Exhibition. All rights reserved.
+        </div>
+</div>
+</footer>
+<!-- Minimal FAB -->
+<a class="fixed bottom-8 right-8 w-14 h-14 glass-panel shadow-[0_40px_40px_-15px_rgba(27,28,26,0.08)] flex items-center justify-center rounded-full text-primary hover:scale-105 transition-transform z-50" href="#">
+<span class="material-symbols-outlined">arrow_upward</span>
+</a>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const reveals = document.querySelectorAll('.reveal');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        reveals.forEach(reveal => revealObserver.observe(reveal));
+    });
+</script>
+</body></html>

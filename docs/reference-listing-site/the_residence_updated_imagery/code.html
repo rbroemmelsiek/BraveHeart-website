@@ -1,0 +1,363 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&amp;family=Work+Sans:wght@300;400;500;600&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#cfe5ff",
+              "surface-container-highest": "#e4e2de",
+              "on-primary": "#ffffff",
+              "on-primary-fixed": "#001d34",
+              "surface-bright": "#fbf9f5",
+              "secondary-fixed-dim": "#c8c6c5",
+              "primary-container": "#4f78a0",
+              "outline-variant": "#c2c7cf",
+              "on-primary-fixed-variant": "#1c4a6f",
+              "tertiary": "#834f31",
+              "tertiary-fixed-dim": "#fcb792",
+              "surface-dim": "#dbdad6",
+              "on-secondary-fixed-variant": "#474646",
+              "outline": "#72777f",
+              "on-error": "#ffffff",
+              "secondary-fixed": "#e5e2e1",
+              "on-surface": "#1b1c1a",
+              "on-secondary-fixed": "#1c1b1b",
+              "background": "#fbf9f5",
+              "secondary-container": "#e2dfde",
+              "surface-container": "#f0eeea",
+              "on-tertiary-fixed-variant": "#6a3b1f",
+              "surface-container-low": "#f5f3ef",
+              "surface-tint": "#376188",
+              "primary-fixed-dim": "#a1caf7",
+              "inverse-surface": "#30312e",
+              "inverse-on-surface": "#f2f0ec",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#331200",
+              "on-error-container": "#93000a",
+              "on-secondary": "#ffffff",
+              "surface": "#fbf9f5",
+              "on-tertiary": "#ffffff",
+              "on-background": "#1b1c1a",
+              "surface-container-high": "#eae8e4",
+              "on-secondary-container": "#636262",
+              "inverse-primary": "#a1caf7",
+              "error": "#ba1a1a",
+              "on-surface-variant": "#42474e",
+              "tertiary-container": "#9f6747",
+              "primary": "#355f86",
+              "tertiary-fixed": "#ffdbca",
+              "surface-variant": "#e4e2de",
+              "error-container": "#ffdad6",
+              "on-primary-container": "#fdfcff",
+              "on-tertiary-container": "#fffbff",
+              "secondary": "#5f5e5e"
+            },
+            fontFamily: {
+              "headline": ["Cormorant Garamond", "serif"],
+              "body": ["Work Sans", "sans-serif"],
+              "label": ["Work Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .serif-italic { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+        
+        .glass-nav {
+            background-color: rgba(251, 249, 245, 0.6);
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+        }
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Scroll Reveal Animations */
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .reveal {
+            opacity: 0;
+        }
+        .reveal.active {
+            animation: fade-in-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        
+        .btn-transition {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-transition:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-white/20 transition-all duration-700">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<a class="font-serif italic text-2xl tracking-tight text-slate-900" href="#" style="">1622 W. Oak St.</a>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-slate-500 font-light hover:text-[#834f31] transition-colors duration-300 uppercase tracking-[0.1rem] text-xs" href="#" style="">Home</a>
+<a class="text-slate-900 border-b border-slate-900 pb-1 font-medium uppercase tracking-[0.1rem] text-xs" href="#" style="">The Residence</a>
+<a class="text-slate-500 font-light hover:text-[#834f31] transition-colors duration-300 uppercase tracking-[0.1rem] text-xs" href="#" style="">Neighborhood</a>
+<a class="text-slate-500 font-light hover:text-[#834f31] transition-colors duration-300 uppercase tracking-[0.1rem] text-xs" href="#" style="">Schools</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-sm text-sm uppercase tracking-widest font-medium hover:opacity-90 btn-transition shadow-lg shadow-primary/10" style="">
+                Schedule Tour
+            </button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section: Editorial Header -->
+<section class="relative px-8 md:px-24 mb-32">
+<div class="max-w-screen-2xl mx-auto grid grid-cols-12 gap-6 items-end">
+<div class="col-span-12 md:col-span-5 mb-12 md:mb-0 z-10 reveal active">
+<p class="font-label text-tertiary uppercase tracking-[0.2rem] text-xs mb-6" style="">Unveiling Artistry</p>
+<h1 class="font-headline text-7xl md:text-9xl leading-[0.9] text-on-surface mb-8" style="">The <br><span class="serif-italic" style="">Residence</span></h1>
+<p class="font-body text-lg text-secondary max-w-md leading-relaxed" style="">
+                        A masterclass in modern restoration. Where historical integrity meets the precision of contemporary design. 1622 W. Oak St. is redefined through the lens of functional luxury.
+                    </p>
+</div>
+<div class="col-span-12 md:col-span-8 md:col-start-5 relative reveal active" style="transition-delay: 200ms;">
+<img class="w-full h-auto object-contain grayscale-[20%] contrast-[1.05]" data-alt="high-resolution view of the spacious entry and living room featuring arched transitions and hardwood floors" src="https://lh3.googleusercontent.com/aida/ADBb0uh1hpPcWqz-SO552oVT1GITNXrWdPracawZJnxzZHXsEovb-MQ0Vd965EcvuUM8Zft-JQ04JmQ_iZWHQ2Dk159gaqfI3ND37gggNm8vj3siGtEfNT039NVtGtdZ-VOptDieBkImot6svZgrK5ZZ22BaQ70jGa9N6ZUeQMGbWUBdSX0fDNl8rFWjfSphvsA1rZI1T2x4GcPRnzMcUb5UlTffzEz--fJXT_86Z_-hmsLQwmxEb45_vWxfy2S4zTc4xF6zsbR_htvEZbU" style="">
+<div class="absolute -bottom-12 -left-12 hidden md:block w-64 h-80 glass-panel p-8 shadow-sm">
+<span class="material-symbols-outlined text-tertiary mb-4" style="font-size: 40px;">architecture</span>
+<h3 class="font-headline text-2xl mb-2" style="">Curated Detail</h3>
+<p class="font-body text-xs text-secondary leading-loose tracking-wide" style="">Every surface was reconsidered. Every system optimized for the modern inhabitant.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Highlights Bento Grid -->
+<section class="bg-surface-container-low py-32 px-8 md:px-24">
+<div class="max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-20 gap-8 reveal active">
+<h2 class="font-headline text-5xl md:text-6xl text-on-surface" style="">Highlights of the Home</h2>
+<div class="h-px bg-outline-variant/30 flex-grow mx-8 hidden md:block"></div>
+<p class="font-label text-secondary uppercase tracking-widest text-xs" style="">Refined &amp; Polished</p>
+</div>
+<!-- Quote Inclusion -->
+<div class="max-w-4xl mx-auto text-center mb-20 reveal active">
+<blockquote class="font-headline text-3xl md:text-4xl italic text-on-surface leading-tight" style="">
+                        “The owners spared no expense creating a home that feels polished, functional, and ready for entertaining.”
+                    </blockquote>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+<!-- Large Feature Image Area -->
+<div class="md:col-span-7 space-y-8 reveal active">
+<div class="relative overflow-hidden group">
+<img class="w-full h-auto object-contain" data-alt="luxury designer kitchen with a professional grade range and custom backsplash" src="https://lh3.googleusercontent.com/aida/ADBb0ugUr5taYixB5wlDHe1X9xqo2ugLcKA-F3eXcgEMEqwQzLkJBf9PH5WzUQKTrrbjSrZV3KUaQ6HwzrXfKmYS83qM1IPJpZh6J3fTxvLxbYP7LxFZKRxY1k00XkHuBKPrqk9B8jLb6pieDL-OObKTKyM2zb3u5rACWW4S9yuhOMn2UTVd1FQkR1MGk4-Pnc8_-9NY-prOM8B42xUH5jGFSJTj-aH_vimPrc7ov6PwVgCD_AbDI6eaA-IH-NAAe3x9EKk1mrQ9AZWI7A" style="">
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/0 transition-colors duration-500"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h3 class="font-headline text-3xl mb-4 italic" style="">Culinary Precision</h3>
+<p class="text-secondary leading-relaxed text-sm" style="">A highlight of the extensive restoration, the kitchen serves as the social heart of the residence.</p>
+</div>
+<div class="relative overflow-hidden">
+<img class="w-full h-auto object-contain" data-alt="kitchen awning window opening to a quartzite patio bar" src="https://lh3.googleusercontent.com/aida/ADBb0ujueQ2Qr8QXsvCu4iLdQu4DGnwNUdmMS1dmKUDdkRtv3HeykKGDWnEr_W5h9sypPmqSqn-nArOF9FQ6ag9n07bATadRJz6eFVJlMsP5tWFzsIP9OhXIivZOupC5_mpmq8KmrKpIbCNkG9_YPMOwk6JaoXPJfG4CxLu_zefiRB7Paqj6hkm9Xuc8iTcWy2raCLwhJvPJGlXX6GfOiFI-7Xtb9PmGUc04fFfYr_0qQTPMfxJEXHtLf5qMASSKqChr8MklZE6evj31wjo" style="">
+</div>
+</div>
+</div>
+<!-- Property Specifications -->
+<div class="md:col-span-5 glass-panel p-10 shadow-sm reveal active" style="transition-delay: 200ms;">
+<h3 class="font-label uppercase tracking-[0.2rem] text-xs text-tertiary mb-10" style="">Property Specifications</h3>
+<ul class="space-y-8">
+<li class="flex gap-4" style="">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-2 shrink-0"></span>
+<p class="text-on-surface text-sm leading-relaxed" style="">Substantial renovation investment reported in MLS marketing materials.</p>
+</li>
+<li class="flex gap-4" style="">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-2 shrink-0"></span>
+<p class="text-on-surface text-sm leading-relaxed" style="">Private front garden entry and elegant transition details including archways and hardwood flooring.</p>
+</li>
+<li class="flex gap-4" style="">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-2 shrink-0"></span>
+<p class="text-on-surface text-sm leading-relaxed" style="">Upgraded split-zone HVAC system with a second unit.</p>
+</li>
+<li class="flex gap-4" style="">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-2 shrink-0"></span>
+<p class="text-on-surface text-sm leading-relaxed" style="">Luxury kitchen with 7-burner executive range, white cabinetry, designer lighting and backsplash, and an awning window opening to a quartzite patio bar.</p>
+</li>
+<li class="flex gap-4" style="">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-2 shrink-0"></span>
+<p class="text-on-surface text-sm leading-relaxed" style="">Primary bath steam shower and extensively updated baths with smart water closets, cabinetry, tile surrounds, plumbing, and flooring.</p>
+</li>
+<li class="flex gap-4" style="">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-2 shrink-0"></span>
+<p class="text-on-surface text-sm leading-relaxed" style="">EV charging, custom closet cabinetry, updated plumbing under the home, electrical improvements, and refreshed landscaping.</p>
+</li>
+<li class="flex gap-4" style="">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-2 shrink-0"></span>
+<p class="text-on-surface text-sm leading-relaxed" style="">Backyard entertaining amenities including a heated pool and spa, covered patio, built-in bar, and dog run.</p>
+</li>
+<li class="flex gap-4" style="">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-2 shrink-0"></span>
+<p class="text-on-surface text-sm leading-relaxed" style="">ADU configuration adds flexibility for guests, extended family, office use, or income-oriented buyers.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- The Sanctuary Section -->
+<section class="py-32 px-8 md:px-24 bg-surface overflow-hidden">
+<div class="max-w-screen-2xl mx-auto relative">
+<div class="grid grid-cols-12 gap-8 items-center">
+<div class="col-span-12 md:col-span-6 order-2 md:order-1 reveal active">
+<div class="relative">
+<img class="w-full h-auto object-contain" data-alt="primary bathroom suite featuring a double vanity and luxury soaking tub" src="https://lh3.googleusercontent.com/aida/ADBb0uhqI-SV6j3HSxziJSSk-sDJMk24WPo4sBR_EKa2lsjovwOX_KNTwatyGijW0dA6ZxpApklt7V_ZK5sopKXbnLjFh5Mr7a7-JabVsBv3UHaUcUwptpDlbmOCSMcJF__71Qky47ZjVB5x-K9mbxJ92sV3aEi9IU3AL8eXBRcb4Pp_iYAttIkJhQ7YwzyX60kSq6EiGKr1gvqyysBMzSxbT1F_249kz0C1VF-1MiBbhHev5TDBCYLX37h1O-ZaFzlDDf3HqFdvE4oCLQ" style="">
+<div class="absolute -top-10 -right-10 md:-right-20 w-48 h-48 glass-panel flex items-center justify-center p-8 bg-tertiary-fixed/40">
+<p class="font-headline text-on-tertiary-fixed text-center leading-tight" style="">The Steam <br>Sanctuary</p>
+</div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-5 md:col-start-8 order-1 md:order-2 mb-16 md:mb-0 reveal active" style="transition-delay: 200ms;">
+<h2 class="font-headline text-5xl mb-8 leading-tight" style="">Restoration of the <span class="serif-italic" style="">Self.</span></h2>
+<p class="text-secondary text-lg mb-10 leading-relaxed" style="">
+                            The primary bath is a testament to the home’s "polished and functional" narrative. A fully integrated steam shower provides a daily spa experience, complemented by elegant fixtures and marble finishes.
+                        </p>
+<div class="space-y-12">
+<div class="flex gap-6">
+<span class="font-headline text-4xl text-primary/40" style="">01</span>
+<div>
+<h4 class="font-label uppercase tracking-widest text-xs mb-2" style="">Technological Wellness</h4>
+<p class="text-secondary text-sm" style="">Digital temperature control for the steam cycle and ambient lighting.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="font-headline text-4xl text-primary/40" style="">02</span>
+<div>
+<h4 class="font-label uppercase tracking-widest text-xs mb-2" style="">ELEGENT Foundations</h4>
+<p class="text-secondary text-sm" style="">Marbled surfaces throughout</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Exterior & ADU -->
+<section class="bg-surface-container-low py-32">
+<div class="max-w-screen-2xl mx-auto px-8 md:px-24">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
+<div class="space-y-24">
+<div class="group reveal active">
+<div class="overflow-hidden mb-8">
+<img class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105" data-alt="luxury outdoor heated pool and spa at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA78naZqQeFCb3yTrJHYFLE6iQm3XLoSV80fyl8vkZCHfgn3xlH_uc7_JJVSudewF6Ybc1MBw_MdwDZ5QoYTwagq5LZvTs2gHIlOsHMWkWrUGOryrtdSCSP5q9UKUkcGh-oN_gBrsOBRlaTKdBLPvSRj95NotpuK-uIubs3ODeLLHqa5uYns8xDFJ6rz899_4RVuvnU3CBg5gZBJ7NG-pgh77iqJzvYx1NpClYxyuQvZG0gDRFGvzUanl9VzIzGzi3CZVGcRezwWKPY" style="">
+</div>
+<h3 class="font-headline text-3xl mb-4 italic" style="">Heated Pool &amp; Spa</h3>
+<p class="text-secondary leading-loose" style="">Year-round leisure. The pool and integrated spa are temperature-controlled via a high-efficiency heating system, surrounded by non-slip stone masonry.</p>
+</div>
+<div class="grid grid-cols-2 gap-8 reveal active" style="transition-delay: 200ms;">
+<div class="glass-panel p-8 flex flex-col justify-between aspect-square">
+<span class="material-symbols-outlined text-tertiary" style="font-size: 32px;">ev_station</span>
+<div>
+<h4 class="font-label uppercase tracking-widest text-[10px] mb-2" style="">HOME OFFICE</h4>
+<p class="font-body text-sm font-medium" style="">Designed for the modern professional.</p>
+</div>
+</div>
+<div class="relative overflow-hidden">
+<img class="w-full h-auto object-contain" data-alt="flex space or office with professional setup including a treadmill desk" src="https://lh3.googleusercontent.com/aida/ADBb0ugu8MXZSBpXfjQuK3lsQ0WuECNv3e_FhJZ48ZbBQb0sBjXsWeL24hPLANkFX0rHATHvSUBeImuzxm5TFWlxWnwM3H4Ls__K6CszFUrxIIL4lifTKW4LKDsU4DHUPKNyH6SmuZ-vFzPfnsyJCj1ZvM1Q6Di-6bIBvi9DbV77cnSoRUMVS_URoHZUUQv0DWw0U-72lRPKOSc9dwsgRunly_SdLUFj57fVa7COgjEFqBmbr3ZaA1zKv2O6qsXX4qUIbm4kiCwbwOwD1w" style="">
+</div>
+</div>
+</div>
+<div class="md:mt-32">
+<div class="mb-12 reveal active">
+<p class="font-label text-tertiary uppercase tracking-[0.2rem] text-xs mb-4" style="">permitted Secondary Dwelling</p>
+<h2 class="font-headline text-5xl mb-8" style="">The Garden <span class="serif-italic" style="">ADU</span></h2>
+<p class="text-secondary text-lg leading-relaxed mb-8" style="">
+                                A fully independent Accessory Dwelling Unit sits at the rear of the property. Perfect for guests, a creative studio, or a professional home office, it mirrors the main house's architectural finish.
+                            </p>
+<div class="mb-8 relative overflow-hidden">
+<img class="w-full h-auto object-contain" data-alt="bedroom within the garden ADU showing seamless indoor-outdoor living" src="https://lh3.googleusercontent.com/aida/ADBb0ui3t4X70HbCBkJ_7ZPTjmn4sKBCzOKRVnArzMA9tYqE2HLXZOcWmXLhz9kBemLEKWxvCeFE-OWKwrce9qjML3jYalBrD7CFgxEpek-ToY6o4wkRLdHRVRX_dIxkqAigU9AT5Ko4h3P6DHIQqk6EzC1TlmlI0nMH22HgDLX-0AySrFDz8o4Jr3uXso4SfnNz5nZMS0gpuQbTl1DTkFyG4dotisRe06-IX3htPmSujjh4YqCcsDNLJhWmoiAq29koK2x_HqIb-ANmbgM" style="">
+</div>
+<ul class="space-y-6">
+<li class="border-b border-outline-variant/20 pb-4 flex justify-between" style="">
+<span class="text-sm font-light italic" style="">Full Kitchenette</span>
+<span class="material-symbols-outlined text-xs" style="">check</span>
+</li>
+<li class="border-b border-outline-variant/20 pb-4 flex justify-between" style="">
+<span class="text-sm font-light italic" style="">Dedicated Climate Zone</span>
+<span class="material-symbols-outlined text-xs" style="">check</span>
+</li>
+<li class="border-b border-outline-variant/20 pb-4 flex justify-between" style="">
+<span class="text-sm font-light italic" style="">Private Street Entrance</span>
+<span class="material-symbols-outlined text-xs" style="">check</span>
+</li>
+</ul>
+</div>
+<div class="glass-panel p-12 shadow-[0_40px_40px_-15px_rgba(27,28,26,0.04)] reveal active" style="transition-delay: 300ms;">
+<h4 class="font-headline text-2xl mb-6 italic text-center" style="">Inquiry for Residence</h4>
+<div class="space-y-6">
+<div class="relative">
+<label class="font-label text-[10px] uppercase text-secondary mb-1 block" style="">Full Name</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-2 focus:ring-0 focus:border-primary transition-all text-sm" type="text">
+</div>
+<div class="relative">
+<label class="font-label text-[10px] uppercase text-secondary mb-1 block" style="">Email Address</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-2 focus:ring-0 focus:border-primary transition-all text-sm" type="email">
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-sm font-label uppercase tracking-widest text-xs mt-4 btn-transition shadow-lg shadow-primary/20" style="">Request Specs</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f5f3ef] dark:bg-slate-900 flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 mt-24 reveal active">
+<div class="mb-12 md:mb-0">
+<h4 class="font-serif text-xl text-slate-800 dark:text-slate-200" style="">1622 W. Oak St.</h4>
+<p class="font-body text-xs tracking-widest uppercase text-slate-400 mt-4 leading-loose" style="">© 2024 1622 W. Oak St. Residential Exhibition. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="text-slate-400 hover:text-slate-700 transition-all font-body text-xs tracking-widest uppercase" href="#" style="">Privacy Policy</a>
+<a class="text-slate-400 hover:text-slate-700 transition-all font-body text-xs tracking-widest uppercase" href="#" style="">Terms of Service</a>
+<a class="text-slate-400 hover:text-slate-700 transition-all font-body text-xs tracking-widest uppercase" href="#" style="">Accessibility</a>
+<a class="text-slate-400 hover:text-slate-700 transition-all font-body text-xs tracking-widest uppercase" href="#" style="">Contact</a>
+</div>
+</footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Scroll reveal logic
+            const reveals = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            reveals.forEach(reveal => revealObserver.observe(reveal));
+        });
+    </script>
+</body></html>

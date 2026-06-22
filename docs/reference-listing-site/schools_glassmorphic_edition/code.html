@@ -1,0 +1,352 @@
+<!DOCTYPE html><html class="light scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&amp;family=Work+Sans:wght@300;400;500;600&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#cfe5ff",
+              "surface-container-highest": "#e4e2de",
+              "on-primary": "#ffffff",
+              "on-primary-fixed": "#001d34",
+              "surface-bright": "#fbf9f5",
+              "secondary-fixed-dim": "#c8c6c5",
+              "primary-container": "#4f78a0",
+              "outline-variant": "#c2c7cf",
+              "on-primary-fixed-variant": "#1c4a6f",
+              "tertiary": "#834f31",
+              "tertiary-fixed-dim": "#fcb792",
+              "surface-dim": "#dbdad6",
+              "on-secondary-fixed-variant": "#474646",
+              "outline": "#72777f",
+              "on-error": "#ffffff",
+              "secondary-fixed": "#e5e2e1",
+              "on-surface": "#1b1c1a",
+              "on-secondary-fixed": "#1c1b1b",
+              "background": "#fbf9f5",
+              "secondary-container": "#e2dfde",
+              "surface-container": "#f0eeea",
+              "on-tertiary-fixed-variant": "#6a3b1f",
+              "surface-container-low": "#f5f3ef",
+              "surface-tint": "#376188",
+              "primary-fixed-dim": "#a1caf7",
+              "inverse-surface": "#30312e",
+              "inverse-on-surface": "#f2f0ec",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#331200",
+              "on-error-container": "#93000a",
+              "on-secondary": "#ffffff",
+              "surface": "#fbf9f5",
+              "on-tertiary": "#ffffff",
+              "on-background": "#1b1c1a",
+              "surface-container-high": "#eae8e4",
+              "on-secondary-container": "#636262",
+              "inverse-primary": "#a1caf7",
+              "error": "#ba1a1a",
+              "on-surface-variant": "#42474e",
+              "tertiary-container": "#9f6747",
+              "primary": "#355f86",
+              "tertiary-fixed": "#ffdbca",
+              "surface-variant": "#e4e2de",
+              "error-container": "#ffdad6",
+              "on-primary-container": "#fdfcff",
+              "on-tertiary-container": "#fffbff",
+              "secondary": "#5f5e5e"
+            },
+            fontFamily: {
+              "headline": ["Cormorant Garamond"],
+              "body": ["Work Sans"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 40px 40px -15px rgba(27,28,26,0.04);
+        }
+        .glass-nav {
+            background-color: rgba(251, 249, 245, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        /* Scroll Reveal Animations */
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .reveal {
+            opacity: 0;
+        }
+        .reveal.active {
+            animation: fade-in-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        .btn-transition {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-transition:hover {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed">
+<nav class="fixed top-0 z-50 w-full glass-nav shadow-[0_40px_40px_-15px_rgba(27,28,26,0.04)] border-b border-white/10 transition-all duration-700">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="font-serif italic text-2xl tracking-tight text-slate-900 dark:text-slate-50" style="">1622 W. Oak St.</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-slate-500 dark:text-slate-400 font-light hover:text-[#834f31] transition-colors duration-300" href="#" style="">Home</a>
+<a class="text-slate-500 dark:text-slate-400 font-light hover:text-[#834f31] transition-colors duration-300" href="#" style="">The Residence</a>
+<a class="text-slate-500 dark:text-slate-400 font-light hover:text-[#834f31] transition-colors duration-300" href="#" style="">Neighborhood</a>
+<a class="text-slate-900 dark:text-white border-b border-slate-900 dark:border-white pb-1 font-medium hover:text-[#834f31] transition-colors duration-300" href="#" style="">Schools</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-sm text-sm uppercase tracking-widest font-medium btn-transition" style="">Schedule Tour</button>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<section class="max-w-screen-2xl mx-auto px-8 mb-24 relative">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
+<div class="md:col-span-5 relative z-10 -mb-12 reveal">
+<span class="block text-secondary text-xs uppercase tracking-[0.2rem] mb-4 font-medium" style="">Educational Excellence</span>
+<h1 class="font-headline text-6xl md:text-8xl font-light text-on-surface leading-tight mb-8" style="">Academic<br>Foundation.</h1>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-md" style="">
+                        Situated in a district known for its commitment to student success, 1622 W. Oak St. offers proximity to some of the area's most distinguished public and private educational institutions.
+                    </p>
+</div>
+<div class="md:col-span-7 reveal" style="transition-delay: 200ms;">
+<div class="aspect-[16/10] overflow-hidden bg-surface-container editorial-shadow">
+<img class="w-full h-full object-cover grayscale-[20%] hover:scale-105 transition-transform duration-1000" data-alt="Modern minimalist architectural view of a university campus library at sunset with large glass windows and warm interior lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb44xaGrt7bP6EFerLSy2EIxKtZXSgv-CZHT3pvL4bAjYVodhU4AFZCJTqAN0vCFsITt1Zn5Zbt-ZMPsAIkzOATywK4oulIQEf2zSWLKBlqIBnoqSEVYB4WhGxG_BYN4JlcynAW9WH5qbtHAvmqF5eGypNvZzdhhE65sj1F-Q2P_3iYB8CQQ6MvpxrbuQ_Kuza0DX7ncqUmdz0zEpu0UDoOeaBsURR1S6RZ9XxiOCD665sy2DbEbiLmOTZMdyAVSAcqWHFAVHMVkaG" style="">
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-low py-24">
+<div class="max-w-4xl mx-auto px-8">
+<div class="flex flex-col items-center text-center mb-16 reveal">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="school" style="">school</span>
+<h2 class="font-headline text-4xl font-light mb-6" style="">School References</h2>
+<div class="w-12 h-px bg-outline-variant"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="p-8 glass-panel rounded-sm shadow-sm flex flex-col items-center text-center reveal" style="transition-delay: 100ms;">
+<span class="text-tertiary font-headline text-5xl mb-4" style="">0.4</span>
+<span class="text-secondary text-xs uppercase tracking-widest mb-2" style="">Miles</span>
+<p class="font-medium text-on-surface" style="">William McKinley Elementary</p>
+</div>
+<div class="p-8 glass-panel rounded-sm shadow-sm flex flex-col items-center text-center reveal" style="transition-delay: 200ms;">
+<span class="text-tertiary font-headline text-5xl mb-4" style="">0.8</span>
+<span class="text-secondary text-xs uppercase tracking-widest mb-2" style="">Miles</span>
+<p class="font-medium text-on-surface" style="">Dolores Huerta Middle</p>
+</div>
+<div class="p-8 glass-panel rounded-sm shadow-sm flex flex-col items-center text-center reveal" style="transition-delay: 300ms;">
+<span class="text-tertiary font-headline text-5xl mb-4" style="">1.2</span>
+<span class="text-secondary text-xs uppercase tracking-widest mb-2" style="">Miles</span>
+<p class="font-medium text-on-surface" style="">John Burroughs High</p>
+</div>
+</div>
+</div>
+</section>
+<section class="max-w-screen-xl mx-auto px-8 py-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-20">
+<div class="lg:col-span-4 reveal">
+<h2 class="font-headline text-5xl font-light leading-tight mb-8" style="">Public Schools</h2>
+<p class="text-on-surface-variant mb-12" style="">
+                        The property is centrally located within the Burbank Unified School District (BUSD), providing access to award-winning campuses and diverse academic programs.
+                    </p>
+<div class="p-6 glass-panel border-l-2 border-primary">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="info" style="">info</span>
+<div>
+<span class="block text-xs uppercase tracking-widest font-bold text-on-primary-fixed-variant mb-2" style="">Important Notice</span>
+<p class="text-sm text-on-primary-fixed-variant leading-relaxed" style="">
+                                    School boundary maps are subject to change. Potential residents MUST confirm specific school paths and enrollment availability directly with the <span class="font-semibold" style="">Burbank Unified School District (BUSD)</span>.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8 reveal" style="transition-delay: 200ms;">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="border-b border-outline-variant">
+<th class="py-4 text-xs uppercase tracking-[0.15rem] font-semibold text-secondary" style="">School Name</th>
+<th class="py-4 text-xs uppercase tracking-[0.15rem] font-semibold text-secondary text-right" style="">Distance</th>
+<th class="py-4 text-xs uppercase tracking-[0.15rem] font-semibold text-secondary text-right" style="">Type</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-highest">
+<tr>
+<td class="py-8" style="">
+<div class="font-headline text-2xl text-on-surface mb-1" style="">William McKinley Elementary</div>
+<div class="text-xs text-secondary font-medium tracking-wide" style="">Primary Education</div>
+</td>
+<td class="py-8 text-right font-body text-on-surface" style="">0.4 Miles</td>
+<td class="py-8 text-right" style="">
+<span class="px-3 py-1 bg-surface-container-highest text-[10px] uppercase tracking-widest font-bold rounded-full" style="">Public</span>
+</td>
+</tr>
+<tr>
+<td class="py-8" style="">
+<div class="font-headline text-2xl text-on-surface mb-1" style="">Dolores Huerta Middle</div>
+<div class="text-xs text-secondary font-medium tracking-wide" style="">Secondary Education</div>
+</td>
+<td class="py-8 text-right font-body text-on-surface" style="">0.8 Miles</td>
+<td class="py-8 text-right" style="">
+<span class="px-3 py-1 bg-surface-container-highest text-[10px] uppercase tracking-widest font-bold rounded-full" style="">Public</span>
+</td>
+</tr>
+<tr>
+<td class="py-8" style="">
+<div class="font-headline text-2xl text-on-surface mb-1" style="">John Burroughs High</div>
+<div class="text-xs text-secondary font-medium tracking-wide" style="">High School</div>
+</td>
+<td class="py-8 text-right font-body text-on-surface" style="">1.2 Miles</td>
+<td class="py-8 text-right" style="">
+<span class="px-3 py-1 bg-surface-container-highest text-[10px] uppercase tracking-widest font-bold rounded-full" style="">Public</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-dim/20 py-32">
+<div class="max-w-screen-xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-baseline gap-8 mb-16 reveal">
+<h2 class="font-headline text-5xl font-light" style="">Private School Options</h2>
+<p class="text-secondary max-w-sm font-light text-sm italic" style="">
+                        Highly-regarded independent institutions within a short commute from the Oak Street residence.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/30 reveal active">
+<div class="bg-surface p-12 hover:bg-surface-container-lowest transition-all duration-500 group">
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-headline text-3xl group-hover:text-primary transition-colors" style="">St. Finbar School</h3>
+<span class="text-xs uppercase tracking-widest text-secondary font-medium mt-2" style="">K-8 Education</span>
+</div>
+<p class="text-on-surface-variant leading-relaxed mb-8" style="">
+                            Offering a robust curriculum with a focus on community and traditional values, located just minutes from the neighborhood.
+                        </p>
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-sm" data-icon="location_on" style="">location_on</span>
+<span class="text-xs uppercase tracking-widest font-bold" style="">Proximity Note: 0.9 Miles away</span>
+</div>
+</div>
+<div class="bg-surface p-12 hover:bg-surface-container-lowest transition-all duration-500 group">
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-headline text-3xl group-hover:text-primary transition-colors" style="">Providence High School</h3>
+<span class="text-xs uppercase tracking-widest text-secondary font-medium mt-2" style="">9-12 Education</span>
+</div>
+<p class="text-on-surface-variant leading-relaxed mb-8" style="">
+                            A premier college-preparatory institution recognized for its health, media, and technology focus programs.
+                        </p>
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-sm" data-icon="location_on" style="">location_on</span>
+<span class="text-xs uppercase tracking-widest font-bold" style="">Proximity Note: 1.5 Miles away</span>
+</div>
+</div>
+<div class="bg-surface p-12 hover:bg-surface-container-lowest transition-all duration-500 group">
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-headline text-3xl group-hover:text-primary transition-colors" style="">Burbank Montessori</h3>
+<span class="text-xs uppercase tracking-widest text-secondary font-medium mt-2" style="">Preschool - Kinder</span>
+</div>
+<p class="text-on-surface-variant leading-relaxed mb-8" style="">
+                            Specializing in child-led development and creative exploration for the earliest stages of academic life.
+                        </p>
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-sm" data-icon="location_on" style="">location_on</span>
+<span class="text-xs uppercase tracking-widest font-bold" style="">Proximity Note: 0.6 Miles away</span>
+</div>
+</div>
+<div class="bg-surface p-12 hover:bg-surface-container-lowest transition-all duration-500 group">
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-headline text-3xl group-hover:text-primary transition-colors" style="">LILA</h3>
+<span class="text-xs uppercase tracking-widest text-secondary font-medium mt-2" style="">International K-12</span>
+</div>
+<p class="text-on-surface-variant leading-relaxed mb-8" style="">
+                            The International School of Los Angeles, the primary French immersion school near Burbank, is an independent accredited school.</p>
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-sm" data-icon="location_on" style="">location_on</span>
+<span class="text-xs uppercase tracking-widest font-bold" style="">Proximity Note: 2.1 Miles away</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="max-w-screen-2xl mx-auto px-8 mt-32">
+<div class="bg-surface-container rounded-sm p-24 text-center relative overflow-hidden reveal">
+<div class="absolute inset-0 opacity-5">
+<img class="w-full h-full object-cover" data-alt="Blurred background of a sophisticated academic hall with rows of wooden desks and classical architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk55pZvb5uIf1TaDY5YEzsASqpw7Zbq73YY_Je3xj7uVKRoxRxx0UUxzbNLKt7QqsZuhO4cJP6ioago5PB80FbgeQRnjS08a3BgG9UDgmdjWR85dQxFHySXRwzvhqeWTLq7eKoP3nFJxeshniQnO0p-67w8VUxONA5HUD424JUfGVDj17d4CMQWVp2HOnnXWYYbu5Mk2XGLZAtUvuYKBewG5pUuOLIVHqSdmq8oRE1pfpPl1bV_erA85RQ6pgnkPQEwJr9owWT2JZL" style="">
+</div>
+<div class="relative z-10 glass-panel max-w-4xl mx-auto py-16 px-12">
+<h2 class="font-headline text-4xl mb-6" style="">Nurturing Future Success.</h2>
+<p class="text-secondary mb-12 max-w-xl mx-auto" style="">
+                        We believe that a home is more than its walls—it's the community and opportunities that surround it. Explore the district details today.
+                    </p>
+<a class="inline-block border-b-2 border-tertiary text-tertiary font-bold text-xs uppercase tracking-[0.2rem] py-2 hover:opacity-70 transition-opacity" href="#" style="">Visit BUSD District Portal</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#f5f3ef] dark:bg-slate-900 transition-colors duration-500">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 mt-24 max-w-screen-2xl mx-auto reveal">
+<div class="mb-8 md:mb-0 text-center md:text-left">
+<div class="font-serif text-xl text-slate-800 dark:text-slate-200 mb-2" style="">1622 W. Oak St.</div>
+<p class="text-[#355f86] dark:text-[#4f78a0] text-xs tracking-widest uppercase" style="">Residential Exhibition</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
+<a class="text-slate-400 dark:text-slate-500 text-xs tracking-widest uppercase hover:text-slate-700 dark:hover:text-slate-300 btn-transition" href="#" style="">Privacy Policy</a>
+<a class="text-slate-400 dark:text-slate-500 text-xs tracking-widest uppercase hover:text-slate-700 dark:hover:text-slate-300 btn-transition" href="#" style="">Terms of Service</a>
+<a class="text-slate-400 dark:text-slate-500 text-xs tracking-widest uppercase hover:text-slate-700 dark:hover:text-slate-300 btn-transition" href="#" style="">Accessibility</a>
+<a class="text-slate-400 dark:text-slate-500 text-xs tracking-widest uppercase hover:text-slate-700 dark:hover:text-slate-300 btn-transition" href="#" style="">Contact</a>
+</div>
+<div class="text-slate-400 dark:text-slate-500 text-[10px] tracking-widest uppercase text-center md:text-right" style="">
+                © 2024 1622 W. Oak St. Residential Exhibition. All rights reserved.
+            </div>
+</div>
+</footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Scroll reveal logic
+            const reveals = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            reveals.forEach(reveal => revealObserver.observe(reveal));
+        });
+    </script>
+</body></html>

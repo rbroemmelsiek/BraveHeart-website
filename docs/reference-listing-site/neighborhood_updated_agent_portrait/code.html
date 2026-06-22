@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="light scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300&amp;family=Work+Sans:wght@300;400;500;600&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#cfe5ff",
+              "surface-container-highest": "#e4e2de",
+              "on-primary": "#ffffff",
+              "on-primary-fixed": "#001d34",
+              "surface-bright": "#fbf9f5",
+              "secondary-fixed-dim": "#c8c6c5",
+              "primary-container": "#4f78a0",
+              "outline-variant": "#c2c7cf",
+              "on-primary-fixed-variant": "#1c4a6f",
+              "tertiary": "#834f31",
+              "tertiary-fixed-dim": "#fcb792",
+              "surface-dim": "#dbdad6",
+              "on-secondary-fixed-variant": "#474646",
+              "outline": "#72777f",
+              "on-error": "#ffffff",
+              "secondary-fixed": "#e5e2e1",
+              "on-surface": "#1b1c1a",
+              "on-secondary-fixed": "#1c1b1b",
+              "background": "#fbf9f5",
+              "secondary-container": "#e2dfde",
+              "surface-container": "#f0eeea",
+              "on-tertiary-fixed-variant": "#6a3b1f",
+              "surface-container-low": "#f5f3ef",
+              "surface-tint": "#376188",
+              "primary-fixed-dim": "#a1caf7",
+              "inverse-surface": "#30312e",
+              "inverse-on-surface": "#f2f0ec",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#331200",
+              "on-error-container": "#93000a",
+              "on-secondary": "#ffffff",
+              "surface": "#fbf9f5",
+              "on-tertiary": "#ffffff",
+              "on-background": "#1b1c1a",
+              "surface-container-high": "#eae8e4",
+              "on-secondary-container": "#636262",
+              "inverse-primary": "#a1caf7",
+              "error": "#ba1a1a",
+              "on-surface-variant": "#42474e",
+              "tertiary-container": "#9f6747",
+              "primary": "#355f86",
+              "tertiary-fixed": "#ffdbca",
+              "surface-variant": "#e4e2de",
+              "error-container": "#ffdad6",
+              "on-primary-container": "#fdfcff",
+              "on-tertiary-container": "#fffbff",
+              "secondary": "#5f5e5e"
+            },
+            fontFamily: {
+              "headline": ["Cormorant Garamond"],
+              "body": ["Work Sans"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Work Sans', sans-serif; }
+        .font-serif-delicate { font-family: 'Cormorant Garamond', serif; }
+        .letter-spacing-tight { letter-spacing: -0.02em; }
+        .letter-spacing-wide { letter-spacing: 0.1rem; }
+        .image-bleed-right { margin-right: -5vw; }
+        .image-bleed-left { margin-left: -5vw; }
+
+        .glass-nav {
+            background-color: rgba(251, 249, 245, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .glass-card-lifestyle {
+            background-color: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .reveal {
+            opacity: 0;
+        }
+        .reveal.active {
+            animation: fade-in-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        .btn-transition {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-transition:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(53, 95, 134, 0.3);
+        }
+        .card-lift {
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .card-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px -12px rgba(27,28,26,0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Top Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-white/10">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<a class="font-serif italic text-2xl tracking-tight text-slate-900" href="#">1622 W. Oak St.</a>
+<div class="hidden md:flex space-x-12 items-center">
+<a class="text-slate-500 font-light hover:text-[#834f31] transition-colors duration-300 text-xs uppercase tracking-[0.1rem]" href="#">Home</a>
+<a class="text-slate-500 font-light hover:text-[#834f31] transition-colors duration-300 text-xs uppercase tracking-[0.1rem]" href="#">The Residence</a>
+<a class="text-slate-900 border-b border-slate-900 pb-1 font-medium text-xs uppercase tracking-[0.1rem]" href="#">Neighborhood</a>
+<a class="text-slate-500 font-light hover:text-[#834f31] transition-colors duration-300 text-xs uppercase tracking-[0.1rem]" href="#">Schools</a>
+<button class="bg-primary text-on-primary px-6 py-2.5 text-xs uppercase tracking-[0.1rem] rounded-sm hover:opacity-90 btn-transition">Schedule Tour</button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary">menu</span>
+</div>
+</div>
+</nav>
+<!-- Editorial Hero -->
+<header class="relative pt-48 pb-24 overflow-hidden">
+<div class="max-w-screen-2xl mx-auto px-8 lg:flex items-center">
+<div class="lg:w-2/5 z-10 relative mb-12 lg:mb-0 reveal">
+<p class="text-tertiary font-medium uppercase tracking-[0.2rem] text-xs mb-4">The Burbank Collection</p>
+<h1 class="font-serif-delicate text-6xl md:text-8xl text-on-surface leading-[0.9] mb-8">Neighborhood and Lifestyle</h1>
+<p class="text-secondary text-lg font-light max-w-md leading-relaxed">Discover the heartbeat of the Media Capital. A curated existence where historic charm meets the modern pulse of global entertainment.</p>
+</div>
+<div class="lg:w-3/5 relative reveal" style="transition-delay: 200ms;">
+<div class="aspect-[16/10] overflow-hidden rounded-sm shadow-xl card-lift">
+<img alt="Sun-drenched wide street in a peaceful California neighborhood" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1NZvJwmI_fCxglWRFA05LhRiiDX_miZMyMZrKnkJoT5BCZyQxYRneGy25eXuBKQmG6MTxHc5VB59F0T2ezSCtG99tRhB-kViG_fzLuAYP_qxyoN0TNYPcfgQTCeTipsp6SZnyoG30XU1pz43E9AI6IWa2snj94zq05EHITvv5bD_Qa3Tj2NoWjtFg20Kf7gaPVx-WCZ8RJYJKpf6JVgMO3Vzrejsc1QPk74hKXsI1lWXQoCWW6byNj0EhxXPC9Xuhu8ZM3P4C64y9"/>
+</div>
+<div class="absolute -bottom-6 -left-12 hidden lg:block glass-panel p-8 shadow-lg max-w-xs reveal" style="transition-delay: 500ms;">
+<p class="font-serif-delicate italic text-xl text-primary mb-2">"A walkable district unlike any other in Los Angeles."</p>
+<p class="text-xs uppercase tracking-widest text-outline">The Resident Journal</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Section: Shopping & Dining -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-screen-xl mx-auto px-8">
+<div class="flex flex-col md:flex-row gap-16 items-start">
+<div class="md:w-1/3 sticky top-32 reveal">
+<h2 class="font-serif-delicate text-4xl mb-6">Shopping, Dining, and Recreation</h2>
+<p class="text-on-surface-variant leading-relaxed font-light mb-8">Burbank's distinct districts offer a tapestry of artisanal coffee shops, vintage boutiques, and world-class culinary destinations just moments from your door.</p>
+<div class="space-y-8">
+<div class="p-6 glass-card-lifestyle card-lift rounded-lg">
+<span class="text-tertiary text-[0.6rem] uppercase tracking-widest block mb-1">Local Landmark</span>
+<h4 class="font-medium text-lg">Magnolia Park</h4>
+<p class="text-sm text-secondary font-light">The quintessential walkable district, famous for retro vibes and indie creators.</p>
+</div>
+<div class="p-6 glass-card-lifestyle card-lift rounded-lg">
+<span class="text-tertiary text-[0.6rem] uppercase tracking-widest block mb-1">Culinary Icon</span>
+<h4 class="font-medium text-lg">Porto's Bakery</h4>
+<p class="text-sm text-secondary font-light">An institution of taste, renowned for world-famous pastries and vibrant atmosphere.</p>
+</div>
+</div>
+</div>
+<div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-4 pt-12 reveal" style="transition-delay: 200ms;">
+<div class="aspect-[4/5] overflow-hidden card-lift rounded-sm">
+<img alt="Modern upscale cafe interior" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnX0TK-qQlYnPNo0YwC7gqTVcMM5LnlL2AICUb2syjYtLJa4tbo4M3tENXvCYIIcd60UK52e6pCUUb7LBbbwZbpOQlQ2dABjA49hITfIk3YMVc9iJlev0-9vmB7UjmU721Z5LfmY8XYyEbQAzwj52XUiLRtpP2bM4b_3EANiIjzf5wMgFG57qEiYN-GfscWesOr3G1EpzL892mQFmkQswh6K3wbYXZGLd5mzSEBNXGefa4meC_jJJSSIyr01unxfVEvbqGpubC3i3O"/>
+</div>
+<figcaption class="font-serif-delicate italic text-lg text-on-surface">Artisanal mornings at Magnolia</figcaption>
+</div>
+<div class="space-y-4 reveal" style="transition-delay: 400ms;">
+<div class="aspect-[4/5] overflow-hidden card-lift rounded-sm">
+<img alt="Gourmet pastries and coffee" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzWKLm6A35ToSK557QqHEPP1iNAuDdouGhRUabIjYJPNQpoqSjaUdUGOrcT6vktVt7FHwGGrZhOzuLhdi6Scm3diPvCWibBnYK43VnaRNuKLThZsgbZ_J8KAYq3rFUMj1pfuTerx-pfMwgkPzBhhKGNPn1cXbiM9NY7AZ4tdVKJoOlMxfnTdndrMHsx0povxj5ULkyw8JhVGFimWlZu1_GijPpPA-7Y491ZVOM8XkDh6n0B9G4Wzt5Pls1u5I9_iPCx5TLXhIgTYsK"/>
+</div>
+<figcaption class="font-serif-delicate italic text-lg text-on-surface">The legendary Porto's experience</figcaption>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Economic Drivers & Media District -->
+<section class="py-32 overflow-hidden bg-surface">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="relative grid grid-cols-12 gap-8 items-center">
+<div class="col-span-12 lg:col-span-7 image-bleed-left order-2 lg:order-1 reveal">
+<div class="aspect-video relative card-lift overflow-hidden">
+<img alt="Modern media campus" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbd7Zi-TWzY2bEpecZ_ARqP1lH6R041BxTSwWZ2OXc0Pyti_hyVbBX07NtykCKKHTMOFHf8Xqudbq9aNEhEtqVinG_ggF-rC2EQ0Kh_4oYCTQ57XoiOY0hG7MlLbH1r-9w3LGDJTnWrdepKu6Jn6rEz9Uh244ZEnq6B_harQdG2KtOIRMVcE3uqU1dwjPCes_ivay8Y7kGGzyyloMCUSgeVvvao8Iz86mkvM2_lOttFAbHInQbTR_9AohsC-4LrORCf6dIYtwW--1T"/>
+<div class="absolute inset-0 bg-primary/5"></div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-5 lg:pl-16 order-1 lg:order-2 mb-12 lg:mb-0 reveal" style="transition-delay: 200ms;">
+<h2 class="font-serif-delicate text-5xl mb-8 leading-tight">Economic Drivers: The Media District</h2>
+<p class="text-on-surface-variant font-light text-lg mb-8 leading-relaxed">Positioned at the epicenter of global entertainment, 1622 W. Oak St. offers unparalleled proximity to the world's leading creative studios. This is where innovation lives.</p>
+<ul class="space-y-6">
+<li class="flex items-start gap-4 p-4 glass-card-lifestyle rounded-lg transition-all duration-500 hover:bg-white/60">
+<span class="material-symbols-outlined text-primary mt-1">movie</span>
+<div>
+<h5 class="font-semibold text-on-surface">The Walt Disney Studios</h5>
+<p class="text-sm text-secondary">A global landmark of storytelling just minutes away.</p>
+</div>
+</li>
+<li class="flex items-start gap-4 p-4 glass-card-lifestyle rounded-lg transition-all duration-500 hover:bg-white/60">
+<span class="material-symbols-outlined text-primary mt-1">video_library</span>
+<div>
+<h5 class="font-semibold text-on-surface">Warner Bros. Discovery</h5>
+<p class="text-sm text-secondary">A powerhouse of media production and industrial heritage.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Table: Nearby Work Centers -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-4xl mx-auto px-8">
+<div class="text-center mb-16 reveal">
+<span class="text-tertiary text-xs uppercase tracking-[0.3rem]">Commuter Intelligence</span>
+<h3 class="font-serif-delicate text-4xl mt-4">Nearby Work Centers</h3>
+</div>
+<div class="overflow-x-auto reveal" style="transition-delay: 200ms;">
+<div class="glass-panel p-8 rounded-lg">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/30">
+<th class="py-6 font-medium text-xs uppercase tracking-widest text-outline">Destination</th>
+<th class="py-6 font-medium text-xs uppercase tracking-widest text-outline">Travel Time</th>
+<th class="py-6 font-medium text-xs uppercase tracking-widest text-outline">Industry</th>
+</tr>
+</thead>
+<tbody class="text-on-surface">
+<tr class="hover:bg-white/40 transition-colors group">
+<td class="py-8 font-medium group-hover:text-primary transition-colors">Disney Corporate Campus</td>
+<td class="py-8 font-light">6 Mins</td>
+<td class="py-8 text-secondary italic">Entertainment</td>
+</tr>
+<tr class="hover:bg-white/40 transition-colors group">
+<td class="py-8 font-medium group-hover:text-primary transition-colors">Warner Bros. Studios</td>
+<td class="py-8 font-light">8 Mins</td>
+<td class="py-8 text-secondary italic">Production</td>
+</tr>
+<tr class="hover:bg-white/40 transition-colors group">
+<td class="py-8 font-medium group-hover:text-primary transition-colors">Providence St. Joseph Medical Center</td>
+<td class="py-8 font-light">5 Mins</td>
+<td class="py-8 text-secondary italic">Healthcare</td>
+</tr>
+<tr class="hover:bg-white/40 transition-colors group">
+<td class="py-8 font-medium group-hover:text-primary transition-colors">Nickelodeon Animation</td>
+<td class="py-8 font-light">10 Mins</td>
+<td class="py-8 text-secondary italic">Animation</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- Lifestyle Showcase (Asymmetric Layout) -->
+<section class="py-32">
+<div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-4 order-2 md:order-1 reveal">
+<div class="aspect-[3/4] overflow-hidden rounded-sm card-lift">
+<img alt="Sunny morning at a farmer's market" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzsSPt-3SPkJfcCxJbwuI6pwbVEYUMzgljZrj13jX4HgWa9SuNJVTo4MNBgQLSovnS-ZVjqortr4M5R9AdDZc0ZPGmtWOVaz6rkohgJw_tXibRlt8YPxEhnqMiB0dgSilJcQleL3FIXBcd-KnGZTaV4MZldnMKqfheQOtteMtgvUvbFO6B6VhjkSB2-AdzUBZVgamaxrGfLWX5dTI0kHR_HhqzpGcpg2IGUnQWwEWzmkeTNg74BYNKd2dDmcJx-XgmQVYlExsVbVne"/>
+</div>
+</div>
+<div class="md:col-span-8 order-1 md:order-2">
+<div class="max-w-2xl ml-auto">
+<h2 class="font-serif-delicate text-6xl mb-12 leading-none reveal">Walkable District, <br/><span class="italic text-primary">Infinite Discovery</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 reveal" style="transition-delay: 300ms;">
+<div class="p-8 glass-panel rounded-lg card-lift">
+<p class="text-on-surface-variant leading-relaxed font-light">The Oak Street lifestyle is defined by the luxury of choice. Whether it's a brisk walk to the neighborhood park for a morning jog or an evening of curated shopping in Magnolia Park, the city unfolds at your pace.</p>
+</div>
+<div class="p-8 glass-panel rounded-lg card-lift">
+<p class="text-on-surface-variant leading-relaxed font-light">This is a community where the "Economic Drivers" of the world's biggest studios blend seamlessly with the quiet, residential serenity of tree-lined avenues and boutique charm.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low text-primary border-t border-white/20">
+<div class="flex flex-col md:flex-row items-center w-full px-12 py-16 max-w-screen-2xl mx-auto reveal"><div class="flex items-center gap-6 mb-12 md:mb-0">
+<div class="w-24 h-24 rounded-full overflow-hidden border-2 border-white shadow-sm">
+<img alt="Karen Van Ness - Real Estate Agent" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6oq5XeZJ73Eqn6nnCbrLjH8LoUiZPiGCCr_jPHMrgoMiL3BTlT3dITjQMrlsuRmwZNM0su5lJklLLBeJTUdRSrcUQ3hsg7g1lUDPeDUxruA6n0C7GlEZfv4Fs3RaIJ_K4pWXjrBuveDSjLLvN8kiO5OEGilNTM00kR_UKdlBvsJXXXXiPGoqFVaqY0sh0W37oGMmP28EQrMG-7ehAw52BpOdnrhJACvTqTkZrrEgDDHSbJ78o7GNYxd6qZ5SFYA32rVsa5_allvaG"/>
+</div>
+<div>
+<p class="text-tertiary text-[0.6rem] uppercase tracking-widest mb-1 font-medium">Exclusive Listing Agent</p>
+<h4 class="font-serif-delicate text-2xl text-on-surface">Karen Van Ness</h4>
+<p class="text-[10px] uppercase tracking-[0.2rem] text-outline">Luxury Estate Specialist</p>
+</div>
+</div>
+<div class="mb-8 md:mb-0">
+<span class="font-serif text-xl text-slate-800 block mb-2 uppercase tracking-widest">1622 W. Oak St.</span>
+<p class="text-[10px] uppercase tracking-widest text-slate-400">© 2024 1622 W. Oak St. Residential Exhibition. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-slate-400 font-light hover:text-primary transition-all text-xs uppercase tracking-widest border-b border-transparent hover:border-primary pb-1" href="#">Privacy Policy</a>
+<a class="text-slate-400 font-light hover:text-primary transition-all text-xs uppercase tracking-widest border-b border-transparent hover:border-primary pb-1" href="#">Terms of Service</a>
+<a class="text-slate-400 font-light hover:text-primary transition-all text-xs uppercase tracking-widest border-b border-transparent hover:border-primary pb-1" href="#">Accessibility</a>
+<a class="text-slate-400 font-light hover:text-primary transition-all text-xs uppercase tracking-widest border-b border-transparent hover:border-primary pb-1" href="#">Contact</a>
+</div>
+</div>
+<div class="pb-12 text-center opacity-30 text-[10px] tracking-[0.4em] uppercase reveal">
+        Digital Curation for Architectural Living
+    </div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Scroll reveal logic
+        const reveals = document.querySelectorAll('.reveal');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        reveals.forEach(reveal => revealObserver.observe(reveal));
+    });
+</script>
+</body></html>
