@@ -22,6 +22,7 @@ relatedPages:
 relatedPosts: []
 cta: verify
 robots: index,follow
+heroesJourneyShowcase: true
 ---
 
 ## What verification means in Phase 1

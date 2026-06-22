@@ -29,6 +29,7 @@ export interface BlogPost {
   cta: VerificationEntryIntent;
   robots: string;
   body: string;
+  heroesJourneyShowcase: boolean;
 }
 
 const postModules = import.meta.glob('../../content/braveheart/posts/*.md', {
@@ -104,6 +105,7 @@ function parsePost(source: string): BlogPost {
     cta: parseCtaIntent(getStringField(data, 'cta', 'verify')),
     robots: getStringField(data, 'robots', 'index,follow'),
     body,
+    heroesJourneyShowcase: getStringField(data, 'heroesJourneyShowcase', 'false').toLowerCase() === 'true',
   };
 }
 

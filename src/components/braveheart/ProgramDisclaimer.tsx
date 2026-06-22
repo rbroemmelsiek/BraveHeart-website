@@ -6,7 +6,7 @@ const DISCLAIMER =
 export default function ProgramDisclaimer() {
   return (
     <aside
-      className="max-w-4xl mx-auto px-8 mt-16 reveal border border-outline-variant/30 bg-surface-container-low/50 p-6 md:p-8 rounded-sm"
+      className="max-w-4xl mx-auto px-6 md:px-8 mt-12 reveal glass-inset p-6 md:p-8 rounded-xl"
       aria-label="Program disclaimer"
     >
       <p className="text-[10px] uppercase tracking-[0.2em] text-secondary mb-3 font-medium">

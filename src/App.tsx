@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import SEOHead from './components/SEOHead';
@@ -18,16 +18,30 @@ import BlogIndex from './pages/BlogIndex';
 import BlogPost from './pages/BlogPost';
 import TopicArchive from './pages/TopicArchive';
 import { ContactModalProvider } from './context/ContactModalContext';
+import AmbientBackground from './components/braveheart/AmbientBackground';
+import MobileContactBar from './components/braveheart/MobileContactBar';
 
 function AppShell() {
   const location = useLocation();
+
+  useEffect(() => {
+    if (!('scrollRestoration' in window.history)) return;
+    const previous = window.history.scrollRestoration;
+    window.history.scrollRestoration = 'manual';
+    return () => {
+      window.history.scrollRestoration = previous;
+    };
+  }, []);
 
   return (
     <>
       <SEOHead pathname={location.pathname} />
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
-          <Navbar />
+      <AmbientBackground />
+      <Navbar />
+      <MobileContactBar />
+      <div className="ambient-bg flex flex-col flex-grow pb-16 2xl:pb-0">
           <main className="flex-grow">
             <Routes>
               <Route path="/" element={<Home />} />
@@ -54,6 +68,7 @@ function AppShell() {
             </Routes>
           </main>
           <Footer />
+      </div>
       </div>
     </>
   );

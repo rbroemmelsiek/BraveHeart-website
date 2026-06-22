@@ -47,7 +47,7 @@ export default function Home() {
             </p>
           ),
           image: {
-            alt: 'Visual roadmap of the Brave Heart client journey from service to home stability.',
+            alt: "The Hero's Path to Homeownership — Brave Heart client journey from first contact through closing and member benefits.",
             file: 'braveheart-client-heroes-journey.webp',
           },
         },
@@ -90,6 +90,8 @@ export default function Home() {
         { label: 'Savings Comparison', to: '/savings-comparison' },
         { label: 'Our Guarantee', to: '/our-guarantee' },
       ]}
+      showFounderSpotlight
+      showContactSection
     />
   );
 }

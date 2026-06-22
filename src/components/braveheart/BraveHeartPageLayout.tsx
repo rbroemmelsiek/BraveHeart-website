@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import PageSection, { PageSectionData } from './PageSection';
 import ProgramDisclaimer from './ProgramDisclaimer';
 import CtaBlock from './CtaBlock';
+import FounderSpotlight from './FounderSpotlight';
+import ProgramContactSection from './ProgramContactSection';
 import { VerificationEntryIntent } from '../../config/cta';
 
 export interface RelatedLink {
@@ -17,6 +19,8 @@ export interface BraveHeartPageLayoutProps {
   sections?: PageSectionData[];
   relatedLinks?: RelatedLink[];
   showDisclaimer?: boolean;
+  showFounderSpotlight?: boolean;
+  showContactSection?: boolean;
   cta?: {
     primaryLabel?: string;
     primaryIntent?: VerificationEntryIntent;
@@ -37,6 +41,8 @@ export default function BraveHeartPageLayout({
   sections = [],
   relatedLinks = [],
   showDisclaimer = true,
+  showFounderSpotlight = false,
+  showContactSection = false,
   cta,
   legalReviewBanner = false,
 }: BraveHeartPageLayoutProps) {
@@ -54,30 +60,32 @@ export default function BraveHeartPageLayout({
       <main className="pt-48 pb-24">
         {legalReviewBanner && (
           <div className="max-w-4xl mx-auto px-8 mb-8 reveal">
-            <p className="text-center text-xs uppercase tracking-widest text-secondary border border-outline-variant/30 py-3 px-4 rounded-sm bg-surface-container-low/80">
+            <p className="text-center text-xs uppercase tracking-widest text-secondary glass-panel py-3 px-4 rounded-lg">
               Draft for legal and compliance review — not final publication copy.
             </p>
           </div>
         )}
 
-        <div className="max-w-screen-2xl mx-auto px-8">
-          <div className="flex flex-col items-center mb-16 text-center reveal">
-            <span className="text-secondary uppercase text-xs tracking-[0.2rem] mb-6 block font-medium">
+        <div className="max-w-screen-2xl mx-auto px-6 md:px-8">
+          <div className="glass-hero rounded-2xl px-6 py-12 md:px-12 md:py-16 mb-16 text-center reveal editorial-shadow max-w-4xl mx-auto">
+            <span className="text-primary uppercase text-xs tracking-[0.25rem] mb-6 block font-medium">
               {eyebrow}
             </span>
-            <h1 className="font-serif font-light text-4xl md:text-6xl lg:text-7xl text-on-surface leading-tight max-w-4xl">
+            <h1 className="font-serif font-light text-4xl md:text-5xl lg:text-6xl text-on-surface leading-tight">
               {h1}
             </h1>
             {intro && (
-              <div className="mt-8 text-on-surface/80 font-light leading-relaxed max-w-2xl text-lg space-y-4">
+              <div className="mt-8 text-on-surface/85 font-light leading-relaxed max-w-2xl mx-auto text-base md:text-lg space-y-4">
                 {intro}
               </div>
             )}
           </div>
         </div>
 
+        {showFounderSpotlight && <FounderSpotlight />}
+
         {sections.length > 0 && (
-          <section className="max-w-4xl mx-auto px-8 space-y-16">
+          <section className="max-w-4xl mx-auto px-6 md:px-8 space-y-8">
             {sections.map((section, index) => (
               <PageSection key={section.title} section={section} index={index} />
             ))}
@@ -96,6 +104,8 @@ export default function BraveHeartPageLayout({
             tertiaryTo={cta.tertiaryTo}
           />
         )}
+
+        {showContactSection && <ProgramContactSection />}
 
         {relatedLinks.length > 0 && (
           <nav

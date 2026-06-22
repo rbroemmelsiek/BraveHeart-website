@@ -20,14 +20,14 @@ export default function BlogIndex() {
     <div className="min-h-screen flex flex-col">
       <main className="pt-48 pb-24">
         <div className="max-w-screen-2xl mx-auto px-8">
-          <div className="flex flex-col items-center mb-16 text-center reveal">
-            <span className="text-secondary uppercase text-xs tracking-[0.2rem] mb-6 block font-medium">
+          <div className="glass-hero rounded-2xl px-6 py-12 md:px-12 md:py-16 mb-16 text-center reveal editorial-shadow max-w-4xl mx-auto">
+            <span className="text-primary uppercase text-xs tracking-[0.25rem] mb-6 block font-medium">
               Brave Heart First Responders
             </span>
-            <h1 className="font-serif font-light text-4xl md:text-6xl lg:text-7xl text-on-surface leading-tight max-w-4xl">
+            <h1 className="font-serif font-light text-4xl md:text-5xl lg:text-6xl text-on-surface leading-tight">
               Program Guidance and Updates
             </h1>
-            <p className="mt-8 text-on-surface/80 font-light leading-relaxed max-w-2xl text-lg">
+            <p className="mt-8 text-on-surface/85 font-light leading-relaxed max-w-2xl mx-auto text-base md:text-lg">
               Published articles for eligible first responders and military members exploring
               program information, eligibility context, and transaction-support topics.
             </p>
@@ -43,7 +43,7 @@ export default function BlogIndex() {
             posts.map((post) => (
               <article
                 key={post.slug}
-                className="reveal border border-outline-variant/20 rounded-sm bg-surface-container-low/40 p-8"
+                className="reveal glass-panel rounded-xl p-8 card-lift editorial-shadow"
               >
                 <div className="flex flex-wrap items-center gap-3 text-[10px] uppercase tracking-[0.18em] text-secondary mb-4">
                   <time dateTime={post.date}>{formatDate(post.date)}</time>

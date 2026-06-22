@@ -27,12 +27,13 @@ export default function CtaBlock({
   const { openVerificationEntry } = useVerificationEntry();
 
   const buttonClass =
-    'bg-primary text-on-primary px-8 py-4 rounded-sm uppercase text-xs tracking-widest font-medium hover:opacity-90 transition-opacity shadow-lg shadow-primary/20 w-full sm:w-auto text-center';
+    'btn-primary text-on-primary px-8 py-4 rounded-lg uppercase text-xs tracking-widest font-medium hover:opacity-95 transition-all w-full sm:w-auto text-center';
   const secondaryLinkClass =
-    'border border-primary/30 text-primary px-8 py-4 rounded-sm uppercase text-xs tracking-widest font-medium hover:bg-primary/5 transition-colors w-full sm:w-auto text-center';
+    'btn-glass text-primary px-8 py-4 rounded-lg uppercase text-xs tracking-widest font-medium transition-all w-full sm:w-auto text-center';
 
   return (
-    <div className="max-w-4xl mx-auto px-8 mt-16 reveal flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center">
+    <div className="max-w-4xl mx-auto px-6 md:px-8 mt-12 reveal">
+      <div className="glass-panel rounded-xl p-8 md:p-10 editorial-shadow flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center">
       <button
         type="button"
         onClick={() => openVerificationEntry(primaryIntent)}
@@ -64,6 +65,7 @@ export default function CtaBlock({
           {tertiaryLabel}
         </Link>
       )}
+      </div>
     </div>
   );
 }

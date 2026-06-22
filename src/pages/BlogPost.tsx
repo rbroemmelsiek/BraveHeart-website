@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import CtaBlock from '../components/braveheart/CtaBlock';
 import ProgramDisclaimer from '../components/braveheart/ProgramDisclaimer';
 import BraveHeartImage from '../components/braveheart/BraveHeartImage';
+import HeroesJourneyShowcase from '../components/braveheart/HeroesJourneyShowcase';
 import {
   getPublishedPostBySlug,
   getRelatedPageLabel,
@@ -59,8 +60,8 @@ export default function BlogPost() {
     <div className="min-h-screen flex flex-col">
       <main className="pt-48 pb-24">
         <article className="max-w-4xl mx-auto px-8">
-          <header className="text-center mb-12 reveal">
-            <span className="text-secondary uppercase text-xs tracking-[0.2rem] mb-6 block font-medium">
+          <header className="glass-hero rounded-2xl px-6 py-10 md:px-12 md:py-14 text-center mb-12 reveal editorial-shadow">
+            <span className="text-primary uppercase text-xs tracking-[0.25rem] mb-6 block font-medium">
               Brave Heart Blog
             </span>
             <h1 className="font-serif font-light text-4xl md:text-5xl lg:text-6xl text-on-surface leading-tight mb-6">
@@ -112,7 +113,7 @@ export default function BlogPost() {
             )}
           </header>
 
-          {(post.ogImage || post.shareImage) && (
+          {(post.ogImage || post.shareImage) && !post.heroesJourneyShowcase && (
             <div className="mb-12 reveal">
               <BraveHeartImage
                 file={post.shareImage || post.ogImage}
@@ -122,7 +123,13 @@ export default function BlogPost() {
             </div>
           )}
 
-          <div className="reveal">
+          {post.heroesJourneyShowcase && (
+            <div className="mb-12">
+              <HeroesJourneyShowcase />
+            </div>
+          )}
+
+          <div className="reveal glass-panel rounded-xl p-6 md:p-10 editorial-shadow">
             <MarkdownBody content={post.body} />
           </div>
 

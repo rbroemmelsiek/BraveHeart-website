@@ -38,7 +38,7 @@ missing          — referenced in docs but not on disk
 | Asset ID | Production Filename | Production Path | Dimensions | Alt Text | Page | Section | Status |
 |---|---|---|---|---|---|---|---|
 | hero-benefits | first-responder-real-estate-benefits.webp | public/assets/images/braveheart/ | 1376×768 | First responder family on a home porch representing real estate benefits for public safety and military households. | Home | Benefits Inside the Transaction | implemented |
-| client-roadmap | braveheart-client-heroes-journey.webp | public/assets/images/braveheart/ | 2752×1536 | Visual roadmap of the Brave Heart client journey from service sacrifice to home stability. | Home | Client Lifecycle Roadmap | implemented |
+| client-roadmap | braveheart-client-heroes-journey.webp | public/assets/images/braveheart/ | 1382×769 | The Hero's Path to Homeownership — Brave Heart client journey from first contact through closing and member benefits. | Home | Client Lifecycle Roadmap | implemented |
 | ai-guardian | ai-guardian-team-real-estate-support.webp | public/assets/images/braveheart/ | 1376×768 | Three-panel visual showing AI-assisted real estate support for ethics, forms, and guidance. | Home | HomeToHome-Powered Support | implemented |
 | legacy-support | braveheart-legacy-of-support-history.webp | public/assets/images/braveheart/ | 1376×768 | Historical timeline graphic highlighting a legacy of support since 1997. | Our Story | Legacy of Support | implemented |
 | founder-history | police-history-generational-wealth.webp | public/assets/images/braveheart/ | 1376×768 | Evolution from historical policing to modern badge emphasizing generational wealth and stability. | Our Story | Founder Origin | implemented |
@@ -63,7 +63,7 @@ missing          — referenced in docs but not on disk
 | Asset ID | Original File | Format | Notes |
 |---|---|---|---|
 | hero-benefits | public/assets/first-responder-real-estate-benefits.png | PNG | Preserved |
-| client-roadmap | public/assets/BraveHeartHerosJourney.webp | WebP | Preserved |
+| client-roadmap | public/assets/images/braveheart/braveheart-client-heroes-journey.png | PNG | Preserved — run `npm run images:braveheart` to regenerate WebP |
 | legacy-support | public/assets/braveheart-legacy-of-support-history.png | PNG | Preserved |
 | ai-guardian | public/assets/ai-guardian-team-real-estate-support.png | PNG | Preserved |
 | secure-verification | public/assets/braveheart-hometohome-secure-verification.png | PNG | Preserved |

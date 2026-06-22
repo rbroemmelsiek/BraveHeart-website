@@ -33,6 +33,11 @@ const ASSETS = [
   { source: 'Brave Heart Logo 2.png', target: 'brave-heart-logo-landscape.webp', action: 'convert' },
   { source: 'icon-final.png', target: 'braveheart-icon.webp', action: 'convert' },
   { source: 'BraveHeartHerosJourney.webp', target: 'braveheart-client-heroes-journey.webp', action: 'copy-reencode' },
+  {
+    source: 'images/braveheart/braveheart-client-heroes-journey.png',
+    target: 'braveheart-client-heroes-journey.webp',
+    action: 'convert',
+  },
   { source: 'Brave Heart LogoDarkSqu.webp', target: 'brave-heart-logo-square.webp', action: 'copy-reencode' },
 ];
 

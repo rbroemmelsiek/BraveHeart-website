@@ -14,14 +14,14 @@ export default function BraveHeartImage({
   className = '',
 }: BraveHeartImageProps) {
   return (
-    <figure className={`w-full reveal ${className}`.trim()}>
+    <figure className={`w-full reveal image-zoom ${className}`.trim()}>
       <img
         src={braveheartImageSrc(file)}
         alt={alt}
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
         fetchPriority={priority ? 'high' : 'auto'}
-        className="w-full h-auto rounded-sm border border-outline-variant/20 editorial-shadow"
+        className="w-full h-auto rounded-md"
       />
     </figure>
   );

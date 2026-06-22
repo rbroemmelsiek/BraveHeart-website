@@ -1,13 +1,34 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useVerificationEntry } from '../context/ContactModalContext';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { braveheartImageSrc } from '../lib/braveheartAssets';
+import { CONTACT_SECTION_ID } from '../config/contact';
+import { scrollToHashTarget } from '../lib/scrollToHashTarget';
+
+const contactTarget = { pathname: '/', hash: `#${CONTACT_SECTION_ID}` } as const;
 
 export default function Footer() {
-  const { openVerificationEntry } = useVerificationEntry();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleContactClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+
+    if (
+      location.pathname === contactTarget.pathname &&
+      (location.hash === contactTarget.hash || window.location.hash === contactTarget.hash)
+    ) {
+      scrollToHashTarget(CONTACT_SECTION_ID);
+      return;
+    }
+
+    navigate(contactTarget);
+    [100, 300, 600, 1000, 1500].forEach((delay) => {
+      window.setTimeout(() => scrollToHashTarget(CONTACT_SECTION_ID), delay);
+    });
+  };
 
   return (
-    <footer className="bg-surface-container-low w-full py-16 md:py-20 px-6 md:px-12 border-t border-outline-variant/10">
+    <footer className="glass-nav w-full py-16 md:py-20 px-6 md:px-12 mt-auto">
       <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-12 w-full max-w-[1920px] mx-auto reveal text-center md:text-left">
         <div className="flex flex-col gap-4 items-center md:items-start">
           <img
@@ -35,13 +56,13 @@ export default function Footer() {
             <Link className="text-on-surface-variant hover:text-primary transition-colors" to="/accessibility">
               Accessibility
             </Link>
-            <button
-              type="button"
+            <Link
               className="text-on-surface-variant hover:text-primary transition-colors"
-              onClick={() => openVerificationEntry('contact')}
+              to={contactTarget}
+              onClick={handleContactClick}
             >
               Contact
-            </button>
+            </Link>
           </div>
           <div className="font-['Work_Sans'] text-[10px] uppercase tracking-[0.15em] text-secondary text-center md:text-right mt-4 md:mt-0">
             © 2026 Brave Heart First Responders. All rights reserved.

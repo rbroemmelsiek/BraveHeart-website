@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useId, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { braveheartImageSrc } from '../../lib/braveheartAssets';
 import {
   CTA_CONFIG,
@@ -96,9 +97,9 @@ export default function VerificationEntryModal({
   const fieldClass =
     'w-full bg-surface-container-low border border-outline-variant/30 rounded-sm px-4 py-3 text-on-surface text-sm font-light focus:outline-none focus:border-primary/50 transition-colors';
 
-  return (
+  const modal = (
     <div
-      className="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-[10050] bg-black/80 flex items-start justify-center pt-24 lg:pt-28 px-4 pb-4 backdrop-blur-sm overflow-y-auto"
       onClick={resetAndClose}
       role="presentation"
     >
@@ -108,7 +109,7 @@ export default function VerificationEntryModal({
         aria-modal="true"
         aria-labelledby={titleId}
         aria-describedby={descriptionId}
-        className="bg-surface border border-outline-variant/20 p-6 md:p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto rounded-sm shadow-2xl relative"
+        className="bg-surface border border-outline-variant/20 p-6 md:p-8 max-w-lg w-full max-h-[calc(100vh-7.5rem)] overflow-y-auto rounded-sm shadow-2xl relative my-auto"
         onClick={(event) => event.stopPropagation()}
       >
         <button
@@ -350,4 +351,6 @@ export default function VerificationEntryModal({
       </div>
     </div>
   );
+
+  return typeof document !== 'undefined' ? createPortal(modal, document.body) : modal;
 }
