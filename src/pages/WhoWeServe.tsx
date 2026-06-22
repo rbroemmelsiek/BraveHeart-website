@@ -33,7 +33,7 @@ export default function WhoWeServe() {
           ],
           image: {
             alt: 'Mobile verification interface protected by digital security symbols.',
-            plannedFile: 'braveheart-hometohome-secure-verification.webp',
+            file: 'braveheart-hometohome-secure-verification.webp',
           },
         },
         {
@@ -63,8 +63,7 @@ export default function WhoWeServe() {
           ),
           image: {
             alt: 'TalentScout AI diagram connecting a service profile to a vetted real estate specialist.',
-            plannedFile: 'talentscout-ai-agent-matching-system.webp',
-            label: 'Visual asset — Plan 03',
+            file: 'talentscout-ai-agent-matching-system.webp',
           },
         },
       ]}

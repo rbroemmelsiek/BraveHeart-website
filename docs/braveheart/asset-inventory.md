@@ -16,61 +16,83 @@ public/assets/images/braveheart/
 public/assets/images/braveheart/inbox/
 ```
 
-## Current On-Disk Location (Pre-Normalization)
+## Source Path (Preserved)
 
-Brave Heart source files currently live at **`public/assets/`** (repo root of assets folder). Production path and inbox are not yet populated with converted assets. Inbox contains only `.gitkeep`.
+Original PNG/WebP sources remain at **`public/assets/`** until owner approves deletion.
 
 ## Status Values
 
 ```text
 raw              — source PNG/JPG on disk, not yet at production path
-converted        — WebP exists (may still be at legacy path)
+converted        — WebP exists at production path, not yet referenced in React
 needs-review     — placement or filename requires owner decision
-approved         — ready for plan 03 conversion/insertion
-implemented      — referenced in React pages
+approved         — ready for insertion
+implemented      — referenced in React pages or global chrome
 retired          — listing-site legacy; do not use
 duplicate        — redundant copy of another asset
 missing          — referenced in docs but not on disk
 ```
 
-## Asset Registry (Reconciled 2026-06-21)
+## Asset Registry (Plan 03 — 2026-06-21)
 
-| Asset ID | On-Disk File (Current) | Target Production Filename | Page | Section | Alt Text | Status |
-|---|---|---|---|---|---|---|
-| hero-benefits | `public/assets/first-responder-real-estate-benefits.png` | `first-responder-real-estate-benefits.webp` | Home | Hero | First responder family on a home porch representing real estate benefits for public safety and military households. | raw |
-| client-roadmap | `public/assets/BraveHeartHerosJourney.webp` | `braveheart-client-heroes-journey.webp` | Home | Lifecycle Roadmap | Visual roadmap of the Brave Heart client journey from service sacrifice to home stability. | converted |
-| legacy-support | `public/assets/braveheart-legacy-of-support-history.png` | `braveheart-legacy-of-support-history.webp` | Our Story | Legacy Timeline | Historical timeline graphic highlighting a legacy of support since 1997. | raw |
-| ai-guardian | `public/assets/ai-guardian-team-real-estate-support.png` | `ai-guardian-team-real-estate-support.webp` | Home | Tech-Enabled Support | Three-panel visual showing AI-assisted real estate support for ethics, forms, and guidance. | raw |
-| secure-verification | `public/assets/braveheart-hometohome-secure-verification.png` | `braveheart-hometohome-secure-verification.webp` | Who We Serve | Verification | Mobile verification interface protected by digital security symbols. | raw |
-| talentscout-matching | `public/assets/talentscout-ai-agent-matching-system.png` | `talentscout-ai-agent-matching-system.webp` | Who We Serve | Agent Matching | TalentScout AI diagram connecting an officer profile to a vetted real estate specialist. | raw |
-| escrow-precision | `public/assets/automated-escrow-title-closing-precision.png` | `automated-escrow-title-closing-precision.webp` | Home / Service Lines | Transaction Flow | Step process tracker showing coordinated escrow, title, and closing precision. | raw |
-| brokerage-lender-credit | `public/assets/major-transaction-savings-brokerage-lender.png` | `major-transaction-savings-brokerage-lender.webp` | Service Lines | Primary Transaction Credits | Graphic showing brokerage and lender credit benefits in a real estate transaction. | raw |
-| aggregation-benefits | `public/assets/real-estate-power-of-aggregation-benefits.png` | `real-estate-power-of-aggregation-benefits.webp` | Savings Comparison | Aggregation | Network diagram showing real estate benefits aggregated across providers. | raw |
-| impact-ledger | `public/assets/real-world-impact-benefit-credit-example.png` | `real-world-impact-benefit-credit-example.webp` | Savings Comparison | Financial Example | Example purchase ledger showing stacked real estate benefit credits. | raw |
-| reduced-costs | `public/assets/reduced-closing-costs-discounts.png` | `reduced-closing-costs-discounts.webp` | Service Lines | Settlement Extensions | Settlement fee breakdown showing escrow, title, disclosure, and inspection savings. | raw |
-| lifecycle-benefits | `public/assets/comprehensive-lifecycle-real-estate-benefits.png` | `comprehensive-lifecycle-real-estate-benefits.webp` | Service Lines / Our Guarantee | Lifecycle Support | Comprehensive lifecycle benefits including warranty, exchange, referral, and inspection support. | raw |
-| testimonial | `public/assets/first-responder-testimonial-captain-lopez.png` | `first-responder-testimonial-captain-lopez.webp` | Case Studies | Peer Endorsement | First responder testimonial image representing program results. | raw |
-| founder-history | `public/assets/police-history-generational-wealth.png` | `police-history-generational-wealth.webp` | Our Story | Founder Origin | Evolution from historical policing to modern badge emphasizing generational wealth and stability. | raw |
-| guarantee-list | `public/assets/braveheart-advantage-benefits-list.png` | `braveheart-advantage-benefits-list.webp` | Our Guarantee | Accountability | Checklist of the Braveheart Advantage highlighting credits, discounts, and AI matching. | raw |
-| app-qr-signup | `public/assets/braveheart-app-qr-code-signup.png` | `braveheart-app-qr-code-signup.webp` | Global / Home | CTA | QR code and smartphone displaying Braveheart HomeToHome app for eligibility verification. | raw |
-| logo-landscape | `public/assets/Brave Heart Logo 2.png` | `brave-heart-logo-landscape.webp` | Global | Navbar/Footer | Brave Heart First Responders landscape logo. | raw |
-| logo-square | `public/assets/Brave Heart LogoDarkSqu.webp` | `brave-heart-logo-square.webp` | Global | Favicon/Icon | Square Brave Heart shield logo. | converted |
-| icon-final | `public/assets/icon-final.png` | `braveheart-icon.webp` | Global | Favicon/Icon | Brave Heart program icon. | raw |
-| listing-agent-photo | `public/assets/Karen2-250px.webp` | — | — | — | Listing-site agent portrait (legacy). | retired |
+| Asset ID | Production Filename | Production Path | Dimensions | Alt Text | Page | Section | Status |
+|---|---|---|---|---|---|---|---|
+| hero-benefits | first-responder-real-estate-benefits.webp | public/assets/images/braveheart/ | 1376×768 | First responder family on a home porch representing real estate benefits for public safety and military households. | Home | Benefits Inside the Transaction | implemented |
+| client-roadmap | braveheart-client-heroes-journey.webp | public/assets/images/braveheart/ | 2752×1536 | Visual roadmap of the Brave Heart client journey from service sacrifice to home stability. | Home | Client Lifecycle Roadmap | implemented |
+| ai-guardian | ai-guardian-team-real-estate-support.webp | public/assets/images/braveheart/ | 1376×768 | Three-panel visual showing AI-assisted real estate support for ethics, forms, and guidance. | Home | HomeToHome-Powered Support | implemented |
+| legacy-support | braveheart-legacy-of-support-history.webp | public/assets/images/braveheart/ | 1376×768 | Historical timeline graphic highlighting a legacy of support since 1997. | Our Story | Legacy of Support | implemented |
+| founder-history | police-history-generational-wealth.webp | public/assets/images/braveheart/ | 1376×768 | Evolution from historical policing to modern badge emphasizing generational wealth and stability. | Our Story | Founder Origin | implemented |
+| secure-verification | braveheart-hometohome-secure-verification.webp | public/assets/images/braveheart/ | 1376×768 | Mobile verification interface protected by digital security symbols. | Who We Serve | Eligibility Categories | implemented |
+| talentscout-matching | talentscout-ai-agent-matching-system.webp | public/assets/images/braveheart/ | 1376×768 | TalentScout AI diagram connecting an officer profile to a vetted real estate specialist. | Who We Serve | Professional Matching | implemented |
+| aggregation-benefits | real-estate-power-of-aggregation-benefits.webp | public/assets/images/braveheart/ | 1376×768 | Network diagram showing real estate benefits aggregated across providers. | Savings Comparison | How Stacked Benefits Work | implemented |
+| impact-ledger | real-world-impact-benefit-credit-example.webp | public/assets/images/braveheart/ | 1376×768 | Example purchase ledger showing stacked real estate benefit credits. | Savings Comparison | Illustrative Comparison | implemented |
+| brokerage-lender-credit | major-transaction-savings-brokerage-lender.webp | public/assets/images/braveheart/ | 1376×768 | Graphic showing brokerage and lender credit benefits in a real estate transaction. | Service Lines | Core Transaction Credits | implemented |
+| reduced-costs | reduced-closing-costs-discounts.webp | public/assets/images/braveheart/ | 1376×768 | Settlement fee breakdown showing escrow, title, disclosure, and inspection savings. | Service Lines | Settlement and Closing Services | implemented |
+| lifecycle-benefits | comprehensive-lifecycle-real-estate-benefits.webp | public/assets/images/braveheart/ | 1376×768 | Comprehensive lifecycle benefits including warranty, exchange, referral, and inspection support. | Service Lines | Lifecycle and Extended Support | implemented |
+| escrow-precision | automated-escrow-title-closing-precision.webp | public/assets/images/braveheart/ | 1376×768 | Step process tracker showing coordinated escrow, title, and closing precision. | Service Lines | Coordinated Transaction Flow | implemented |
+| guarantee-list | braveheart-advantage-benefits-list.webp | public/assets/images/braveheart/ | 1376×768 | Checklist of the Braveheart Advantage highlighting credits, discounts, and AI matching. | Our Guarantee | Service Standards | implemented |
+| testimonial | first-responder-testimonial-captain-lopez.webp | public/assets/images/braveheart/ | 1376×768 | First responder testimonial image representing program results. | Case Studies | Peer Endorsement Placeholder | implemented |
+| logo-landscape | brave-heart-logo-landscape.webp | public/assets/images/braveheart/ | 1408×768 | Brave Heart First Responders landscape logo. | Global | Navbar/Footer | implemented |
+| icon-final | braveheart-icon.webp | public/assets/images/braveheart/ | 2048×2048 | Brave Heart program icon. | Global | Favicon | implemented |
+| logo-square | brave-heart-logo-square.webp | public/assets/images/braveheart/ | 1408×1408 | Square Brave Heart shield logo. | Global | OG/social (Plan 05) | converted |
+| app-qr-signup | braveheart-app-qr-code-signup.webp | public/assets/images/braveheart/ | 1376×768 | QR code and smartphone displaying Braveheart HomeToHome app for eligibility verification. | Global | CTA | converted |
+| listing-agent-photo | — | public/assets/Karen2-250px.webp | — | Listing-site agent portrait (legacy). | — | — | retired |
 
-## Gaps and Mismatches
+## Source Files (Preserved)
+
+| Asset ID | Original File | Format | Notes |
+|---|---|---|---|
+| hero-benefits | public/assets/first-responder-real-estate-benefits.png | PNG | Preserved |
+| client-roadmap | public/assets/BraveHeartHerosJourney.webp | WebP | Preserved |
+| legacy-support | public/assets/braveheart-legacy-of-support-history.png | PNG | Preserved |
+| ai-guardian | public/assets/ai-guardian-team-real-estate-support.png | PNG | Preserved |
+| secure-verification | public/assets/braveheart-hometohome-secure-verification.png | PNG | Preserved |
+| talentscout-matching | public/assets/talentscout-ai-agent-matching-system.png | PNG | Preserved |
+| escrow-precision | public/assets/automated-escrow-title-closing-precision.png | PNG | Preserved |
+| brokerage-lender-credit | public/assets/major-transaction-savings-brokerage-lender.png | PNG | Preserved |
+| aggregation-benefits | public/assets/real-estate-power-of-aggregation-benefits.png | PNG | Preserved |
+| impact-ledger | public/assets/real-world-impact-benefit-credit-example.png | PNG | Preserved |
+| reduced-costs | public/assets/reduced-closing-costs-discounts.png | PNG | Preserved |
+| lifecycle-benefits | public/assets/comprehensive-lifecycle-real-estate-benefits.png | PNG | Preserved |
+| testimonial | public/assets/first-responder-testimonial-captain-lopez.png | PNG | Preserved |
+| founder-history | public/assets/police-history-generational-wealth.png | PNG | Preserved |
+| guarantee-list | public/assets/braveheart-advantage-benefits-list.png | PNG | Preserved |
+| app-qr-signup | public/assets/braveheart-app-qr-code-signup.png | PNG | Preserved |
+| logo-landscape | public/assets/Brave Heart Logo 2.png | PNG | Preserved |
+| logo-square | public/assets/Brave Heart LogoDarkSqu.webp | WebP | Preserved |
+| icon-final | public/assets/icon-final.png | PNG | Preserved |
+
+## Gaps and Deferred Items
 
 | Issue | Detail |
 |---|---|
-| Production path empty | `public/assets/images/braveheart/` has no WebP output files yet. |
-| Filename spaces | `Brave Heart Logo 2.png` must be normalized before public URLs (plan 03). |
-| Journey filename drift | On-disk `BraveHeartHerosJourney.webp` vs manifest `braveheart-client-heroes-journey.jpg` — reconcile target SEO name in plan 03. |
-| Logo target names | Inventory previously used spaced names (`Brave Heart Logo 2.webp`); normalize to kebab-case. |
-| Listing images missing | 22 unique root-level `/ *.webp` paths referenced in `src/pages/` — files not in repo (see inspection note §6). |
-| Karen2 path mismatch | File exists at `public/assets/Karen2-250px.webp` but pages reference `/Karen2-250px.webp` (public root) — broken either way after Brave Heart conversion. |
+| App QR CTA | `braveheart-app-qr-code-signup.webp` converted but not wired — Plan 04 CTA entry. |
+| Square logo OG | `brave-heart-logo-square.webp` ready for Plan 05 Open Graph metadata. |
+| Compliance-sensitive graphics | Savings example, discount breakdown, guarantee checklist, testimonial — shown with editorial/compliance flags in copy. |
+| Listing legacy | `Karen2-250px.webp` retained at source path; not referenced by active routes. |
 
 ## Notes
 
-- Do not implement React image paths until WebP files exist at the production path and status is `approved` or above.
-- Original PNG deletion is prohibited until owner approval (plan 03).
-- Reconcile placement of `escrow-precision`, `lifecycle-benefits`, and `talentscout-matching` with content map during plan 02.
+- All public route images use production WebP paths via `src/lib/braveheartAssets.ts`.
+- Original PNG deletion is prohibited until owner approval.
+- Conversion script: `npm run images:braveheart`.

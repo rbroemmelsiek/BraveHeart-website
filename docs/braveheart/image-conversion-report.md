@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Record image conversion results. Cursor should update this after converting new images to WebP (plan 03).
+Record image conversion results. Updated after Plan 03 WebP conversion (2026-06-21).
 
 ## Conversion Defaults
 
@@ -12,45 +12,48 @@ Quality: 82 default
 Dimensions: preserve original
 Upscaling: prohibited unless explicitly requested
 Original deletion: prohibited until approved
+Tool: Sharp via npm run images:braveheart
+Output: public/assets/images/braveheart/
 ```
 
-## Normalization Status (Plan 00 — 2026-06-21)
+## Normalization Status (Plan 03 — 2026-06-21)
 
-- **Conversion not started.** All Brave Heart marketing assets remain PNG at `public/assets/` except two partial WebPs.
-- Production output path `public/assets/images/braveheart/` is empty.
-- Inbox `public/assets/images/braveheart/inbox/` contains only `.gitkeep`.
-- Plan 03 will populate conversion rows below and update file sizes/dimensions.
+- **Conversion complete.** 19 production WebP files written to `public/assets/images/braveheart/`.
+- All PNG sources preserved at `public/assets/`.
+- Existing partial WebPs relocated and re-encoded to kebab-case production names.
+- `Karen2-250px.webp` retired — not converted.
+- Re-run: `npm run images:braveheart` (reads `scripts/convert-braveheart-images.mjs`).
 
 ## Source Inventory Summary
 
 | Category | Count | Location |
 |---|---:|---|
 | PNG sources (Brave Heart) | 16 | `public/assets/*.png` |
-| WebP partial (Brave Heart) | 2 | `public/assets/BraveHeartHerosJourney.webp`, `Brave Heart LogoDarkSqu.webp` |
+| WebP partial (Brave Heart) | 2 | `public/assets/BraveHeartHerosJourney.webp`, `public/assets/Brave Heart LogoDarkSqu.webp` |
 | Retired listing asset | 1 | `public/assets/Karen2-250px.webp` |
-| Production WebP output | 0 | `public/assets/images/braveheart/` |
+| Production WebP output | 19 | `public/assets/images/braveheart/` |
 
 ## Conversion Table
 
 | Original File | Original Format | Original Dimensions | Original Size | WebP File | WebP Size | Status | Notes |
 |---|---|---:|---:|---|---:|---|---|
-| first-responder-real-estate-benefits.png | PNG | TBD | TBD | first-responder-real-estate-benefits.webp | TBD | Not started | Source at public/assets/ |
-| braveheart-legacy-of-support-history.png | PNG | TBD | TBD | braveheart-legacy-of-support-history.webp | TBD | Not started | Source at public/assets/ |
-| ai-guardian-team-real-estate-support.png | PNG | TBD | TBD | ai-guardian-team-real-estate-support.webp | TBD | Not started | Source at public/assets/ |
-| braveheart-hometohome-secure-verification.png | PNG | TBD | TBD | braveheart-hometohome-secure-verification.webp | TBD | Not started | Source at public/assets/ |
-| talentscout-ai-agent-matching-system.png | PNG | TBD | TBD | talentscout-ai-agent-matching-system.webp | TBD | Not started | Source at public/assets/ |
-| automated-escrow-title-closing-precision.png | PNG | TBD | TBD | automated-escrow-title-closing-precision.webp | TBD | Not started | Source at public/assets/ |
-| major-transaction-savings-brokerage-lender.png | PNG | TBD | TBD | major-transaction-savings-brokerage-lender.webp | TBD | Not started | Source at public/assets/ |
-| real-estate-power-of-aggregation-benefits.png | PNG | TBD | TBD | real-estate-power-of-aggregation-benefits.webp | TBD | Not started | Source at public/assets/ |
-| real-world-impact-benefit-credit-example.png | PNG | TBD | TBD | real-world-impact-benefit-credit-example.webp | TBD | Not started | Source at public/assets/ |
-| reduced-closing-costs-discounts.png | PNG | TBD | TBD | reduced-closing-costs-discounts.webp | TBD | Not started | Source at public/assets/ |
-| comprehensive-lifecycle-real-estate-benefits.png | PNG | TBD | TBD | comprehensive-lifecycle-real-estate-benefits.webp | TBD | Not started | Source at public/assets/ |
-| first-responder-testimonial-captain-lopez.png | PNG | TBD | TBD | first-responder-testimonial-captain-lopez.webp | TBD | Not started | Source at public/assets/ |
-| police-history-generational-wealth.png | PNG | TBD | TBD | police-history-generational-wealth.webp | TBD | Not started | Source at public/assets/ |
-| braveheart-advantage-benefits-list.png | PNG | TBD | TBD | braveheart-advantage-benefits-list.webp | TBD | Not started | Source at public/assets/ |
-| braveheart-app-qr-code-signup.png | PNG | TBD | TBD | braveheart-app-qr-code-signup.webp | TBD | Not started | Source at public/assets/ |
-| Brave Heart Logo 2.png | PNG | TBD | TBD | brave-heart-logo-landscape.webp | TBD | Not started | Normalize spaced filename |
-| icon-final.png | PNG | TBD | TBD | braveheart-icon.webp | TBD | Not started | Favicon candidate |
-| BraveHeartHerosJourney.webp | WebP | TBD | TBD | braveheart-client-heroes-journey.webp | TBD | Not started | Relocate/rename to production path |
-| Brave Heart LogoDarkSqu.webp | WebP | TBD | TBD | brave-heart-logo-square.webp | TBD | Not started | Relocate/rename to production path |
-| Karen2-250px.webp | WebP | TBD | TBD | — | — | Retired | Listing-site legacy; do not convert |
+| first-responder-real-estate-benefits.png | PNG | 1376×768 | 1.31 MB | first-responder-real-estate-benefits.webp | 85.0 KB | Complete | Home hero/benefits |
+| braveheart-legacy-of-support-history.png | PNG | 1376×768 | 1.25 MB | braveheart-legacy-of-support-history.webp | 78.3 KB | Complete | Our Story legacy |
+| ai-guardian-team-real-estate-support.png | PNG | 1376×768 | 1.12 MB | ai-guardian-team-real-estate-support.webp | 82.7 KB | Complete | Home HomeToHome support |
+| braveheart-hometohome-secure-verification.png | PNG | 1376×768 | 1.09 MB | braveheart-hometohome-secure-verification.webp | 42.3 KB | Complete | Who We Serve verification |
+| talentscout-ai-agent-matching-system.png | PNG | 1376×768 | 1.05 MB | talentscout-ai-agent-matching-system.webp | 69.3 KB | Complete | Who We Serve matching |
+| automated-escrow-title-closing-precision.png | PNG | 1376×768 | 1.16 MB | automated-escrow-title-closing-precision.webp | 73.5 KB | Complete | Service Lines flow |
+| major-transaction-savings-brokerage-lender.png | PNG | 1376×768 | 1.13 MB | major-transaction-savings-brokerage-lender.webp | 60.6 KB | Complete | Service Lines credits |
+| real-estate-power-of-aggregation-benefits.png | PNG | 1376×768 | 1009.0 KB | real-estate-power-of-aggregation-benefits.webp | 55.8 KB | Complete | Savings aggregation |
+| real-world-impact-benefit-credit-example.png | PNG | 1376×768 | 903.5 KB | real-world-impact-benefit-credit-example.webp | 51.1 KB | Complete | Savings example — compliance review |
+| reduced-closing-costs-discounts.png | PNG | 1376×768 | 1.17 MB | reduced-closing-costs-discounts.webp | 68.7 KB | Complete | Service Lines settlement |
+| comprehensive-lifecycle-real-estate-benefits.png | PNG | 1376×768 | 1.16 MB | comprehensive-lifecycle-real-estate-benefits.webp | 65.9 KB | Complete | Service Lines lifecycle |
+| first-responder-testimonial-captain-lopez.png | PNG | 1376×768 | 1.15 MB | first-responder-testimonial-captain-lopez.webp | 56.5 KB | Complete | Case Studies — pending verification |
+| police-history-generational-wealth.png | PNG | 1376×768 | 906.2 KB | police-history-generational-wealth.webp | 45.7 KB | Complete | Our Story founder |
+| braveheart-advantage-benefits-list.png | PNG | 1376×768 | 986.6 KB | braveheart-advantage-benefits-list.webp | 54.4 KB | Complete | Our Guarantee — compliance review |
+| braveheart-app-qr-code-signup.png | PNG | 1376×768 | 1.07 MB | braveheart-app-qr-code-signup.webp | 47.1 KB | Complete | Deferred to Plan 04 CTA |
+| Brave Heart Logo 2.png | PNG | 1408×768 | 1.65 MB | brave-heart-logo-landscape.webp | 52.2 KB | Complete | Navbar/footer logo |
+| icon-final.png | PNG | 2048×2048 | 1.41 MB | braveheart-icon.webp | 50.1 KB | Complete | Favicon |
+| BraveHeartHerosJourney.webp | WebP | 2752×1536 | 267.8 KB | braveheart-client-heroes-journey.webp | 294.7 KB | Complete | Relocated/re-encoded |
+| Brave Heart LogoDarkSqu.webp | WebP | 1408×1408 | 49.9 KB | brave-heart-logo-square.webp | 55.5 KB | Complete | OG/social candidate |
+| Karen2-250px.webp | WebP | — | 6.8 KB | — | — | Retired | Listing-site legacy; do not convert |

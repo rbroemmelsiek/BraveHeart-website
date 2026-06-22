@@ -26,7 +26,7 @@ export default function SavingsComparison() {
           ),
           image: {
             alt: 'Network diagram showing real estate benefits aggregated across providers.',
-            plannedFile: 'real-estate-power-of-aggregation-benefits.webp',
+            file: 'real-estate-power-of-aggregation-benefits.webp',
           },
         },
         {
@@ -45,8 +45,7 @@ export default function SavingsComparison() {
           ),
           image: {
             alt: 'Example purchase ledger showing stacked benefit credits.',
-            plannedFile: 'real-world-impact-benefit-credit-example.webp',
-            label: 'Example figures — pending compliance review',
+            file: 'real-world-impact-benefit-credit-example.webp',
           },
         },
         {

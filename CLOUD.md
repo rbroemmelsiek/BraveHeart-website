@@ -76,7 +76,17 @@ If no lint script exists, record that in the validation report rather than inven
 
 ## Image Processing
 
-If a WebP conversion script is added, document usage here. Do not assume ImageMagick, Sharp, or Squoosh are installed unless the repo has been configured for them.
+Brave Heart marketing assets are converted with Sharp:
+
+```bash
+npm run images:braveheart
+```
+
+- Reads source PNG/WebP from `public/assets/`
+- Writes production WebP to `public/assets/images/braveheart/`
+- Quality: 82 (default); preserves dimensions; does not delete originals
+- Conversion results JSON: `scripts/.braveheart-conversion-results.json`
+- Update `docs/braveheart/image-conversion-report.md` after each run
 
 Suggested future command:
 

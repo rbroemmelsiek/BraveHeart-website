@@ -3,7 +3,7 @@
 ## Current Status
 
 ```text
-Status: Plan 02 complete — awaiting approval for Plan 03
+Status: Plan 03 complete — awaiting approval for Plan 04
 Primary objective: Convert cloned Home Listing Website into Brave Heart First Responders website.
 ```
 
@@ -13,8 +13,8 @@ Primary objective: Convert cloned Home Listing Website into Brave Heart First Re
 |---|---|---:|---|
 | 00 | Source normalization | **Complete** | Asset inventory reconciled; inspection note complete. |
 | 01 | Rebrand and route shell | **Complete** | Routes, nav, footer, legacy redirects. |
-| 02 | Content pages | **Complete** | Route-specific content via BraveHeartPageLayout; image placeholders; legal drafts flagged. Lint + build pass. **Awaiting approval.** |
-| 03 | Assets and visual system | Not started | Convert images to WebP and apply brand tokens. |
+| 02 | Content pages | **Complete** | Route-specific content via BraveHeartPageLayout; legal drafts flagged. |
+| 03 | Assets and visual system | **Complete** | 19 WebP conversions; images wired; navy/gold theme. Lint + build pass. **Awaiting approval.** |
 | 04 | CTA and verification entry | Not started | Add eligibility/contact/app entry CTAs. |
 | 05 | SEO and publication controls | Not started | Add metadata, robots, sitemap, validation. |
 
@@ -30,6 +30,7 @@ Primary objective: Convert cloned Home Listing Website into Brave Heart First Re
 ```text
 .agent/validation/braveheart-site-validation.md
 .agent/validation/02.braveheart-content-pages-validation.md
+.agent/validation/03.braveheart-assets-and-visual-system-validation.md
 ```
 
 ## Open Decisions
@@ -42,10 +43,11 @@ Primary objective: Convert cloned Home Listing Website into Brave Heart First Re
 - Legal sign-off for privacy, terms, and accessibility drafts.
 - Verified testimonial publication for case studies.
 
-## Plan 02 Summary (2026-06-21)
+## Plan 03 Summary (2026-06-21)
 
-- Shared layout: `src/components/braveheart/BraveHeartPageLayout.tsx` and helpers.
-- All 10 routes have route-specific sections; no generic stub copy.
-- No `<img>` on public routes — `ImagePlaceholder` until Plan 03.
-- Program disclaimer on benefit pages; legal draft banners on legal routes.
-- Normalized markdown body copy still outline-only — React uses conservative derived copy.
+- Conversion: `npm run images:braveheart` — 19 production WebP files at `public/assets/images/braveheart/`.
+- Components: `BraveHeartImage.tsx`, `braveheartAssets.ts`; `PageSection` renders production images.
+- Theme: deep navy background, gold accent, warm white text, dark glass surfaces in `src/index.css`.
+- Global chrome: landscape logo in Navbar/Footer; favicon from `braveheart-icon.webp`.
+- 16 section images wired across 7 content routes; originals preserved at `public/assets/`.
+- Deferred: app QR CTA graphic (Plan 04), square logo OG (Plan 05).

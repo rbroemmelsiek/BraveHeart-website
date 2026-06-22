@@ -56,8 +56,7 @@ export default function CaseStudies() {
           ),
           image: {
             alt: 'First responder testimonial image representing program results.',
-            plannedFile: 'first-responder-testimonial-captain-lopez.webp',
-            label: 'Testimonial — pending verification and approval',
+            file: 'first-responder-testimonial-captain-lopez.webp',
           },
         },
       ]}

@@ -2,19 +2,19 @@
 
 ## Status
 
-Plan 02 content pages validated — 2026-06-21. See `.agent/validation/02.braveheart-content-pages-validation.md` for plan-specific detail.
+Plan 03 assets and visual system validated — 2026-06-21. See `.agent/validation/03.braveheart-assets-and-visual-system-validation.md` for plan-specific detail.
 
 ## Required Route Validation
 
 | Route | Renders | H1 Present | Metadata | Images OK | Links OK | Notes |
 |---|---:|---:|---:|---:|---:|---|
-| `/` | Yes | Yes | Pending (Plan 05) | Yes (placeholders) | Yes | Plan 02 content |
-| `/our-story` | Yes | Yes | Pending | Yes (placeholders) | Yes | Plan 02 content |
-| `/who-we-serve` | Yes | Yes | Pending | Yes (placeholders) | Yes | Plan 02 content |
-| `/savings-comparison` | Yes | Yes | Pending | Yes (placeholders) | Yes | Plan 02 content |
-| `/service-lines` | Yes | Yes | Pending | Yes (placeholders) | Yes | Plan 02 content |
-| `/our-guarantee` | Yes | Yes | Pending | Yes (placeholders) | Yes | Plan 02 content |
-| `/case-studies` | Yes | Yes | Pending | Yes (placeholders) | Yes | Plan 02 content |
+| `/` | Yes | Yes | Pending (Plan 05) | Yes (3 WebP) | Yes | Plan 03 images + theme |
+| `/our-story` | Yes | Yes | Pending | Yes (2 WebP) | Yes | Plan 03 images |
+| `/who-we-serve` | Yes | Yes | Pending | Yes (2 WebP) | Yes | Plan 03 images |
+| `/savings-comparison` | Yes | Yes | Pending | Yes (2 WebP) | Yes | Compliance flags on figures |
+| `/service-lines` | Yes | Yes | Pending | Yes (4 WebP) | Yes | Plan 03 images |
+| `/our-guarantee` | Yes | Yes | Pending | Yes (1 WebP) | Yes | Compliance flags |
+| `/case-studies` | Yes | Yes | Pending | Yes (1 WebP) | Yes | Illustrative + testimonial pending |
 | `/privacy-policy` | Yes | Yes | Pending | N/A | Yes | Draft legal — review required |
 | `/terms-of-service` | Yes | Yes | Pending | N/A | Yes | Draft legal — review required |
 | `/accessibility` | Yes | Yes | Pending | N/A | Yes | Draft legal — review required |
@@ -34,11 +34,12 @@ Plan 02 content pages validated — 2026-06-21. See `.agent/validation/02.braveh
 
 | Check | Result | Notes |
 |---|---|---|
-| Install succeeds | Pass | Prior session |
+| Install succeeds | Pass | Includes `sharp` devDependency |
 | Dev server starts | Not run | — |
-| Production build succeeds | Pass | Plan 02 |
-| `npm run lint` | Pass | Plan 02 |
-| No missing image paths on public routes | Pass | ImagePlaceholder only |
+| Production build succeeds | Pass | Plan 03 |
+| `npm run lint` | Pass | Plan 03 |
+| All referenced WebP files exist | Pass | 19 production files |
+| No listing-site image refs on active routes | Pass | Unrouted legacy pages retain old refs only |
 | robots.txt present | Pending | Plan 05 |
 | sitemap.xml present | Pending | Plan 05 |
 
@@ -50,10 +51,22 @@ Plan 02 content pages validated — 2026-06-21. See `.agent/validation/02.braveh
 | Unique SEO titles | Pending | Plan 05 |
 | Unique meta descriptions | Pending | Plan 05 |
 | Canonical URLs | Pending | Plan 05 |
-| Open Graph images | Pending | Plans 03, 05 |
-| Alt text on meaningful images | Pending | Plan 03 (placeholders have aria-label) |
+| Open Graph images | Pending | `brave-heart-logo-square.webp` ready — Plan 05 |
+| Alt text on meaningful images | Pass | Plan 03 |
 | Internal links resolve | Pass | Related links + CTAs |
+| Favicon | Pass | `braveheart-icon.webp` |
+
+## Asset Validation
+
+| Check | Result |
+|---|---|
+| Production path populated | Pass — 19 WebP files |
+| Originals preserved | Pass — sources at `public/assets/` |
+| Kebab-case filenames | Pass |
+| WebP quality ~82 | Pass |
+| Dimensions preserved | Pass |
+| Global logo in nav/footer | Pass |
 
 ## Publication Decision
 
-**Not ready for publication.** Legal pages and compliance-sensitive figures require review. Plan 02 complete — awaiting approval before Plan 03.
+**Not ready for publication.** Legal pages, compliance-sensitive figures, and verified testimonials require review. Plan 03 complete — awaiting approval before Plan 04.

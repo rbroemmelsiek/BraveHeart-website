@@ -24,7 +24,7 @@ export default function ServiceLines() {
           ),
           image: {
             alt: 'Graphic showing brokerage and lender credit benefits in a real estate transaction.',
-            plannedFile: 'major-transaction-savings-brokerage-lender.webp',
+            file: 'major-transaction-savings-brokerage-lender.webp',
           },
           bullets: [
             'Brokerage fee credits — subject to verification and transaction rules',
@@ -41,8 +41,7 @@ export default function ServiceLines() {
           ),
           image: {
             alt: 'Settlement fee breakdown showing escrow, title, and inspection-related savings.',
-            plannedFile: 'reduced-closing-costs-discounts.webp',
-            label: 'Specific discount figures — pending compliance review',
+            file: 'reduced-closing-costs-discounts.webp',
           },
           bullets: [
             'Escrow fee reductions where available',
@@ -61,8 +60,7 @@ export default function ServiceLines() {
           ),
           image: {
             alt: 'Comprehensive lifecycle benefits including warranty, exchange, and referral support.',
-            plannedFile: 'comprehensive-lifecycle-real-estate-benefits.webp',
-            label: 'Visual asset — Plan 03',
+            file: 'comprehensive-lifecycle-real-estate-benefits.webp',
           },
           bullets: [
             'Home warranty coupons or credits where available',
@@ -82,8 +80,7 @@ export default function ServiceLines() {
           ),
           image: {
             alt: 'Step process tracker showing coordinated escrow, title, and closing precision.',
-            plannedFile: 'automated-escrow-title-closing-precision.webp',
-            label: 'Visual asset — Plan 03',
+            file: 'automated-escrow-title-closing-precision.webp',
           },
         },
       ]}

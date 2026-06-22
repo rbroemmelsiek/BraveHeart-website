@@ -23,8 +23,7 @@ export default function OurGuarantee() {
           ],
           image: {
             alt: 'Checklist of the Braveheart Advantage highlighting program standards.',
-            plannedFile: 'braveheart-advantage-benefits-list.webp',
-            label: 'Benefit list figures — pending compliance review',
+            file: 'braveheart-advantage-benefits-list.webp',
           },
         },
         {

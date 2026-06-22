@@ -49,13 +49,24 @@ Each public route is implemented in `src/pages/` using shared layout components 
 |---|---|
 | `BraveHeartPageLayout.tsx` | Page shell: hero, sections, CTAs, related links, disclaimer |
 | `PageSection.tsx` | Numbered editorial section grid |
-| `ImagePlaceholder.tsx` | Non-loading visual placeholder until Plan 03 |
+| `BraveHeartImage.tsx` | Production WebP renderer with lazy/eager loading |
+| `ImagePlaceholder.tsx` | Retained for fallback; superseded by BraveHeartImage in Plan 03 |
 | `ProgramDisclaimer.tsx` | Compliance disclaimer on benefit pages |
 | `CtaBlock.tsx` | Primary/secondary CTAs (ContactModal via Plan 04) |
 
 ### H1 Control
 
 H1 text per route follows `docs/braveheart/seo-publication-map.md` and normalized content target H1 fields.
+
+### Visual System (Plan 03 — 2026-06-21)
+
+| Asset | Path |
+|---|---|
+| Production WebP base | `public/assets/images/braveheart/` |
+| Image helper | `src/lib/braveheartAssets.ts` |
+| Image component | `src/components/braveheart/BraveHeartImage.tsx` |
+| Theme tokens | `src/index.css` — deep navy, gold accent, warm white text, dark glass |
+| Conversion script | `npm run images:braveheart` → `scripts/convert-braveheart-images.mjs` |
 
 ### Publication Gaps
 

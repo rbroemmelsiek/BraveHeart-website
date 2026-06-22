@@ -30,7 +30,7 @@ export default function OurStory() {
           ),
           image: {
             alt: 'Historical and generational context emphasizing stability for public-safety families.',
-            plannedFile: 'police-history-generational-wealth.webp',
+            file: 'police-history-generational-wealth.webp',
           },
         },
         {
@@ -44,8 +44,7 @@ export default function OurStory() {
           ),
           image: {
             alt: 'Timeline graphic highlighting a legacy of support for public-safety and military families.',
-            plannedFile: 'braveheart-legacy-of-support-history.webp',
-            label: 'Visual asset — pending editorial approval',
+            file: 'braveheart-legacy-of-support-history.webp',
           },
         },
         {

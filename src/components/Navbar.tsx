@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useContactModal } from '../context/ContactModalContext';
+import { braveheartImageSrc } from '../lib/braveheartAssets';
 
 export default function Navbar() {
   const location = useLocation();
@@ -31,8 +32,14 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 transition-all duration-700">
       <div className="relative z-50 w-full glass-nav shadow-sm border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 lg:px-12 py-4 lg:py-6 max-w-[1920px] mx-auto">
-          <Link to="/" className="font-serif text-lg lg:text-xl italic tracking-tight text-on-surface z-50">
-            Brave Heart First Responders
+          <Link to="/" className="flex items-center gap-3 z-50 shrink-0">
+            <img
+              src={braveheartImageSrc('brave-heart-logo-landscape.webp')}
+              alt="Brave Heart First Responders"
+              className="h-8 lg:h-10 w-auto"
+              width={1408}
+              height={768}
+            />
           </Link>
           <div className="hidden xl:flex space-x-8 font-serif text-lg font-light tracking-wide items-center">
             {links.map((link) => {
@@ -41,7 +48,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`${isActive ? 'text-primary border-b border-primary/30 pb-1' : 'text-slate-600'} hover:text-primary transition-colors duration-500 uppercase text-xs tracking-widest`}
+                  className={`${isActive ? 'text-primary border-b border-primary/30 pb-1' : 'text-on-surface-variant'} hover:text-primary transition-colors duration-500 uppercase text-xs tracking-widest`}
                 >
                   {link.name}
                 </Link>

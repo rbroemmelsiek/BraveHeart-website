@@ -37,15 +37,16 @@ export default function Accessibility() {
           bullets: [
             'Semantic headings and landmarks for screen reader navigation',
             'Keyboard-accessible navigation and interactive controls where implemented',
-            'Alt text policy for meaningful images once assets are wired in Plan 03',
+            'Alt text on meaningful marketing images per asset inventory',
           ],
         },
         {
           title: 'Known Limitations',
           body: (
             <p>
-              Some visual assets are placeholders during Phase 1 development. Third-party
-              embeds or future app integrations may require separate accessibility review.
+              Some compliance-sensitive figures and draft legal copy remain under review.
+              Third-party embeds or future app integrations may require separate accessibility
+              review.
             </p>
           ),
         },

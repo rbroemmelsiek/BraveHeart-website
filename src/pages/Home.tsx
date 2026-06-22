@@ -33,7 +33,8 @@ export default function Home() {
           ),
           image: {
             alt: 'First responder family representing real estate benefits for public safety and military households.',
-            plannedFile: 'first-responder-real-estate-benefits.webp',
+            file: 'first-responder-real-estate-benefits.webp',
+            priority: true,
           },
         },
         {
@@ -47,7 +48,7 @@ export default function Home() {
           ),
           image: {
             alt: 'Visual roadmap of the Brave Heart client journey from service to home stability.',
-            plannedFile: 'braveheart-client-heroes-journey.webp',
+            file: 'braveheart-client-heroes-journey.webp',
           },
         },
         {
@@ -62,7 +63,7 @@ export default function Home() {
           ),
           image: {
             alt: 'Three-panel visual showing AI-assisted real estate support for ethics, forms, and guidance.',
-            plannedFile: 'ai-guardian-team-real-estate-support.webp',
+            file: 'ai-guardian-team-real-estate-support.webp',
           },
         },
         {

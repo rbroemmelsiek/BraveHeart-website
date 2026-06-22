@@ -1,11 +1,11 @@
 import React, { ReactNode } from 'react';
-import ImagePlaceholder from './ImagePlaceholder';
+import BraveHeartImage from './BraveHeartImage';
 
 export interface PageSectionData {
   title: string;
   body?: ReactNode;
   bullets?: string[];
-  image?: { alt: string; plannedFile: string; label?: string };
+  image?: { alt: string; file: string; priority?: boolean };
 }
 
 interface PageSectionProps {
@@ -33,10 +33,10 @@ const PageSection: React.FC<PageSectionProps> = ({ section, index }) => {
           </ul>
         )}
         {section.image && (
-          <ImagePlaceholder
+          <BraveHeartImage
             alt={section.image.alt}
-            plannedFile={section.image.plannedFile}
-            label={section.image.label}
+            file={section.image.file}
+            priority={section.image.priority}
           />
         )}
       </div>
