@@ -4,35 +4,46 @@
 
 Defines the target public routes for the Brave Heart First Responders website and documents current listing-site routes pending replacement.
 
-## Current Listing-Site Routes (As Implemented)
+## Current Routes (As Implemented — Plan 01 Complete)
 
 | Route | Component | Status |
 |---|---|---|
-| `/` | `Home` | Listing-site — replace content |
-| `/residence` | `TheResidence` | Listing-site — remove/redirect in plan 01 |
-| `/neighborhood` | `Neighborhood` | Listing-site — remove/redirect in plan 01 |
-| `/schools` | `Schools` | Listing-site — remove/redirect in plan 01 |
-| `/gallery` | `Gallery` | Listing-site — remove/redirect in plan 01 |
-| `/privacy` | `PrivacyPolicy` | Listing legal copy — slug mismatch |
-| `/terms` | `TermsOfService` | Listing legal copy — slug mismatch |
-| `/accessibility` | `Accessibility` | Listing legal copy — slug OK |
+| `/` | `Home` | Stub shell — Plan 02 content |
+| `/our-story` | `OurStory` | Stub shell |
+| `/who-we-serve` | `WhoWeServe` | Stub shell |
+| `/savings-comparison` | `SavingsComparison` | Stub shell |
+| `/service-lines` | `ServiceLines` | Stub shell |
+| `/our-guarantee` | `OurGuarantee` | Stub shell |
+| `/case-studies` | `CaseStudies` | Stub shell |
+| `/privacy-policy` | `PrivacyPolicy` | Legal stub |
+| `/terms-of-service` | `TermsOfService` | Legal stub |
+| `/accessibility` | `Accessibility` | Legal stub |
 
 Configured in [`src/App.tsx`](../../src/App.tsx).
+
+## Legacy Listing Files (Retained, Unrouted)
+
+| File | Former route | Status |
+|---|---|---|
+| `TheResidence.tsx` | `/residence` | Redirects to `/our-story` |
+| `Neighborhood.tsx` | `/neighborhood` | Redirects to `/who-we-serve` |
+| `Schools.tsx` | `/schools` | Redirects to `/savings-comparison` |
+| `Gallery.tsx` | `/gallery` | Redirects to `/case-studies` |
 
 ## Phase 1 Target Routes
 
 | Route | Page | Purpose | Status |
 |---|---|---|---|
-| `/` | Home | Benefits hero, program overview, primary CTA. | Planned |
-| `/our-story` | Our Story | Founder story and program origin. | Planned |
-| `/who-we-serve` | Who We Serve | Eligibility categories and verification introduction. | Planned |
-| `/savings-comparison` | Savings Comparison | Explain stacked credits and examples. | Planned |
-| `/service-lines` | Service Lines | Menu of transaction savings/services. | Planned |
-| `/our-guarantee` | Our Guarantee | Accountability, service standards, oversight. | Planned |
-| `/case-studies` | Case Studies | Example outcomes and user scenarios. | Planned |
-| `/privacy-policy` | Privacy Policy | Privacy and data governance. | Planned |
-| `/terms-of-service` | Terms of Service | Program terms and disclaimers. | Planned |
-| `/accessibility` | Accessibility | Accessibility commitment. | Planned |
+| `/` | Home | Benefits hero, program overview, primary CTA. | Stub (Plan 02) |
+| `/our-story` | Our Story | Founder story and program origin. | Stub (Plan 02) |
+| `/who-we-serve` | Who We Serve | Eligibility categories and verification introduction. | Stub (Plan 02) |
+| `/savings-comparison` | Savings Comparison | Explain stacked credits and examples. | Stub (Plan 02) |
+| `/service-lines` | Service Lines | Menu of transaction savings/services. | Stub (Plan 02) |
+| `/our-guarantee` | Our Guarantee | Accountability, service standards, oversight. | Stub (Plan 02) |
+| `/case-studies` | Case Studies | Example outcomes and user scenarios. | Stub (Plan 02) |
+| `/privacy-policy` | Privacy Policy | Privacy and data governance. | Stub (Plan 02) |
+| `/terms-of-service` | Terms of Service | Program terms and disclaimers. | Stub (Plan 02) |
+| `/accessibility` | Accessibility | Accessibility commitment. | Stub (Plan 02) |
 
 ## Route Slug Mismatches (Documented)
 
