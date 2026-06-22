@@ -1,16 +1,74 @@
 import React from 'react';
-import BraveHeartPageStub from '../components/BraveHeartPageStub';
+import BraveHeartPageLayout from '../components/braveheart/BraveHeartPageLayout';
 
 export default function SavingsComparison() {
   return (
-    <BraveHeartPageStub
+    <BraveHeartPageLayout
       h1="Real Savings: Transparent Financial Analysis"
-      intro="Placeholder for savings comparison and worked examples. Approved figures and copy pending compliance review in Plan 02."
+      intro={
+        <p>
+          Brave Heart is designed to stack transaction-related benefits where eligible and
+          available—potentially reducing out-of-pocket costs across multiple service lines.
+          Actual savings vary by transaction, market, lender approval, and provider
+          participation.
+        </p>
+      }
       sections={[
         {
-          title: 'Savings Overview',
-          body: 'Placeholder for benefit stacking explanation. Source: docs/braveheart/normalized-content/savings-comparison.md.',
+          title: 'How Stacked Benefits Work',
+          body: (
+            <p>
+              Instead of treating brokerage, lending, escrow, title, and inspections as
+              isolated line items, the program aggregates pre-negotiated benefits across
+              participating providers. Eligible participants may receive credits and discounts
+              subject to final verification and transaction-specific rules.
+            </p>
+          ),
+          image: {
+            alt: 'Network diagram showing real estate benefits aggregated across providers.',
+            plannedFile: 'real-estate-power-of-aggregation-benefits.webp',
+          },
         },
+        {
+          title: 'Illustrative Comparison',
+          body: (
+            <>
+              <p>
+                Worked examples and purchase-scenario math will be published here after
+                compliance review. Figures must not be treated as guarantees.
+              </p>
+              <p className="text-secondary text-sm italic">
+                [TBD: Approved example ledger and numeric scenarios — compliance review
+                required before publication.]
+              </p>
+            </>
+          ),
+          image: {
+            alt: 'Example purchase ledger showing stacked benefit credits.',
+            plannedFile: 'real-world-impact-benefit-credit-example.webp',
+            label: 'Example figures — pending compliance review',
+          },
+        },
+        {
+          title: 'What Affects Your Outcome',
+          bullets: [
+            'Verified eligibility and program category',
+            'Participating providers in your market',
+            'Loan type, purchase price, and transaction structure',
+            'Lender approval and closing timeline',
+            'Applicable law and transaction-specific documentation',
+          ],
+        },
+      ]}
+      cta={{
+        primaryLabel: 'Verify Eligibility',
+        secondaryLabel: 'View Service Lines',
+        secondaryTo: '/service-lines',
+      }}
+      relatedLinks={[
+        { label: 'Service Lines', to: '/service-lines' },
+        { label: 'Who We Serve', to: '/who-we-serve' },
+        { label: 'Our Guarantee', to: '/our-guarantee' },
       ]}
     />
   );

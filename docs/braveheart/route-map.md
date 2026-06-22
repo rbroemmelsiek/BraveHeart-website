@@ -34,16 +34,16 @@ Configured in [`src/App.tsx`](../../src/App.tsx).
 
 | Route | Page | Purpose | Status |
 |---|---|---|---|
-| `/` | Home | Benefits hero, program overview, primary CTA. | Stub (Plan 02) |
-| `/our-story` | Our Story | Founder story and program origin. | Stub (Plan 02) |
-| `/who-we-serve` | Who We Serve | Eligibility categories and verification introduction. | Stub (Plan 02) |
-| `/savings-comparison` | Savings Comparison | Explain stacked credits and examples. | Stub (Plan 02) |
-| `/service-lines` | Service Lines | Menu of transaction savings/services. | Stub (Plan 02) |
-| `/our-guarantee` | Our Guarantee | Accountability, service standards, oversight. | Stub (Plan 02) |
-| `/case-studies` | Case Studies | Example outcomes and user scenarios. | Stub (Plan 02) |
-| `/privacy-policy` | Privacy Policy | Privacy and data governance. | Stub (Plan 02) |
-| `/terms-of-service` | Terms of Service | Program terms and disclaimers. | Stub (Plan 02) |
-| `/accessibility` | Accessibility | Accessibility commitment. | Stub (Plan 02) |
+| `/` | Home | Benefits hero, program overview, primary CTA. | Stub content (Plan 02) — needs-review |
+| `/our-story` | Our Story | Founder story and program origin. | Stub content (Plan 02) — needs-review |
+| `/who-we-serve` | Who We Serve | Eligibility categories and verification introduction. | Stub content (Plan 02) — needs-review |
+| `/savings-comparison` | Savings Comparison | Explain stacked credits and examples. | Stub content (Plan 02) — needs-review |
+| `/service-lines` | Service Lines | Menu of transaction savings/services. | Stub content (Plan 02) — needs-review |
+| `/our-guarantee` | Our Guarantee | Accountability, service standards, oversight. | Stub content (Plan 02) — needs-review |
+| `/case-studies` | Case Studies | Example outcomes and user scenarios. | Stub content (Plan 02) — needs-review |
+| `/privacy-policy` | Privacy Policy | Privacy and data governance. | Draft legal (Plan 02) — legal review |
+| `/terms-of-service` | Terms of Service | Program terms and disclaimers. | Draft legal (Plan 02) — legal review |
+| `/accessibility` | Accessibility | Accessibility commitment. | Draft legal (Plan 02) — legal review |
 
 ## Route Slug Mismatches (Documented)
 

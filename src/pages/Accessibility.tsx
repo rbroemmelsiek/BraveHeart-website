@@ -1,17 +1,69 @@
 import React from 'react';
-import BraveHeartPageStub from '../components/BraveHeartPageStub';
+import BraveHeartPageLayout from '../components/braveheart/BraveHeartPageLayout';
 
 export default function Accessibility() {
   return (
-    <BraveHeartPageStub
+    <BraveHeartPageLayout
       eyebrow="Legal"
       h1="Accessibility Statement"
-      intro="Placeholder for Brave Heart accessibility commitment and digital interface standards. Review required before publication in Plan 02."
+      legalReviewBanner
+      showDisclaimer={false}
+      intro={
+        <p>
+          Brave Heart First Responders is committed to improving digital accessibility for
+          eligible participants, partners, and visitors. This draft statement describes our
+          goals pending a formal accessibility audit.
+        </p>
+      }
       sections={[
         {
           title: 'Accessibility Commitment',
-          body: 'Placeholder for accessibility statement sections. Source: docs/braveheart/normalized-content/accessibility.md.',
+          body: (
+            <p>
+              We aim to provide a website that is usable across common devices and assistive
+              technologies. Ongoing improvements include semantic structure, readable contrast,
+              keyboard navigation, and descriptive alternative text for meaningful visuals.
+            </p>
+          ),
         },
+        {
+          title: 'Standards and Testing',
+          body: (
+            <p>
+              [TBD: Target WCAG conformance level and audit date will be documented after
+              formal accessibility review.]
+            </p>
+          ),
+          bullets: [
+            'Semantic headings and landmarks for screen reader navigation',
+            'Keyboard-accessible navigation and interactive controls where implemented',
+            'Alt text policy for meaningful images once assets are wired in Plan 03',
+          ],
+        },
+        {
+          title: 'Known Limitations',
+          body: (
+            <p>
+              Some visual assets are placeholders during Phase 1 development. Third-party
+              embeds or future app integrations may require separate accessibility review.
+            </p>
+          ),
+        },
+        {
+          title: 'Feedback and Assistance',
+          body: (
+            <p>
+              If you encounter a barrier on this site, contact the program team through the
+              contact entry point. [TBD: Dedicated accessibility contact channel after legal
+              review.]
+            </p>
+          ),
+        },
+      ]}
+      cta={{ primaryLabel: 'Contact the Program Team' }}
+      relatedLinks={[
+        { label: 'Privacy Policy', to: '/privacy-policy' },
+        { label: 'Terms of Service', to: '/terms-of-service' },
       ]}
     />
   );
