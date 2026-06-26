@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { GoogleLogin, type CredentialResponse } from '@react-oauth/google';
+import type { CredentialResponse } from '@react-oauth/google';
 import { useAuth } from '../../context/AuthContext';
 import { isAdmin } from '../../config/auth';
+import GoogleSignInPanel from './GoogleSignInPanel';
 
 interface AuthNavActionsProps {
   variant: 'desktop' | 'mobile';
@@ -164,16 +165,10 @@ export default function AuthNavActions({ variant, onNavigate }: AuthNavActionsPr
             Use your Google account to sign in or create access.
           </p>
           {authConfigured ? (
-            <div className="flex justify-center">
-              <GoogleLogin
-                onSuccess={handleGoogleSuccess}
-                onError={() => setError('Google sign-in was cancelled or failed.')}
-                theme="filled_black"
-                size="medium"
-                text="continue_with"
-                shape="rectangular"
-              />
-            </div>
+            <GoogleSignInPanel
+              onSuccess={handleGoogleSuccess}
+              onError={() => setError('Google sign-in was cancelled or failed.')}
+            />
           ) : (
             <p className="text-xs text-secondary leading-relaxed">
               Sign-in is not configured yet. Add <code className="text-primary">VITE_GOOGLE_CLIENT_ID</code>{' '}

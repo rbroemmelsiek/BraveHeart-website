@@ -232,20 +232,26 @@ h1, h2, h3 {
   border-color: rgba(201, 162, 39, 0.5);
 }
 
-/* Scroll Reveal Animations */
+/* Scroll Reveal Animations — transform-only so LCP content stays visible */
 @keyframes fade-in-up {
   from {
-      opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(24px);
   }
   to {
-      opacity: 1;
       transform: translateY(0);
   }
 }
 .reveal {
-  opacity: 0;
-  animation: fade-in-up 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: fade-in-up 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.reveal-motion {
+  animation: fade-in-up 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-motion {
+    animation: none;
+  }
 }
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }

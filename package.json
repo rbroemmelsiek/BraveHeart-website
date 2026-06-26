@@ -13,7 +13,8 @@
     "lint": "tsc --noEmit",
     "sitemap:generate": "node scripts/generate-sitemap.mjs",
     "start": "node server.mjs",
-    "images:braveheart": "node scripts/convert-braveheart-images.mjs"
+    "images:braveheart": "node scripts/convert-braveheart-images.mjs",
+    "images:responsive": "node scripts/generate-responsive-images.mjs"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",

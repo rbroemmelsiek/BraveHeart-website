@@ -1,5 +1,6 @@
 import React from 'react';
 import BraveHeartImage from './BraveHeartImage';
+import { FULL_BLEED_SIZES } from '../../lib/braveheartAssets';
 
 export interface JourneyStep {
   title: string;
@@ -97,6 +98,7 @@ export default function HeroesJourneyShowcase({
                   file={infographicFile}
                   alt={infographicAlt}
                   priority
+                  sizes={FULL_BLEED_SIZES}
                   zoomOnHover={false}
                   className="w-full"
                 />

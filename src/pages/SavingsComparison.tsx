@@ -27,6 +27,7 @@ export default function SavingsComparison() {
           image: {
             alt: 'Network diagram showing real estate benefits aggregated across providers.',
             file: 'real-estate-power-of-aggregation-benefits.webp',
+            priority: true,
           },
         },
         {

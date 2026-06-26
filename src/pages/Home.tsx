@@ -34,7 +34,6 @@ export default function Home() {
           image: {
             alt: 'First responder family representing real estate benefits for public safety and military households.',
             file: 'first-responder-real-estate-benefits.webp',
-            priority: true,
           },
         },
         {

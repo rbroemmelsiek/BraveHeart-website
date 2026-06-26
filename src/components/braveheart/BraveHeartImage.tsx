@@ -1,4 +1,9 @@
-import { braveheartImageSrc } from '../../lib/braveheartAssets';
+import {
+  braveheartImageSrc,
+  infographicDefaultSrc,
+  infographicSrcSet,
+  INFOGRAPHIC_SIZES,
+} from '../../lib/braveheartAssets';
 
 interface BraveHeartImageProps {
   alt: string;
@@ -8,6 +13,10 @@ interface BraveHeartImageProps {
   /** When false, skips hover scale (prevents clipping on detail infographics). Default true. */
   zoomOnHover?: boolean;
   imgClassName?: string;
+  /** Override default content-column sizes attribute. */
+  sizes?: string;
+  /** Skip responsive srcset (logos, one-off assets). Default true for marketing infographics. */
+  responsive?: boolean;
 }
 
 export default function BraveHeartImage({
@@ -17,16 +26,23 @@ export default function BraveHeartImage({
   className = '',
   zoomOnHover = true,
   imgClassName = '',
+  sizes = INFOGRAPHIC_SIZES,
+  responsive = true,
 }: BraveHeartImageProps) {
+  const src = responsive ? infographicDefaultSrc(file) : braveheartImageSrc(file);
+  const srcSet = responsive ? infographicSrcSet(file) : undefined;
+
   return (
     <figure
-      className={`w-full reveal ${zoomOnHover ? 'image-zoom' : 'overflow-visible'} ${className}`.trim()}
+      className={`w-full ${zoomOnHover ? 'image-zoom reveal-motion' : 'overflow-visible'} ${className}`.trim()}
     >
       <img
-        src={braveheartImageSrc(file)}
+        src={src}
+        srcSet={srcSet}
+        sizes={srcSet ? sizes : undefined}
         alt={alt}
         loading={priority ? 'eager' : 'lazy'}
-        decoding="async"
+        decoding={priority ? 'sync' : 'async'}
         fetchPriority={priority ? 'high' : 'auto'}
         className={`w-full h-auto max-w-full block ${zoomOnHover ? 'rounded-md' : ''} ${imgClassName}`.trim()}
       />
