@@ -20,7 +20,7 @@ parentPlatform: HomeToHome / BrokerBrand
 founderName: Karen Van Ness
 founderRole: Founder / Program Innovator
 phone: 858-699-6409
-email: tactics@braveheartfirstresponders.com
+email: karen@braveheartfirstresponders.com
 ```
 
 Verify all contact information before publication.

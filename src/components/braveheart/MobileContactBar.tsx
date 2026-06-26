@@ -1,12 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import {
-  CONTACT_SECTION_ID,
-  contactSmsHref,
-  contactTelHref,
-} from '../../config/contact';
-
-const contactPath = { pathname: '/', hash: `#${CONTACT_SECTION_ID}` } as const;
+import { contactEmailHref, contactSmsHref, contactTelHref } from '../../config/contact';
 
 export default function MobileContactBar() {
   return (
@@ -33,15 +26,15 @@ export default function MobileContactBar() {
           </span>
           Call
         </a>
-        <Link
-          to={contactPath}
+        <a
+          href={contactEmailHref()}
           className="flex-1 flex flex-col items-center justify-center py-3 px-2 text-[10px] uppercase tracking-widest text-on-surface hover:text-primary transition-colors"
         >
           <span className="material-symbols-outlined text-lg mb-0.5" aria-hidden="true">
-            contact_mail
+            mail
           </span>
-          Contact
-        </Link>
+          Email
+        </a>
       </div>
     </div>
   );

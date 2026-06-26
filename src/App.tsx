@@ -17,7 +17,11 @@ import Accessibility from './pages/Accessibility';
 import BlogIndex from './pages/BlogIndex';
 import BlogPost from './pages/BlogPost';
 import TopicArchive from './pages/TopicArchive';
+import Account from './pages/Account';
+import AdminBlog from './pages/admin/AdminBlog';
+import ProtectedAdminRoute from './components/auth/ProtectedAdminRoute';
 import { ContactModalProvider } from './context/ContactModalContext';
+import { AuthProvider } from './context/AuthContext';
 import AmbientBackground from './components/braveheart/AmbientBackground';
 import MobileContactBar from './components/braveheart/MobileContactBar';
 
@@ -57,6 +61,15 @@ function AppShell() {
               <Route path="/blog" element={<BlogIndex />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/topics/:taxonomySlug" element={<TopicArchive />} />
+              <Route path="/account" element={<Account />} />
+              <Route
+                path="/admin/blog"
+                element={
+                  <ProtectedAdminRoute>
+                    <AdminBlog />
+                  </ProtectedAdminRoute>
+                }
+              />
 
               {/* Legacy listing-site and legal slug redirects */}
               <Route path="/residence" element={<Navigate to="/our-story" replace />} />
@@ -76,10 +89,12 @@ function AppShell() {
 
 export default function App() {
   return (
-    <ContactModalProvider>
-      <Router>
-        <AppShell />
-      </Router>
-    </ContactModalProvider>
+    <AuthProvider>
+      <ContactModalProvider>
+        <Router>
+          <AppShell />
+        </Router>
+      </ContactModalProvider>
+    </AuthProvider>
   );
 }

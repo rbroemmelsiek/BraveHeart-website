@@ -10,8 +10,8 @@ export const PROGRAM_CONTACT = {
   dre: 'DRE #01354837',
   phoneTel: '+18586996409',
   phoneDisplay: '(858) 699-6409',
-  email: 'tactics@braveheartfirstresponders.com',
-  portraitSrc: '/assets/Karen2-250px.webp',
+  email: 'karen@braveheartfirstresponders.com',
+  portraitSrc: '/assets/images/braveheart/karen-van-ness-portrait.webp',
   portraitAlt: 'Karen Van Ness — Brave Heart First Responders founder and program innovator',
   smsBody:
     "Hi, I'm interested in learning about Brave Heart First Responders program benefits and eligibility.",

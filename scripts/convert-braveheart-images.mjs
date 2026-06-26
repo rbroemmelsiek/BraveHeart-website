@@ -32,6 +32,7 @@ const ASSETS = [
   { source: 'braveheart-app-qr-code-signup.png', target: 'braveheart-app-qr-code-signup.webp', action: 'convert' },
   { source: 'Brave Heart Logo 2.png', target: 'brave-heart-logo-landscape.webp', action: 'convert' },
   { source: 'icon-final.png', target: 'braveheart-icon.webp', action: 'convert' },
+  { source: 'images/braveheart/inbox/Karen-Van-Ness-portrait.jpg', target: 'karen-van-ness-portrait.webp', action: 'convert', quality: 95, smartSubsample: false },
   { source: 'BraveHeartHerosJourney.webp', target: 'braveheart-client-heroes-journey.webp', action: 'copy-reencode' },
   {
     source: 'images/braveheart/braveheart-client-heroes-journey.png',
@@ -52,17 +53,17 @@ async function getMeta(filePath) {
   return { width: meta.width ?? 0, height: meta.height ?? 0 };
 }
 
-async function convertAsset({ source, target, action }) {
+async function convertAsset({ source, target, action, quality = QUALITY, smartSubsample = true }) {
   const sourcePath = path.join(SOURCE_DIR, source);
   const targetPath = path.join(OUTPUT_DIR, target);
 
   const sourceStat = await fs.stat(sourcePath);
   const sourceMeta = await getMeta(sourcePath);
 
-  const pipeline = sharp(sourcePath).webp({ quality: QUALITY, effort: 4 });
+  const webpOptions = { quality, effort: 6, smartSubsample };
+  const pipeline = sharp(sourcePath).webp(webpOptions);
   if (action === 'copy-reencode') {
-    // Preserve alpha for logos/icons when present
-    pipeline.webp({ quality: QUALITY, effort: 4, alphaQuality: QUALITY });
+    pipeline.webp({ ...webpOptions, alphaQuality: quality });
   }
 
   await pipeline.toFile(targetPath);

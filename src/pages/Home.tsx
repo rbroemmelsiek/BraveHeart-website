@@ -38,20 +38,6 @@ export default function Home() {
           },
         },
         {
-          title: 'Client Lifecycle Roadmap',
-          body: (
-            <p>
-              The program is designed to support households from first inquiry through
-              closing and ongoing lifecycle needs—verification, professional matching,
-              coordinated transaction steps, and follow-up support where the program applies.
-            </p>
-          ),
-          image: {
-            alt: "The Hero's Path to Homeownership — Brave Heart client journey from first contact through closing and member benefits.",
-            file: 'braveheart-client-heroes-journey.webp',
-          },
-        },
-        {
           title: 'HomeToHome-Powered Support',
           body: (
             <p>
@@ -91,6 +77,7 @@ export default function Home() {
         { label: 'Our Guarantee', to: '/our-guarantee' },
       ]}
       showFounderSpotlight
+      showHeroesJourneyShowcase
       showContactSection
     />
   );

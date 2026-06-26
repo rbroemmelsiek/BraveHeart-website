@@ -5,6 +5,7 @@ import ProgramDisclaimer from './ProgramDisclaimer';
 import CtaBlock from './CtaBlock';
 import FounderSpotlight from './FounderSpotlight';
 import ProgramContactSection from './ProgramContactSection';
+import HeroesJourneyShowcase from './HeroesJourneyShowcase';
 import { VerificationEntryIntent } from '../../config/cta';
 
 export interface RelatedLink {
@@ -21,6 +22,7 @@ export interface BraveHeartPageLayoutProps {
   showDisclaimer?: boolean;
   showFounderSpotlight?: boolean;
   showContactSection?: boolean;
+  showHeroesJourneyShowcase?: boolean;
   cta?: {
     primaryLabel?: string;
     primaryIntent?: VerificationEntryIntent;
@@ -43,6 +45,7 @@ export default function BraveHeartPageLayout({
   showDisclaimer = true,
   showFounderSpotlight = false,
   showContactSection = false,
+  showHeroesJourneyShowcase = false,
   cta,
   legalReviewBanner = false,
 }: BraveHeartPageLayoutProps) {
@@ -81,6 +84,12 @@ export default function BraveHeartPageLayout({
             )}
           </div>
         </div>
+
+        {showHeroesJourneyShowcase && (
+          <div className="mb-16 md:mb-20">
+            <HeroesJourneyShowcase variant="feature" showSteps={false} />
+          </div>
+        )}
 
         {showFounderSpotlight && <FounderSpotlight />}
 

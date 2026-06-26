@@ -1,5 +1,6 @@
 import React from 'react';
 import { PROGRAM_CONTACT } from '../../config/contact';
+import FounderPortrait from './FounderPortrait';
 
 export default function FounderSpotlight() {
   return (
@@ -10,15 +11,7 @@ export default function FounderSpotlight() {
       <article className="glass-panel rounded-xl p-6 md:p-10 editorial-shadow card-lift">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           <div className="flex justify-center md:justify-start">
-            <img
-              src={PROGRAM_CONTACT.portraitSrc}
-              alt={PROGRAM_CONTACT.portraitAlt}
-              width={250}
-              height={250}
-              className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover ring-2 ring-primary/40 editorial-shadow"
-              loading="lazy"
-              decoding="async"
-            />
+            <FounderPortrait size="spotlight" />
           </div>
           <div className="md:col-span-2 space-y-4 text-center md:text-left">
             <p className="text-[10px] uppercase tracking-[0.25em] text-secondary">

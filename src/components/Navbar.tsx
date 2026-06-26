@@ -2,13 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import { useVerificationEntry } from '../context/ContactModalContext';
+import { useAuth } from '../context/AuthContext';
+import AuthNavActions from './auth/AuthNavActions';
 import { braveheartImageSrc } from '../lib/braveheartAssets';
-import {
-  CONTACT_SECTION_ID,
-  contactEmailHref,
-  contactSmsHref,
-  contactTelHref,
-} from '../config/contact';
+import { CONTACT_SECTION_ID } from '../config/contact';
 
 const contactPath = { pathname: '/', hash: `#${CONTACT_SECTION_ID}` } as const;
 
@@ -16,6 +13,7 @@ export default function Navbar() {
   const location = useLocation();
   const path = location.pathname;
   const { openVerificationEntry } = useVerificationEntry();
+  const { user } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const links = [
@@ -75,34 +73,27 @@ export default function Navbar() {
         })}
 
         <div className="w-full pt-4 border-t border-outline-variant/30 mt-2 shrink-0 space-y-4 pb-8">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-secondary">Contact</p>
-          <div className="flex flex-wrap gap-x-6 gap-y-3">
-            <a href={contactTelHref()} className={contactLinkClass}>
-              Call
-            </a>
-            <a href={contactEmailHref()} className={contactLinkClass}>
-              Email
-            </a>
-            <a href={contactSmsHref()} className={contactLinkClass}>
-              Text
-            </a>
-            <Link
-              to={contactPath}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={contactLinkClass}
-            >
-              Contact Form
-            </Link>
-          </div>
-          <button
-            onClick={() => {
-              setIsMobileMenuOpen(false);
-              openVerificationEntry('verify');
-            }}
-            className="btn-primary text-on-primary w-full md:w-auto md:px-12 py-4 md:py-5 rounded-lg uppercase text-sm tracking-widest font-medium hover:opacity-95 transition-all"
-          >
-            Verify Eligibility
-          </button>
+          <AuthNavActions variant="mobile" onNavigate={() => setIsMobileMenuOpen(false)} />
+          {!user && (
+            <>
+              <Link
+                to={contactPath}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`${contactLinkClass} text-sm`}
+              >
+                Schedule Consultation
+              </Link>
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  openVerificationEntry('verify');
+                }}
+                className="btn-primary text-on-primary w-full md:w-auto md:px-12 py-4 md:py-5 rounded-lg uppercase text-sm tracking-widest font-medium hover:opacity-95 transition-all"
+              >
+                Verify Eligibility
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>
@@ -138,33 +129,24 @@ export default function Navbar() {
               })}
             </div>
 
-            <div className="hidden 2xl:flex items-center gap-5 shrink-0">
-              <div className="flex items-center gap-4 border-r border-outline-variant/25 pr-5">
-                <Link to={contactPath} className={contactLinkClass}>
-                  Contact Us
-                </Link>
-                <a href={contactEmailHref()} className={contactLinkClass}>
-                  Email
-                </a>
-                <a href={contactTelHref()} className={contactLinkClass}>
-                  Call
-                </a>
-                <a href={contactSmsHref()} className={contactLinkClass}>
-                  Text
-                </a>
-              </div>
-              <Link
-                to={contactPath}
-                className="btn-glass text-on-surface px-5 py-3 rounded-lg uppercase text-[10px] tracking-widest font-medium hover:opacity-95 transition-all"
-              >
-                Schedule Consultation
-              </Link>
-              <button
-                onClick={() => openVerificationEntry('verify')}
-                className="btn-primary text-on-primary px-6 2xl:px-8 py-3 rounded-lg uppercase text-xs tracking-widest font-medium hover:opacity-95 transition-all"
-              >
-                Verify Eligibility
-              </button>
+            <div className="hidden 2xl:flex items-center gap-4 shrink-0">
+              <AuthNavActions variant="desktop" />
+              {!user && (
+                <>
+                  <Link
+                    to={contactPath}
+                    className="btn-glass text-on-surface px-5 py-3 rounded-lg uppercase text-[10px] tracking-widest font-medium hover:opacity-95 transition-all"
+                  >
+                    Schedule Consultation
+                  </Link>
+                  <button
+                    onClick={() => openVerificationEntry('verify')}
+                    className="btn-primary text-on-primary px-6 2xl:px-8 py-3 rounded-lg uppercase text-xs tracking-widest font-medium hover:opacity-95 transition-all"
+                  >
+                    Verify Eligibility
+                  </button>
+                </>
+              )}
             </div>
 
             <button

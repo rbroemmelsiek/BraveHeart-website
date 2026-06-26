@@ -3,7 +3,7 @@
 ## Current Status
 
 ```text
-Status: Plan 07 complete — Phase 1 technical QA pass; publication launch blocked pending owner/legal/compliance sign-off
+Status: Plan 07 complete + post-launch enhancements committed — publication still blocked pending owner/legal/compliance sign-off
 Primary objective: Convert cloned Home Listing Website into Brave Heart First Responders website.
 ```
 
@@ -38,9 +38,24 @@ Primary objective: Convert cloned Home Listing Website into Brave Heart First Re
 docs/braveheart/launch-readiness-report.md
 ```
 
+## Post-Plan-07 Enhancements (2026-06-22)
+
+| Area | Status | Notes |
+|---|---|---|
+| Google OAuth + session auth | **Committed** | `AuthProvider`, `/account`, `server/auth-api.mjs`; dev proxy via `npm run dev` |
+| Admin blog route | **Committed** | `/admin/blog` protected by `ProtectedAdminRoute`; admin email allowlist |
+| Founder portrait asset | **Committed** | `karen-van-ness-portrait.webp` + inbox source; wired in Founder components |
+| Heroes Journey showcase | **Committed** | Interactive milestone UI refinements on Home |
+| Blog post rendering | **Committed** | `markdownBody.tsx` and `BlogPost.tsx` layout improvements |
+| Navbar auth actions | **Committed** | Sign-in / account / admin nav via `AuthNavActions` |
+
+**Not in original Phase 1 plans.** Requires production OAuth secrets (`VITE_GOOGLE_CLIENT_ID`, `AUTH_SESSION_SECRET`, `ADMIN_EMAILS`) before admin features work in deployment.
+
 ## Open Decisions
 
 - Final production domain (placeholder `https://braveheartfirstresponders.com` in SEO config).
+- Google OAuth production credentials and authorized origins.
+- Whether admin blog editing remains file-based or moves to a CMS backend.
 - Final HomeToHome app URL (`CTA_CONFIG.appUrl` currently null).
 - Verification backend / CRM integration (not Phase 1).
 - Founder contact mailto/tel publication approval.
@@ -75,7 +90,7 @@ docs/braveheart/launch-readiness-report.md
 - Added `scripts/generate-sitemap.mjs` (runs before build) — 12 sitemap entries.
 - Sample posts: 1 published, 1 draft, 1 review (draft/review excluded publicly).
 - Footer Blog link added; Phase 1 nav preserved.
-- No backend CMS, database, authentication, or form backend introduced.
+- No backend CMS or database at Plan 06 completion; **Google OAuth admin auth added post-Plan-07** (see above).
 - `npm run lint` and `npm run build` pass.
 
 ## Plan 05 Summary (2026-06-21)

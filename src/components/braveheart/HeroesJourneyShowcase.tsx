@@ -51,6 +51,9 @@ interface HeroesJourneyShowcaseProps {
   infographicFile?: string;
   infographicAlt?: string;
   steps?: JourneyStep[];
+  /** `feature` = full-bleed banner for home; `default` = in-page showcase with step cards */
+  variant?: 'default' | 'feature';
+  showSteps?: boolean;
   className?: string;
 }
 
@@ -58,40 +61,82 @@ export default function HeroesJourneyShowcase({
   infographicFile = 'braveheart-client-heroes-journey.webp',
   infographicAlt = "The Hero's Path to Homeownership — Brave Heart client journey from first contact through closing.",
   steps = DEFAULT_JOURNEY_STEPS,
+  variant = 'default',
+  showSteps = true,
   className = '',
 }: HeroesJourneyShowcaseProps) {
+  const isFeature = variant === 'feature';
+
   return (
     <section
-      className={`reveal space-y-8 ${className}`.trim()}
+      className={`reveal ${isFeature ? 'w-full' : 'space-y-8'} ${className}`.trim()}
       aria-labelledby="heroes-journey-heading"
     >
-      <div className="glass-hero rounded-2xl p-6 md:p-10 editorial-shadow text-center">
-        <p className="text-[10px] uppercase tracking-[0.25em] text-primary mb-3 font-medium">
-          Program Standard
-        </p>
-        <h2
-          id="heroes-journey-heading"
-          className="font-serif font-light text-2xl md:text-3xl text-on-surface leading-snug"
-        >
-          The Hero&apos;s Path to Homeownership
-        </h2>
-        <p className="mt-4 text-on-surface/80 font-light leading-relaxed max-w-2xl mx-auto text-sm md:text-base">
-          A structured journey from first inquiry through verification, professional coordination,
-          and transaction support—presented here as the Brave Heart visual standard.
-        </p>
-      </div>
+      {isFeature ? (
+        <div className="relative w-full">
+          <div className="text-center px-6 md:px-10 pt-2 pb-6 md:pb-8 max-w-3xl mx-auto">
+            <p className="text-[10px] uppercase tracking-[0.25em] text-primary mb-3 font-medium">
+              Program Standard
+            </p>
+            <h2
+              id="heroes-journey-heading"
+              className="font-serif font-light text-2xl md:text-4xl text-on-surface leading-snug"
+            >
+              The Hero&apos;s Path to Homeownership
+            </h2>
+            <p className="mt-4 text-on-surface/80 font-light leading-relaxed text-sm md:text-base">
+              Your structured journey from first inquiry through verification, professional
+              coordination, and closing—designed for eligible public-safety and military households.
+            </p>
+          </div>
 
-      {infographicFile && (
-        <div className="glass-panel rounded-xl p-3 md:p-4 editorial-shadow">
-          <BraveHeartImage
-            file={infographicFile}
-            alt={infographicAlt}
-            className="glass-inset rounded-lg p-1 md:p-2"
-          />
+          {infographicFile && (
+            <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-surface-container-low/40 border-y border-outline-variant/15 overflow-visible">
+              <div className="w-full max-w-[1920px] mx-auto">
+                <BraveHeartImage
+                  file={infographicFile}
+                  alt={infographicAlt}
+                  priority
+                  zoomOnHover={false}
+                  className="w-full"
+                />
+              </div>
+            </div>
+          )}
         </div>
+      ) : (
+        <>
+          <div className="glass-hero rounded-2xl p-6 md:p-10 editorial-shadow text-center">
+            <p className="text-[10px] uppercase tracking-[0.25em] text-primary mb-3 font-medium">
+              Program Standard
+            </p>
+            <h2
+              id="heroes-journey-heading"
+              className="font-serif font-light text-2xl md:text-3xl text-on-surface leading-snug"
+            >
+              The Hero&apos;s Path to Homeownership
+            </h2>
+            <p className="mt-4 text-on-surface/80 font-light leading-relaxed max-w-2xl mx-auto text-sm md:text-base">
+              A structured journey from first inquiry through verification, professional coordination,
+              and transaction support—presented here as the Brave Heart visual standard.
+            </p>
+          </div>
+
+          {infographicFile && (
+            <div className="w-full overflow-visible">
+              <BraveHeartImage
+                file={infographicFile}
+                alt={infographicAlt}
+                zoomOnHover={false}
+                className="w-full"
+              />
+            </div>
+          )}
+        </>
       )}
 
-      <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 list-none p-0 m-0">
+      {showSteps && steps.length > 0 && (
+      <ol className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 list-none p-0 m-0 ${isFeature ? 'max-w-screen-2xl mx-auto px-6 md:px-10 mt-10 md:mt-12' : ''}`}>
         {steps.map((step, index) => (
           <li
             key={step.title}
@@ -113,8 +158,9 @@ export default function HeroesJourneyShowcase({
           </li>
         ))}
       </ol>
+      )}
 
-      <p className="text-center text-on-surface-variant text-xs font-light leading-relaxed px-4">
+      <p className={`text-center text-on-surface-variant text-xs font-light leading-relaxed px-4 ${isFeature ? 'mt-8 max-w-3xl mx-auto' : ''}`}>
         Illustrative program flow only. Eligibility, provider participation, and final benefits are
         confirmed during verification and the transaction process.
       </p>

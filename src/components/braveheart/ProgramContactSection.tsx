@@ -7,6 +7,7 @@ import {
   contactTelHref,
 } from '../../config/contact';
 import { VERIFICATION_ENTRY_FORM_NOTICE } from '../../config/cta';
+import FounderPortrait from './FounderPortrait';
 
 interface InquiryForm {
   name: string;
@@ -37,15 +38,7 @@ export default function ProgramContactSection() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <aside className="lg:col-span-4 glass-panel rounded-xl p-8 editorial-shadow card-lift">
           <div className="text-center mb-8">
-            <img
-              src={PROGRAM_CONTACT.portraitSrc}
-              alt={PROGRAM_CONTACT.portraitAlt}
-              width={250}
-              height={250}
-              className="w-28 h-28 rounded-full mx-auto mb-5 object-cover ring-2 ring-primary/35"
-              loading="lazy"
-              decoding="async"
-            />
+            <FounderPortrait size="contact" className="mx-auto mb-5" />
             <h2 className="font-serif text-2xl text-on-surface font-light">
               {PROGRAM_CONTACT.founderName}
             </h2>
@@ -55,6 +48,17 @@ export default function ProgramContactSection() {
             <p className="text-on-surface-variant text-xs mt-1">{PROGRAM_CONTACT.dre}</p>
           </div>
           <ul className="space-y-4">
+            <li>
+              <a
+                href={contactSmsHref()}
+                className="flex items-center gap-3 text-on-surface/85 hover:text-primary transition-colors group"
+              >
+                <span className="material-symbols-outlined text-primary" aria-hidden="true">
+                  sms
+                </span>
+                <span className="font-light">Text the program team</span>
+              </a>
+            </li>
             <li>
               <a
                 href={contactTelHref()}
@@ -75,17 +79,6 @@ export default function ProgramContactSection() {
                   mail
                 </span>
                 <span className="font-light">{PROGRAM_CONTACT.email}</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href={contactSmsHref()}
-                className="flex items-center gap-3 text-on-surface/85 hover:text-primary transition-colors group"
-              >
-                <span className="material-symbols-outlined text-primary" aria-hidden="true">
-                  sms
-                </span>
-                <span className="font-light">Text the program team</span>
               </a>
             </li>
           </ul>

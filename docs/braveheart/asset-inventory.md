@@ -56,6 +56,7 @@ missing          — referenced in docs but not on disk
 | icon-final | braveheart-icon.webp | public/assets/images/braveheart/ | 2048×2048 | Brave Heart program icon. | Global | Favicon | implemented |
 | logo-square | brave-heart-logo-square.webp | public/assets/images/braveheart/ | 1408×1408 | Square Brave Heart shield logo. | Global | OG/social (Plan 05) | converted |
 | app-qr-signup | braveheart-app-qr-code-signup.webp | public/assets/images/braveheart/ | 1376×768 | QR code and smartphone displaying Braveheart HomeToHome app for eligibility verification. | Global | CTA | converted |
+| founder-portrait | karen-van-ness-portrait.webp | public/assets/images/braveheart/ | 1351×1992 | Karen Van Ness — Brave Heart First Responders founder and program innovator. | Global | Founder spotlight / Contact | implemented |
 | listing-agent-photo | — | public/assets/Karen2-250px.webp | — | Listing-site agent portrait (legacy). | — | — | retired |
 
 ## Source Files (Preserved)
@@ -81,6 +82,7 @@ missing          — referenced in docs but not on disk
 | logo-landscape | public/assets/Brave Heart Logo 2.png | PNG | Preserved |
 | logo-square | public/assets/Brave Heart LogoDarkSqu.webp | WebP | Preserved |
 | icon-final | public/assets/icon-final.png | PNG | Preserved |
+| founder-portrait | public/assets/images/braveheart/inbox/Karen-Van-Ness-portrait.jpg | JPG | Preserved — run `npm run images:braveheart` to regenerate WebP |
 
 ## Gaps and Deferred Items
 
@@ -89,7 +91,7 @@ missing          — referenced in docs but not on disk
 | App QR CTA | `braveheart-app-qr-code-signup.webp` converted but not wired — Plan 04 CTA entry. |
 | Square logo OG | `brave-heart-logo-square.webp` ready for Plan 05 Open Graph metadata. |
 | Compliance-sensitive graphics | Savings example, discount breakdown, guarantee checklist, testimonial — shown with editorial/compliance flags in copy. |
-| Listing legacy | `Karen2-250px.webp` retained at source path; not referenced by active routes. |
+| Listing legacy | `Karen2-250px.webp` retained at source path; superseded by `karen-van-ness-portrait.webp`. |
 
 ## Notes
 
