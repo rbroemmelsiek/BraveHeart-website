@@ -13,12 +13,14 @@ public/assets/images/braveheart/
 ## Raw Intake Path
 
 ```text
-public/assets/images/braveheart/inbox/
+assets-sources/braveheart/inbox/
 ```
 
-## Source Path (Preserved)
+Place new raw PNG/JPG files in inbox, then run `npm run images:braveheart`. Only production WebP files belong under `public/`.
 
-Original PNG/WebP sources remain at **`public/assets/`** until owner approves deletion.
+## Source Path (Preserved, not deployed)
+
+Original PNG/JPG/PSD/WebP sources live at **`assets-sources/braveheart/`** (outside `public/` so Vite does not copy them into `dist/`).
 
 ## Status Values
 

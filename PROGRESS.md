@@ -44,7 +44,8 @@ docs/braveheart/launch-readiness-report.md
 |---|---|---|
 | Google OAuth + session auth | **Committed** | `AuthProvider`, `/account`, `server/auth-api.mjs`; dev proxy via `npm run dev` |
 | Admin blog route | **Committed** | `/admin/blog` protected by `ProtectedAdminRoute`; admin email allowlist |
-| Founder portrait asset | **Committed** | `karen-van-ness-portrait.webp` + inbox source; wired in Founder components |
+| Founder portrait asset | **Committed** | `karen-van-ness-portrait.webp`; raw JPG in `assets-sources/braveheart/inbox/` |
+| Deploy asset trim | **Committed** | Sources moved to `assets-sources/braveheart/`; `public/` production WebP only (~2 MB dist) |
 | Heroes Journey showcase | **Committed** | Interactive milestone UI refinements on Home |
 | Blog post rendering | **Committed** | `markdownBody.tsx` and `BlogPost.tsx` layout improvements |
 | Navbar auth actions | **Committed** | Sign-in / account / admin nav via `AuthNavActions` |

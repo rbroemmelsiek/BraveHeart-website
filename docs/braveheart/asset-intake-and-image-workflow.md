@@ -6,11 +6,13 @@ Defines how new Brave Heart images are added, converted, tracked, approved, inse
 
 ## Raw Image Intake
 
-Place new images here first:
+Place new images here first (not served in production):
 
 ```text
-public/assets/images/braveheart/inbox/
+assets-sources/braveheart/inbox/
 ```
+
+After conversion, production WebP output is written to `public/assets/images/braveheart/`.
 
 ## Production Image Folder
 
@@ -38,7 +40,7 @@ Rules:
 4. Use WebP quality 82 by default.
 5. Use quality 75–80 if the image remains unnecessarily large.
 6. Preserve transparency where required.
-7. Keep originals in `inbox/` until deletion is approved.
+7. Keep originals in `assets-sources/braveheart/` until deletion is approved.
 8. Do not wire images into React pages until inventory and placement are approved.
 
 ## Inventory Requirements

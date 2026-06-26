@@ -88,11 +88,13 @@ npm run images:braveheart
 - Conversion results JSON: `scripts/.braveheart-conversion-results.json`
 - Update `docs/braveheart/image-conversion-report.md` after each run
 
-Suggested future command:
+If a WebP conversion script is added, document usage here. Run:
 
 ```bash
 npm run images:braveheart
 ```
+
+Sources are read from `assets-sources/braveheart/`; output is written to `public/assets/images/braveheart/` (production deploy only).
 
 ## Deployment Notes
 

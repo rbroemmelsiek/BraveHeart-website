@@ -1,7 +1,8 @@
 /**
- * Converts Brave Heart source assets to production WebP under
+ * Converts Brave Heart source assets from assets-sources/braveheart/ to production WebP under
  * public/assets/images/braveheart/
  *
+ * Source PNG/JPG/PSD files live outside public/ so they are not copied into dist/ on build.
  * Preserves original dimensions. Does not delete source files.
  */
 import fs from 'node:fs/promises';
@@ -9,7 +10,7 @@ import path from 'node:path';
 import sharp from 'sharp';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
-const SOURCE_DIR = path.join(ROOT, 'public', 'assets');
+const SOURCE_DIR = path.join(ROOT, 'assets-sources', 'braveheart');
 const OUTPUT_DIR = path.join(ROOT, 'public', 'assets', 'images', 'braveheart');
 const QUALITY = 82;
 
@@ -32,13 +33,9 @@ const ASSETS = [
   { source: 'braveheart-app-qr-code-signup.png', target: 'braveheart-app-qr-code-signup.webp', action: 'convert' },
   { source: 'Brave Heart Logo 2.png', target: 'brave-heart-logo-landscape.webp', action: 'convert' },
   { source: 'icon-final.png', target: 'braveheart-icon.webp', action: 'convert' },
-  { source: 'images/braveheart/inbox/Karen-Van-Ness-portrait.jpg', target: 'karen-van-ness-portrait.webp', action: 'convert', quality: 95, smartSubsample: false },
+  { source: 'inbox/Karen-Van-Ness-portrait.jpg', target: 'karen-van-ness-portrait.webp', action: 'convert', quality: 95, smartSubsample: false },
   { source: 'BraveHeartHerosJourney.webp', target: 'braveheart-client-heroes-journey.webp', action: 'copy-reencode' },
-  {
-    source: 'images/braveheart/braveheart-client-heroes-journey.png',
-    target: 'braveheart-client-heroes-journey.webp',
-    action: 'convert',
-  },
+  { source: 'braveheart-client-heroes-journey.png', target: 'braveheart-client-heroes-journey.webp', action: 'convert' },
   { source: 'Brave Heart LogoDarkSqu.webp', target: 'brave-heart-logo-square.webp', action: 'copy-reencode' },
 ];
 
