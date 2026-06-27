@@ -1,6 +1,7 @@
 import {
   braveheartImageSrc,
   infographicDefaultSrc,
+  infographicDimensions,
   infographicSrcSet,
   INFOGRAPHIC_SIZES,
 } from '../../lib/braveheartAssets';
@@ -31,16 +32,24 @@ export default function BraveHeartImage({
 }: BraveHeartImageProps) {
   const src = responsive ? infographicDefaultSrc(file) : braveheartImageSrc(file);
   const srcSet = responsive ? infographicSrcSet(file) : undefined;
+  const dims = responsive ? infographicDimensions(file) : null;
 
   return (
     <figure
       className={`w-full ${zoomOnHover ? 'image-zoom reveal-motion' : 'overflow-visible'} ${className}`.trim()}
+      style={
+        dims
+          ? { aspectRatio: `${dims.width} / ${dims.height}` }
+          : undefined
+      }
     >
       <img
         src={src}
         srcSet={srcSet}
         sizes={srcSet ? sizes : undefined}
         alt={alt}
+        width={dims?.width}
+        height={dims?.height}
         loading={priority ? 'eager' : 'lazy'}
         decoding={priority ? 'sync' : 'async'}
         fetchPriority={priority ? 'high' : 'auto'}

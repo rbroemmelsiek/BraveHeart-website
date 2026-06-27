@@ -4,13 +4,13 @@ import ScrollToTop from './components/ScrollToTop';
 import SEOHead from './components/SEOHead';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Home from './pages/Home';
 import ProtectedAdminRoute from './components/auth/ProtectedAdminRoute';
 import { ContactModalProvider } from './context/ContactModalContext';
 import { AuthProvider } from './context/AuthContext';
 import AmbientBackground from './components/braveheart/AmbientBackground';
 import MobileContactBar from './components/braveheart/MobileContactBar';
 
-const Home = lazy(() => import('./pages/Home'));
 const OurStory = lazy(() => import('./pages/OurStory'));
 const WhoWeServe = lazy(() => import('./pages/WhoWeServe'));
 const SavingsComparison = lazy(() => import('./pages/SavingsComparison'));
@@ -26,10 +26,15 @@ const TopicArchive = lazy(() => import('./pages/TopicArchive'));
 const Account = lazy(() => import('./pages/Account'));
 const AdminBlog = lazy(() => import('./pages/admin/AdminBlog'));
 
+/** Reserves vertical space while lazy routes load to prevent footer CLS. */
 function RouteFallback() {
   return (
-    <div className="min-h-[50vh] flex items-center justify-center" aria-hidden="true">
-      <div className="h-8 w-8 rounded-full border-2 border-primary/30 border-t-primary animate-spin" />
+    <div className="min-h-[1400px] pt-48 pb-24" aria-busy="true" aria-label="Loading page">
+      <div className="max-w-4xl mx-auto px-6 md:px-8 space-y-8 animate-pulse">
+        <div className="rounded-2xl h-56 md:h-72 bg-surface-container-high/25 border border-outline-variant/10" />
+        <div className="rounded-xl h-80 bg-surface-container-high/20 border border-outline-variant/10" />
+        <div className="rounded-xl h-80 bg-surface-container-high/20 border border-outline-variant/10" />
+      </div>
     </div>
   );
 }

@@ -67,6 +67,24 @@ h1, h2, h3 {
   font-family: var(--font-serif);
 }
 
+/* Fixed icon box — prevents CLS when Material Symbols loads with font-display: optional */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
 .editorial-shadow {
   box-shadow:
     0 24px 48px -12px rgba(0, 0, 0, 0.5),

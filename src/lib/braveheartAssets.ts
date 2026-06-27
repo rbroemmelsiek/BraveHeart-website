@@ -54,3 +54,15 @@ export function infographicDefaultSrc(filename: string): string {
 export function portraitDefaultSrc(filename: string): string {
   return braveheartVariantSrc(filename, PORTRAIT_SRCSET_WIDTHS[0]);
 }
+
+/** Standard Brave Heart infographic canvas (1376×768). */
+export const STANDARD_INFOGRAPHIC_DIMENSIONS = { width: 1376, height: 768 } as const;
+
+/** Per-file overrides when dimensions differ from the standard canvas. */
+const INFOGRAPHIC_DIMENSION_OVERRIDES: Record<string, { width: number; height: number }> = {
+  'braveheart-client-heroes-journey.webp': { width: 1382, height: 769 },
+};
+
+export function infographicDimensions(filename: string): { width: number; height: number } {
+  return INFOGRAPHIC_DIMENSION_OVERRIDES[filename] ?? STANDARD_INFOGRAPHIC_DIMENSIONS;
+}
